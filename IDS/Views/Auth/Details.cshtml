@@ -1,0 +1,76 @@
+﻿@model IDS.Models.ApplicationUser
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الموظف</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    @* <link href="~/css/header.css" rel="stylesheet"> *@
+    <link href="~/css/AddEmployee.css" rel="stylesheet">
+    <link href="~/css/EmployeeDetails.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+    </style>
+</head>
+
+<body style="font-family: 'Noto Sans Arabic', sans-serif;">
+
+    <header>
+        <div class="auth-buttons">
+            <a asp-controller="Reception" asp-action="Index" class="sign-up">العوده الي الصفحه  الرئيسيه</a>
+
+        </div>
+        <div class="auth-buttons">
+            <a asp-controller="Auth" asp-action="SignOut" class="sign-out">تسجيل الخروج</a>
+
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="EmployeeCard">
+            <div class="frm">
+                <dl class="row">
+                    <div class="col-md-6">
+                        <div class="employee-info"><dt>الإسم ثلاثي:</dt><dd>@Model.FullName</dd></div>
+                        <div class="employee-info"><dt>الرقم القومي:</dt><dd>@Model.NationalId</dd></div>
+                        <div class="employee-info"><dt>رقم الهاتف:</dt><dd>@Model.PhoneNumber</dd></div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="employee-info"><dt>الإيميل:</dt><dd>@Model.Email</dd></div>
+
+                        <div class="employee-info"><dt>إسم المستخدم:</dt><dd>@Model.UserName</dd></div>
+                        <div class="employee-info"><dt>القسم:</dt><dd>@Model.Role</dd></div>
+
+
+                    </div>
+                </dl>
+
+                <div class="d-flex links">
+                    <a id="edit" asp-controller="Auth" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">للتعديل اضغط هنا !</a>
+                    <a id="back" asp-controller="Reception" asp-action="Index" class="btn btn-primary">الرجوع  للصفحه الرئيسيه </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>جميع الحقوق محفوظة لفريق IDS 2025</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
