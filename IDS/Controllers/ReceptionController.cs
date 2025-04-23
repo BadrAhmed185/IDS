@@ -8,6 +8,7 @@ using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Spreadsheet;
 using IDS.Migrations;
 using IDS.Models;
+using IDS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
@@ -43,221 +44,6 @@ namespace IDS.Controllers
         {
             return View();
         }
-
-
-        // In .NET, Task is a class in the System.Threading.
-        // Tasks namespace used to represent asynchronous operations. 
-        public async Task<IActionResult> CreateTicketForNewPatient()
-        {
-            TempData["New"] = true;
-
-            return View("ReceptionTicket");
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateTicketForNewPatient(TicketVM ticket)
-        {
-
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            ViewBag.ModelStateErrors = errors;
-            foreach (var error in errors)
-            {
-                Console.WriteLine(error.ErrorMessage);
-            }
-            if (PatientsIds.Contains(ticket.PatientId))
-            {
-                TempData["Error"] = "عذرا , هذا المريض مسجل بالفعل";
-                return View("ReceptionTicket", ticket);
-            }
-
-            if (ModelState.IsValid)
-            {
-                Patient patient = new Patient();
-                Ticket newTicket = new Ticket(_context);
-
-
-                patient.PatientId = ticket.PatientId;
-                patient.Name = ticket.Name;
-                patient.Address = ticket.Address;
-                patient.profession = ticket.profession;
-                patient.phoneNumber = ticket.phoneNumber;
-                patient.Gender = ticket.Gender;
-                patient.Age = ticket.Age;
-
-
-
-                var referredTo = new ReferredTo
-                {
-                    Oral = ticket.Oral,
-                    RemovableProsth = ticket.RemovableProsth,
-                    Operative = ticket.Operative,
-                    Endodontic = ticket.Endodontic,
-                    Ortho = ticket.Ortho,
-                    CrownAndBridge = ticket.CrownAndBridge,
-                    Surgery = ticket.Surgery,
-                    Pedo = ticket.Pedo,
-                    XRay = ticket.XRay,
-                };
-
-
-                var medicalHistory = new MedicalHistory
-                {
-                    HeartTrouble = ticket.HeartTrouble,
-                    Hyperttention = ticket.Hyperttention,
-                    Pregnancy = ticket.Pregnancy,
-                    Diabetes = ticket.Diabetes,
-                    Hepatitis = ticket.Hepatitis,
-                    AIDs = ticket.AIDs,
-                    Tuberculosis = ticket.Tuberculosis,
-                    Allergies = ticket.Allergies,
-                    Anemia = ticket.Anemia,
-                    Rheumatism = ticket.Rheumatism,
-                    RadTherapy = ticket.RadTherapy,
-                    Haemophilia = ticket.Haemophilia,
-                    AspirinIntake = ticket.AspirinIntake,
-                    KidneyTroubles = ticket.KidneyTroubles,
-                    Asthma = ticket.Asthma,
-                    HayFever = ticket.HayFever,
-                    MedicalHistoryText = ticket.MedicalHistoryText,
-                };
-
-                // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
-                // then EF Core automatically updates the Id property of the medicalHistory object with the generated
-                // value.
-                // So, after calling _context.SaveChanges(), you can access medicalHistory.Id,
-                // and it will contain the new database- generated identity value.
-                _context.AddRange(patient, referredTo, medicalHistory);
-                _context.SaveChanges();
-
-                newTicket.PatientId = patient.PatientId;
-                newTicket.MedicalHistoryId = medicalHistory.Id;
-                newTicket.ReferredToId = referredTo.Id;
-                newTicket.AppointmentDate = ticket.AppointmentDate;
-
-                _context.Add(newTicket);
-                await _context.SaveChangesAsync();
-
-                TempData["SuccessForNew"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكره لعياده التشخيص";
-
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                TempData["Error"] = "عذرا , حدث خطأ اثناء تسجيل البيانات";
-                return View("ReceptionTicket", ticket);
-            }
-        }
-
-
-
-
-
-        [HttpGet]
-        public async Task<IActionResult> CreateTicketForExistingPatient(string id)
-        {
-            TempData["New"] = false;
-            if (id == null)
-            {
-                return NotFound();
-            }
-            if (!PatientsIds.Contains(id))
-            {
-                TempData["Error"] = "عذرا , هذا المريض  غير موجود";
-                return RedirectToAction(nameof(Index));
-            }
-
-            var patient = Patients.FirstOrDefault(p => p.PatientId == id);
-
-            var ticket = new TicketVM();
-            ticket.PatientId = patient.PatientId;
-            ticket.Name = patient.Name;
-            ticket.Address = patient.Address;
-            ticket.profession = patient.profession;
-            ticket.phoneNumber = patient.phoneNumber;
-            ticket.Gender = patient.Gender;
-            ticket.Age = patient.Age;
-
-            return View("ReceptionTicket", ticket);
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateTicketForExistingPatient(TicketVM ticket)
-        {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-
-            ViewBag.ModelStateErrors = errors;
-
-            if (ModelState.IsValid)
-            {
-                Ticket newTicket = new Ticket(_context);
-
-                var referredTo = new ReferredTo
-                {
-                    Oral = ticket.Oral,
-                    RemovableProsth = ticket.RemovableProsth,
-                    Operative = ticket.Operative,
-                    Endodontic = ticket.Endodontic,
-                    Ortho = ticket.Ortho,
-                    CrownAndBridge = ticket.CrownAndBridge,
-                    Surgery = ticket.Surgery,
-                    Pedo = ticket.Pedo,
-                    XRay = ticket.XRay,
-                };
-
-
-                var medicalHistory = new MedicalHistory
-                {
-                    HeartTrouble = ticket.HeartTrouble,
-                    Hyperttention = ticket.Hyperttention,
-                    Pregnancy = ticket.Pregnancy,
-                    Diabetes = ticket.Diabetes,
-                    Hepatitis = ticket.Hepatitis,
-                    AIDs = ticket.AIDs,
-                    Tuberculosis = ticket.Tuberculosis,
-                    Allergies = ticket.Allergies,
-                    Anemia = ticket.Anemia,
-                    Rheumatism = ticket.Rheumatism,
-                    RadTherapy = ticket.RadTherapy,
-                    Haemophilia = ticket.Haemophilia,
-                    AspirinIntake = ticket.AspirinIntake,
-                    KidneyTroubles = ticket.KidneyTroubles,
-                    Asthma = ticket.Asthma,
-                    HayFever = ticket.HayFever,
-                    MedicalHistoryText = ticket.MedicalHistoryText,
-                };
-
-                // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
-                // then EF Core automatically updates the Id property of the medicalHistory object with the generated
-                // value.
-                // So, after calling _context.SaveChanges(), you can access medicalHistory.Id,
-                // and it will contain the new database- generated identity value.
-                _context.AddRange(referredTo, medicalHistory);
-                _context.SaveChanges();
-
-                newTicket.PatientId = ticket.PatientId;
-                newTicket.MedicalHistoryId = medicalHistory.Id;
-                newTicket.ReferredToId = referredTo.Id;
-                newTicket.AppointmentDate = ticket.AppointmentDate;
-
-                _context.Add(newTicket);
-                await _context.SaveChangesAsync();
-
-                TempData["SuccessForExist"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكره لعياده التشخيص";
-                return RedirectToAction(nameof(Index));
-            }
-            else
-            {
-                TempData["Error"] = "عذرا , حدث خطأ اثناء تسجيل البيانات";
-                return View("ReceptionTicket", ticket);
-            }
-        }
-
-
-        [HttpPost]
         public async Task<IActionResult> ShowFullTicket(string id)
         {
             TempData["New"] = false;
@@ -393,6 +179,247 @@ namespace IDS.Controllers
 
 
 
+        // In .NET, Task is a class in the System.Threading.
+        // Tasks namespace used to represent asynchronous operations. 
+        public async Task<IActionResult> CreateTicketForNewPatient()
+        {
+            TempData["New"] = true;
+
+            return View("ReceptionTicket");
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateTicketForNewPatient(TicketVM ticket)
+        {
+
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+            TempData["Errors"] = errors;
+
+
+            //foreach (var error in errors)
+            //{
+            //    Console.WriteLine(error.ErrorMessage);
+            //}
+
+            if (PatientsIds.Contains(ticket.PatientId))
+            {
+                TempData["Error"] = "عذرا , هذا المريض مسجل بالفعل";
+                return View("ReceptionTicket", ticket);
+            }
+
+            if (ModelState.IsValid)
+            {
+                Patient patient = new Patient();
+                Ticket newTicket = new Ticket(_context);
+
+
+                patient.PatientId = ticket.PatientId;
+                patient.Name = ticket.Name;
+                patient.Address = ticket.Address;
+                patient.profession = ticket.profession;
+                patient.phoneNumber = ticket.phoneNumber;
+                patient.Gender = ticket.Gender;
+                patient.Age = ticket.Age;
+
+
+
+                var referredTo = new ReferredTo
+                {
+                    Oral = ticket.Oral,
+                    RemovableProsth = ticket.RemovableProsth,
+                    Operative = ticket.Operative,
+                    Endodontic = ticket.Endodontic,
+                    Ortho = ticket.Ortho,
+                    CrownAndBridge = ticket.CrownAndBridge,
+                    Surgery = ticket.Surgery,
+                    Pedo = ticket.Pedo,
+                    XRay = ticket.XRay,
+                };
+
+
+                var medicalHistory = new MedicalHistory
+                {
+                    HeartTrouble = ticket.HeartTrouble,
+                    Hyperttention = ticket.Hyperttention,
+                    Pregnancy = ticket.Pregnancy,
+                    Diabetes = ticket.Diabetes,
+                    Hepatitis = ticket.Hepatitis,
+                    AIDs = ticket.AIDs,
+                    Tuberculosis = ticket.Tuberculosis,
+                    Allergies = ticket.Allergies,
+                    Anemia = ticket.Anemia,
+                    Rheumatism = ticket.Rheumatism,
+                    RadTherapy = ticket.RadTherapy,
+                    Haemophilia = ticket.Haemophilia,
+                    AspirinIntake = ticket.AspirinIntake,
+                    KidneyTroubles = ticket.KidneyTroubles,
+                    Asthma = ticket.Asthma,
+                    HayFever = ticket.HayFever,
+                    MedicalHistoryText = ticket.MedicalHistoryText,
+                };
+
+
+                // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
+                // then EF Core automatically updates the Id property of the medicalHistory object with the generated
+                // value.
+                // So, after calling _context.SaveChanges(), you can access medicalHistory.Id,
+                // and it will contain the new database- generated identity value.
+                _context.AddRange(patient, referredTo, medicalHistory);
+                _context.SaveChanges();
+
+                newTicket.PatientId = patient.PatientId;
+                newTicket.MedicalHistoryId = medicalHistory.Id;
+                newTicket.ReferredToId = referredTo.Id;
+                newTicket.AppointmentDate = ticket.AppointmentDate;
+                
+
+                _context.Add(newTicket);
+
+                var ticketAccountacy = new TicketAccountancy
+                {
+                    TicketId = newTicket.TicketId,
+                    ReceptionEmpId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+
+                };
+                _context.Add(ticketAccountacy);
+
+                await _context.SaveChangesAsync();
+
+                TempData["Success"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكرة لعيادة التشخيص";
+                TempData["TicketId"] = newTicket.TicketId;
+
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                TempData["Error"] = "عذرا , حدث خطأ اثناء تسجيل البيانات";
+                return View("ReceptionTicket", ticket);
+            }
+        }
+
+
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> CreateTicketForExistingPatient(string id)
+        {
+            TempData["New"] = false;
+            if (id == null)
+            {
+                return NotFound();
+            }
+            if (!PatientsIds.Contains(id))
+            {
+                TempData["Error"] = "عذرا , هذا المريض  غير موجود";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var patient = Patients.FirstOrDefault(p => p.PatientId == id);
+
+            var ticket = new TicketVM();
+            ticket.PatientId = patient.PatientId;
+            ticket.Name = patient.Name;
+            ticket.Address = patient.Address;
+            ticket.profession = patient.profession;
+            ticket.phoneNumber = patient.phoneNumber;
+            ticket.Gender = patient.Gender;
+            ticket.Age = patient.Age;
+
+            return View("ReceptionTicket", ticket);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateTicketForExistingPatient(TicketVM ticket)
+        {
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+            TempData["Errors"] = errors;
+
+
+            if (ModelState.IsValid)
+            {
+                Ticket newTicket = new Ticket(_context);
+
+                var referredTo = new ReferredTo
+                {
+                    Oral = ticket.Oral,
+                    RemovableProsth = ticket.RemovableProsth,
+                    Operative = ticket.Operative,
+                    Endodontic = ticket.Endodontic,
+                    Ortho = ticket.Ortho,
+                    CrownAndBridge = ticket.CrownAndBridge,
+                    Surgery = ticket.Surgery,
+                    Pedo = ticket.Pedo,
+                    XRay = ticket.XRay,
+                };
+
+
+                var medicalHistory = new MedicalHistory
+                {
+                    HeartTrouble = ticket.HeartTrouble,
+                    Hyperttention = ticket.Hyperttention,
+                    Pregnancy = ticket.Pregnancy,
+                    Diabetes = ticket.Diabetes,
+                    Hepatitis = ticket.Hepatitis,
+                    AIDs = ticket.AIDs,
+                    Tuberculosis = ticket.Tuberculosis,
+                    Allergies = ticket.Allergies,
+                    Anemia = ticket.Anemia,
+                    Rheumatism = ticket.Rheumatism,
+                    RadTherapy = ticket.RadTherapy,
+                    Haemophilia = ticket.Haemophilia,
+                    AspirinIntake = ticket.AspirinIntake,
+                    KidneyTroubles = ticket.KidneyTroubles,
+                    Asthma = ticket.Asthma,
+                    HayFever = ticket.HayFever,
+                    MedicalHistoryText = ticket.MedicalHistoryText,
+                };
+
+                // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
+                // then EF Core automatically updates the Id property of the medicalHistory object with the generated
+                // value.
+                // So, after calling _context.SaveChanges(), you can access medicalHistory.Id,
+                // and it will contain the new database- generated identity value.
+                _context.AddRange(referredTo, medicalHistory);
+                _context.SaveChanges();
+
+                newTicket.PatientId = ticket.PatientId;
+                newTicket.MedicalHistoryId = medicalHistory.Id;
+                newTicket.ReferredToId = referredTo.Id;
+                newTicket.AppointmentDate = ticket.AppointmentDate;
+
+                _context.Add(newTicket);
+
+                var ticketAccountacy = new TicketAccountancy
+                {
+                    TicketId = newTicket.TicketId,
+                    ReceptionEmpId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+
+                };
+                _context.Add(ticketAccountacy);
+                await _context.SaveChangesAsync();
+
+                TempData["Success"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكرة لعيادة التشخيص";
+                TempData["TicketId"] = newTicket.TicketId;
+
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                TempData["Error"] = "عذرا , حدث خطأ اثناء تسجيل البيانات";
+                return View("ReceptionTicket", ticket);
+            }
+        }
+
+
+     
+
+
+    
 
 
     }

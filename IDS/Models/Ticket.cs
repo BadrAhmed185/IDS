@@ -53,27 +53,31 @@ namespace IDS.Models
         [Display(Name = "شكوي المريض.")]
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
         [MinLength(3, ErrorMessage = " .يجب أن تكون شكوي المريض على الأقل 3 أحرف")]
-        public string ChiefComlant { get; set; } = " ";
+        public string ChiefComlant { get; set; } = "N/A";
 
         [Display(Name = "التشخيص المبدئي.")]
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
         [MinLength(3, ErrorMessage = " .يجب أن يكون التشخيص المبدئي على الأقل 3 أحرف")]
-        public string PrevisionalDiagnosis { get; set; } = " ";
+        public string PrevisionalDiagnosis { get; set; } = "N/A";
 
 
         [Display(Name = "تاريخ الزيارة القادمه.")]
         [FutureDate(ErrorMessage = "تاريخ الزيارة القادمه يجب أن يكون اليوم أو في المستقبل")]
 
+        //Second version in the model
         public DateTime? NextDate { get; set; }
-        public int Status { get; set; } = 1;
+        public string Status { get; set; } = "Reception"; // part of third changes
         public bool IsValid { get; set; } = true;
 
+        public string? LevelOfCompletness { get; set; }  // part of third changes
 
 
         //Navigation properties
         public Patient Patient { get; set; }
         public MedicalHistory MedicalHistory { get; set; }
-        public ReferredTo ReferredTo { get; set; } 
+        public ReferredTo ReferredTo { get; set; }
+        public TicketAccountancy Accountancy { get; set; }  // part of third changes
+
 
 
 

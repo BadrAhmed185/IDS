@@ -261,6 +261,9 @@ namespace IDS.Migrations
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
 
+                    b.Property<string>("LevelOfCompletness")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MedicalHistoryId")
                         .HasColumnType("int");
 
@@ -279,8 +282,9 @@ namespace IDS.Migrations
                     b.Property<int>("ReferredToId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TicketId");
 
@@ -293,6 +297,28 @@ namespace IDS.Migrations
                         .IsUnique();
 
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("IDS.Models.TicketAccountancy", b =>
+                {
+                    b.Property<string>("TicketId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DiagnosisDocId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ReceptionEmpId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("TicketId");
+
+                    b.HasIndex("DiagnosisDocId");
+
+                    b.HasIndex("ReceptionEmpId");
+
+                    b.ToTable("TicketAccountancy");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -455,6 +481,33 @@ namespace IDS.Migrations
                     b.Navigation("ReferredTo");
                 });
 
+            modelBuilder.Entity("IDS.Models.TicketAccountancy", b =>
+                {
+                    b.HasOne("IDS.Models.ApplicationUser", "DiagnosisDoc")
+                        .WithMany()
+                        .HasForeignKey("DiagnosisDocId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IDS.Models.ApplicationUser", "ReceptionEmployee")
+                        .WithMany()
+                        .HasForeignKey("ReceptionEmpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IDS.Models.Ticket", "Ticket")
+                        .WithOne("Accountancy")
+                        .HasForeignKey("IDS.Models.TicketAccountancy", "TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DiagnosisDoc");
+
+                    b.Navigation("ReceptionEmployee");
+
+                    b.Navigation("Ticket");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -520,6 +573,12 @@ namespace IDS.Migrations
             modelBuilder.Entity("IDS.Models.ReferredTo", b =>
                 {
                     b.Navigation("Ticket")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("IDS.Models.Ticket", b =>
+                {
+                    b.Navigation("Accountancy")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

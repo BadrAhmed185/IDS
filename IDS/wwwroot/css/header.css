@@ -3,17 +3,17 @@
     justify-content: space-between;
     align-items: center;
     /* background: #4e2d48; */
-    background: rgb(4, 4, 67);
+   /* background: rgb(4, 4, 67);*/
     padding: 15px 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: 0.7s;
     margin-bottom: 15px;
 }
 
-    header:hover {
-        background: rgb(1, 1, 44);
+   /* header:hover {
+      
     }
-
+*/
 .logo {
     font-size: 22px;
     font-weight: bold;

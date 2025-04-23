@@ -8,5 +8,13 @@ namespace IDS.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Index(string load)
+        {
+            ViewBag.LoadPartial = load;
+            return View();
+        }
+
     }
 }

@@ -1,5 +1,4 @@
-﻿/* Background */
-body {
+﻿body {
     font-family: 'Tajawal', Arial, sans-serif;
     background: url("../Images/IdsBackGround.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -13,77 +12,105 @@ body {
     margin: 0;
 }
 
-/* Header */
 header {
     position: absolute;
-    top: 0;
+    top: 4px;
     width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 15px;
+    background: none;
+    padding: 10px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: 'Lalezar', system-ui;
+    color: #ece9e9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 15px;
 }
 
-/* Centering the Container */
 .container {
-    /* height: 100vh; */
     margin-top: 100px;
 }
 
-/* Content Box */
 .content-box {
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-}
-
-/* Feature Box */
-.feature-box {
-    background-color: rgb(2,136,173,0.95);
     padding: 20px;
     border-radius: 10px;
+    width: 95%;
+    max-width: 1200px;
+}
+
+.feature-box {
+    background-color: rgba(8, 92, 120, 0.95);
+    padding: 10px;
+    border-radius: 12px;
     text-align: center;
     color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
-}
-
-    .feature-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        background: rgb(1, 1, 44);
-        transform: translateY(-5px) rotateY(15deg) rotateX(10deg);
-        /* color: white; */
-    }
-
-
-/* Icons */
-.icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-/* Form Box */
-.form-box {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+    height: 100%;
+    min-height: 200px;
+    width: 85%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-/* Form */
-form {
-    width: 100%;
-    max-width: 250px;
-    margin: auto;
+.icon {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
-    form button {
-        width: 100px;
+.feature-box:hover .icon {
+    transform: scale(1.2);
+}
+
+.feature-box h3 {
+    font-size: 25px;
+    margin-top: 10px;
+    font-weight: 300;
+    text-align: center;
+    font-family: 'Tajawal', Arial, sans-serif;
+}
+
+.feature-box p {
+    font-size: 15px;
+    color: #d1d1d1;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Tajawal', Arial, sans-serif;
+}
+
+.feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background-color: rgb(1, 36, 63);
+}
+
+form input, form button {
+    width: 80%;
+    max-width: 300px;
+    margin: 5px auto;
+}
+
+form {
+    margin-top: 15px;
+}
+
+    form input {
+        text-align: right;
     }
 
-input {
-    text-align: right;
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #efeeee;
+    font-size: 20px;
+}
+
+.icon {
+    font-size: 30px;
+    color: white;
 }

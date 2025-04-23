@@ -56,12 +56,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/IDS/IDS/Views/Auth/_ShowAllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxfU2hvd0FsbFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDS/IDS/Views/Auth/_UserSearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxfVXNlclNlYXJjaFJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/IDS/IDS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IDS/IDS/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDS/IDS/Views/Patient/c.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDS/IDS/Views/Patient/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDS/IDS/Views/Patient/PatientProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDS/IDS/Views/Patient/_PatientsSearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxfUGF0aWVudHNTZWFyY2hSZXN1bHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDS/IDS/Views/Patient/_ShowAllPatients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxfU2hvd0FsbFBhdGllbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IDS/IDS/Views/Reception/Index.cshtml]
@@ -76,28 +104,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uXFRpY2tldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IDS/IDS/Views/Roles/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+[D:/IDS/IDS/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IDS/IDS/Views/Roles/_ShowAllRoles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcX1Nob3dBbGxSb2xlcy5jc2h0bWw=
+[D:/IDS/IDS/Views/Role/_ShowAllRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxfU2hvd0FsbFJvbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IDS/IDS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IDS/IDS/Views/Shared/_ShowAllUsers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaG93QWxsVXNlcnMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/IDS/IDS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IDS/IDS/Views/Tickets/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
+[D:/IDS/IDS/Views/Ticket/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IDS/IDS/Views/_ViewImports.cshtml]

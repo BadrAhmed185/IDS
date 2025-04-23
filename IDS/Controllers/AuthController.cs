@@ -276,23 +276,28 @@ namespace IDS.Controllers
             var user =await _userManager.FindByIdAsync(id);
             if (user == null)
             {
-                return RedirectToAction("Index", "Reception");
+                TempData["Error"] = "عفواو المستخدم غير موجود.";
+
+                return RedirectToAction("Index", "Admin", new { load = "Auth/ShowAll" });
+
             }
 
             return View(user);
         }
 
+
+        [HttpGet]
         public async Task<IActionResult> Edit(string id)
-		{
-			if (id == null) return NotFound();
-			var user = await _userManager.FindByIdAsync(id);
-			if (user == null) return NotFound();
+        {
+            if (id == null) return NotFound();
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null) return NotFound();
 
-			ViewBag.Roles = _roleManager.Roles.ToList();
-			return View(user);
-		}
+            ViewBag.Roles = _roleManager.Roles.ToList();
+            return View(user);
+        }
 
-		[HttpPost]
+        [HttpPost]
 		public async Task<IActionResult> Edit(ApplicationUser model)
 		{
 			if (ModelState.IsValid)
@@ -317,26 +322,31 @@ namespace IDS.Controllers
 					{
 						await _userManager.AddToRoleAsync(user, user.Role);
 					}
-					return RedirectToAction(nameof(ShowAll));
-				}
+                    TempData["success"] = "تم تعديل بيانات الموظف بنجاح";
+
+                    return RedirectToAction("Index", "Admin", new { load = "Auth/ShowAll" });
+                }
 
 				foreach (var error in result.Errors)
 				{
 					ModelState.AddModelError("", error.Description);
 				}
 			}
-			ViewBag.Roles = _roleManager.Roles.ToList();
+            TempData["Error"] = "فشل التعديل,الرجاء مراجعه البيانات و المحاوله مره أخري";
+
+            ViewBag.Roles = _roleManager.Roles.ToList();
 			return View(model);
 		}
 
 
-		public async Task<IActionResult> Delete(string id)
-		{
-			if (id == null) return NotFound();
-			var user = await _userManager.FindByIdAsync(id);
-			if (user == null) return NotFound();
-			return View(user);
-		}
+       // [HttpGet]
+		//public async Task<IActionResult> Delete(string id)
+		//{
+		//	if (id == null) return NotFound();
+		//	var user = await _userManager.FindByIdAsync(id);
+		//	if (user == null) return NotFound();
+		//	return View(user);
+		//}
 
 		// POST: Users/Delete/5
 		[HttpPost, ActionName("Delete")]
@@ -348,15 +358,21 @@ namespace IDS.Controllers
 				var result = await _userManager.DeleteAsync(user);
 				if (result.Succeeded)
 				{
-					return RedirectToAction(nameof(ShowAll));
-				}
+                    TempData["success"] = "تم حذف الموظف من قواعد البيانات بنجاح";
+
+                    return RedirectToAction("Index", "Admin", new { load = "Auth/ShowAll" });
+					
+                }
 				foreach (var error in result.Errors)
 				{
 					ModelState.AddModelError("", error.Description);
 				}
 			}
-			return RedirectToAction(nameof(ShowAll));
-		}
+            TempData["Error"] = "فشل الحذف,الرجاء مراجعه البيانات و المحاوله مره أخري";
+
+            return RedirectToAction("Index", "Admin", new { load = "Auth/ShowAll" });
+
+        }
 
 
         public async Task<IActionResult> Search(string keyword)

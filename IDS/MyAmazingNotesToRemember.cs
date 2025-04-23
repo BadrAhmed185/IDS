@@ -1,4 +1,7 @@
-﻿namespace IDS
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+using System;
+
+namespace IDS
 {
     public class MyAmazingNotesToRemember
     {
@@ -63,4 +66,39 @@
         //    .Include(t => t.ReferredTo)
         //    .FirstOrDefaultAsync(t => t.TicketId == id); // ✅ Use FirstOrDefaultAsync
     }
+
+
+
+
+    //    <script>
+    //    function loadPartialView(url)
+    //{
+    //        $.ajax({
+    //    url: url,  // Send request to the given URL
+    //            type: "GET",  // Use GET method
+    //            success: function(data) {
+    //                $("#partialView").html(data);  // Insert response (HTML) into the placeholder
+    //        },
+    //            error: function() {
+    //            alert("Error loading content.");  // Show an error message if something goes wrong
+    //        }
+    //    });
+    //}
+    //</script>
+
+    //<script>
+    //    //  you've already created the layout and the mechanism for loading partial views 
+    //    // dynamically via JavaScript (AJAX). 
+    //    // Add this JavaScript block to load the correct partial view automatically when redirected:
+    //    //  You already have loadPartialView(url) working — this just calls it when the page loads.
+    //    window.onload = function()
+    //{
+    //    const urlParams = new URLSearchParams(window.location.search);
+    //    const load = urlParams.get('load');
+    //    if (load)
+    //    {
+    //        loadPartialView('/' + load);
+    //    }
+    //};
+    //</script>
 }

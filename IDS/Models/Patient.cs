@@ -22,15 +22,15 @@ namespace IDS.Models
         [Required(ErrorMessage = "العنوان مطلوب.")]
         [StringLength(255, ErrorMessage = "يجب ألا يتجاوز العنوان 255 حرفًا")]
         [MinLength(5, ErrorMessage = "يجب أن يكون العنوان على الأقل 5 أحرف")]
-        [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = " .العنوان يحتوي على رموز غير مسموحة")]
-        public string? Address { get; set; } = "-";
+      //  [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = " .العنوان يحتوي على رموز غير مسموحة")]
+        public string? Address { get; set; } = "N/A";
 
 
         [Required(ErrorMessage = "المهنة مطلوبة.")]
         [StringLength(100, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 100 حرفًا")]
         [MinLength(3, ErrorMessage = " .يجب أن تكون المهنة على الأقل 3 أحرف")]
-        [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = "المهنة تحتوي على رموز غير مسموحة")]
-        public string profession { get; set; } = "-";
+      //  [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = "المهنة تحتوي على رموز غير مسموحة")]
+        public string profession { get; set; } = "N/A";
 
         [Required(ErrorMessage = "رقم الهاتف مطلوب")]
         [StringLength(11, ErrorMessage = ".رقم الهاتف يجب أن يكون 11 رقم")]
@@ -39,7 +39,7 @@ namespace IDS.Models
         public string phoneNumber { get; set; }
 
         [Required(ErrorMessage = "الرجاء إختيار جنس المريض.")]
-        [RegularExpression("^(ذكر|انثي)$", ErrorMessage = "يجب أن يكون الجنس ذكر أو انثي فقط")]
+        //[RegularExpression("^(ذكر|انثي)$", ErrorMessage = "يجب أن يكون الجنس ذكر أو انثي فقط")]
         [Display(Name = "النوع")]
         public string Gender { get; set; }
 
@@ -48,7 +48,7 @@ namespace IDS.Models
         public int Age { get; set; }
 
 
-        public IEnumerable<Ticket> Tickets { get; set; }
+        public IEnumerable<Ticket>? Tickets { get; set; }
     }
 
 

@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     background-image: url("../Images/IdsBackGround.jpg");
     background-size: cover;
@@ -138,17 +139,30 @@ input {
     display: block;
     height: 50px;
     width: 100%;
-    background-color: rgba(255,255,255,0.07);
+    background-color: rgba(255, 255, 255, 0.07);
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    color: #fff;
 }
+
+    /* Autofill override for Chromium-based browsers (Edge, Chrome) */
+    input:-webkit-autofill {
+        background-color: rgba(255, 255, 255, 0.07) !important;
+        -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.07) inset !important;
+        box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.07) inset !important;
+        color: #fff !important;
+        border-radius: 3px !important;
+        font-weight: 300 !important;
+        transition: background-color 9999s ease-out 0s, color 9999s ease-out 0s;
+    }
 
 ::placeholder {
     color: #e5e5e5;
 }
+
 
 input:hover {
     border: 1px solid;
@@ -157,14 +171,15 @@ input:hover {
 button {
     margin-top: 50px;
     width: 100%;
-    background-color: #ffffff;
-    color: #080710;
+    color:  #0394b6;
+    
+    background-color: white;
     padding: 15px 0;
     font-size: 18px;
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-    transition : 0.5s;
+    transition: 0.5s;
 }
 
 button:hover {
@@ -186,3 +201,4 @@ footer {
     color: white;
     font-size: 20px;
 }
+

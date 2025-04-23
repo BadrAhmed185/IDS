@@ -66,7 +66,7 @@ namespace IDS.Models
 
         [Display(Name = "Medical History & Present Medication")]
         [DataType(DataType.MultilineText)]
-        public string MedicalHistoryText { get; set; } 
+        public string MedicalHistoryText { get; set; } = "N/A";
 
 
 

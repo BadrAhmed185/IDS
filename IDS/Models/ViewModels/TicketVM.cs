@@ -11,6 +11,8 @@ namespace IDS.Models
         /// <summary>
         /// ////////////////////////// Patient Properties
         /// </summary>
+        /// 
+
 
         [Required(ErrorMessage = "يجب ادخال الرقم القومي")]
         [StringLength(14, MinimumLength = 14, ErrorMessage = "الرقم القومي يجب ان يكون 14 رقم")]
@@ -27,14 +29,14 @@ namespace IDS.Models
         [StringLength(255, ErrorMessage = "يجب ألا يتجاوز العنوان 255 حرفًا")]
       //  [MinLength(5, ErrorMessage = "يجب أن يكون العنوان على الأقل 5 أحرف")]
        // [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = " .العنوان يحتوي على رموز غير مسموحة")]
-        public string? Address { get; set; } = "-";
+        public string? Address { get; set; } = "N/A";
 
 
         [StringLength(100, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 100 حرفًا")]
        // [MinLength(3, ErrorMessage = " .يجب أن تكون المهنة على الأقل 3 أحرف")]
         [Required(AllowEmptyStrings = true, ErrorMessage = "يرجى إدخال  المهنه")]
         //  [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = "المهنة تحتوي على رموز غير مسموحة")]
-        public string profession { get; set; } = "-";
+        public string profession { get; set; } = "N/A";
 
         [Required(ErrorMessage = "رقم الهاتف مطلوب")]
         [StringLength(11, ErrorMessage = ".رقم الهاتف يجب أن يكون 11 رقم")]
@@ -68,6 +70,8 @@ namespace IDS.Models
         //[Required(ErrorMessage = "رقم التذكره مطلوب.")]
         //[RegularExpression(@"^\d{6}$", ErrorMessage = "يجب أن يتكون رقم التذكره من 6 أرقام فقط.")]
         //public string TicketId { get; set; }
+        public string? TicketID { get; set; }
+
 
         [Required(ErrorMessage = "تاريخ الكشف مطلوب.")]
         [DataType(DataType.DateTime)]
@@ -78,19 +82,32 @@ namespace IDS.Models
         [Display(Name = "شكوي المريض.")]
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
         //[MinLength(3, ErrorMessage = " .يجب أن تكون شكوي المريض على الأقل 3 أحرف")]
-        [Required(AllowEmptyStrings = true, ErrorMessage = "يرجى إدخال  شكوي المريض")]
-        [BindProperty]
-        [DisplayFormat(ConvertEmptyStringToNull = false)]
-        public string ChiefComlant { get; set; } = "";
+        [Required(ErrorMessage = "يرجى إدخال  شكوي المريض")]
+        //[BindProperty]
+        //[DisplayFormat(ConvertEmptyStringToNull = false)]
+        public string ChiefComlant { get; set; } = "N/A";
 
         [Display(Name = "التشخيص المبدئي.")]
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
       //  [MinLength(3, ErrorMessage = " .يجب أن يكون التشخيص المبدئي على الأقل 3 أحرف")]
-        [Required(AllowEmptyStrings = true, ErrorMessage = "يرجى إدخال التشخيص المبدئي")]
-        [BindProperty]
-        [DisplayFormat(ConvertEmptyStringToNull = false)]
+        [Required(ErrorMessage = "يرجى إدخال التشخيص المبدئي")]
+        //[BindProperty]
+        //[DisplayFormat(ConvertEmptyStringToNull = false)]
         [DataType(DataType.MultilineText)]
-        public string PrevisionalDiagnosis { get; set; } = "";
+        public string PrevisionalDiagnosis { get; set; } = "N/A";
+
+
+        [Display(Name = "تاريخ الكشف القادم")]
+        [DataType(DataType.DateTime)]
+
+        public DateTime? NextDate { get; set; }
+
+        [Display(Name = "يتوجه إالي.")]
+        public string Status { get; set; } = "Reception";
+
+        [Display(Name = " تذكره صالحه ؟.")]
+
+        public bool IsValid { get; set; } = true;
 
 
         /// <summary>
@@ -147,11 +164,11 @@ namespace IDS.Models
         public bool HayFever { get; set; } = false;
 
         [Display(Name = "Medical History & Present Medication")]
-        [Required(AllowEmptyStrings = true, ErrorMessage = "يرجى إدخال  التاريخ المرضي اذا اردت")]
-        [BindProperty]
-        [DisplayFormat(ConvertEmptyStringToNull = false)]
+        [Required(ErrorMessage = "يرجى إدخال  التاريخ المرضي اذا اردت")]
+        //[BindProperty]
+        //[DisplayFormat(ConvertEmptyStringToNull = false)]
         [DataType(DataType.MultilineText)]
-        public string MedicalHistoryText { get; set; } = string.Empty;
+        public string MedicalHistoryText { get; set; } = "N/A";
 
 
 

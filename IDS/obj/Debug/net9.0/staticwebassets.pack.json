@@ -69,8 +69,16 @@
       "PackagePath": "staticwebassets\\css\\AdminHome.css"
     },
     {
+      "Id": "D:\\IDS\\IDS\\wwwroot\\css\\EditPatient.css",
+      "PackagePath": "staticwebassets\\css\\EditPatient.css"
+    },
+    {
       "Id": "D:\\IDS\\IDS\\wwwroot\\css\\EmployeeDetails.css",
       "PackagePath": "staticwebassets\\css\\EmployeeDetails.css"
+    },
+    {
+      "Id": "D:\\IDS\\IDS\\wwwroot\\css\\Error.css",
+      "PackagePath": "staticwebassets\\css\\Error.css"
     },
     {
       "Id": "D:\\IDS\\IDS\\wwwroot\\css\\IndexForDicts.css",
@@ -79,6 +87,10 @@
     {
       "Id": "D:\\IDS\\IDS\\wwwroot\\css\\LogIn.css",
       "PackagePath": "staticwebassets\\css\\LogIn.css"
+    },
+    {
+      "Id": "D:\\IDS\\IDS\\wwwroot\\css\\PatientProfile.css",
+      "PackagePath": "staticwebassets\\css\\PatientProfile.css"
     },
     {
       "Id": "D:\\IDS\\IDS\\wwwroot\\css\\Reception.css",
@@ -109,6 +121,10 @@
       "PackagePath": "staticwebassets\\css\\header.css"
     },
     {
+      "Id": "D:\\IDS\\IDS\\wwwroot\\css\\popup.css",
+      "PackagePath": "staticwebassets\\css\\popup.css"
+    },
+    {
       "Id": "D:\\IDS\\IDS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -127,6 +143,10 @@
     {
       "Id": "D:\\IDS\\IDS\\wwwroot\\js\\Teicket.js",
       "PackagePath": "staticwebassets\\js\\Teicket.js"
+    },
+    {
+      "Id": "D:\\IDS\\IDS\\wwwroot\\js\\UserSearchHandler.js",
+      "PackagePath": "staticwebassets\\js\\UserSearchHandler.js"
     },
     {
       "Id": "D:\\IDS\\IDS\\wwwroot\\js\\main.js",

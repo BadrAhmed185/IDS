@@ -11,12 +11,12 @@ namespace IDS.Controllers
     //[Authorize(Roles = "Admin")]
 
     //  [Authorize(Roles = "Admin")]
-    public class RolesController : Controller
+    public class RoleController : Controller
     {
 
 
         private readonly RoleManager<IdentityRole> _roleManager;
-        public RolesController(RoleManager<IdentityRole> roleManager)
+        public RoleController(RoleManager<IdentityRole> roleManager)
         {
             _roleManager = roleManager;
 
