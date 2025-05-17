@@ -380,7 +380,7 @@ namespace IDS.Controllers
             IEnumerable<IDS.Models.ApplicationUser> users;
             if (!string.IsNullOrWhiteSpace(keyword))
             {
-                users = _userManager.Users.Where(u => u.UserName.Contains(keyword));
+                users = _userManager.Users.Where(u => u.NationalId.Contains(keyword));
             }
             else
             { 
@@ -399,6 +399,7 @@ namespace IDS.Controllers
         public async Task<IActionResult> SignOut()
         {
             _signInManager.SignOutAsync();
+
             return View("LogIn");
         }
 

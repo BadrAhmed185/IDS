@@ -1,4 +1,6 @@
-﻿using IDS.Models;
+﻿///////// Ticket ViewModel //////////
+
+using IDS.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,13 +29,13 @@ namespace IDS.Models
 
         [Required(ErrorMessage = "العنوان مطلوب.")]
         [StringLength(255, ErrorMessage = "يجب ألا يتجاوز العنوان 255 حرفًا")]
-      //  [MinLength(5, ErrorMessage = "يجب أن يكون العنوان على الأقل 5 أحرف")]
-       // [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = " .العنوان يحتوي على رموز غير مسموحة")]
+        //  [MinLength(5, ErrorMessage = "يجب أن يكون العنوان على الأقل 5 أحرف")]
+        // [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = " .العنوان يحتوي على رموز غير مسموحة")]
         public string? Address { get; set; } = "N/A";
 
 
         [StringLength(100, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 100 حرفًا")]
-       // [MinLength(3, ErrorMessage = " .يجب أن تكون المهنة على الأقل 3 أحرف")]
+        // [MinLength(3, ErrorMessage = " .يجب أن تكون المهنة على الأقل 3 أحرف")]
         [Required(AllowEmptyStrings = true, ErrorMessage = "يرجى إدخال  المهنه")]
         //  [RegularExpression(@"^[a-zA-Z0-9\s,.-]+$", ErrorMessage = "المهنة تحتوي على رموز غير مسموحة")]
         public string profession { get; set; } = "N/A";
@@ -42,7 +44,7 @@ namespace IDS.Models
         [StringLength(11, ErrorMessage = ".رقم الهاتف يجب أن يكون 11 رقم")]
         [RegularExpression("^0\\d{10}$", ErrorMessage = "رقم الهاتف يجب أن يكون 11 رقمًا ويبدأ بصفر")]
         [Display(Name = "رقم الهاتف")]
-      public string phoneNumber { get; set; }
+        public string phoneNumber { get; set; }
 
 
 
@@ -89,7 +91,7 @@ namespace IDS.Models
 
         [Display(Name = "التشخيص المبدئي.")]
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
-      //  [MinLength(3, ErrorMessage = " .يجب أن يكون التشخيص المبدئي على الأقل 3 أحرف")]
+        //  [MinLength(3, ErrorMessage = " .يجب أن يكون التشخيص المبدئي على الأقل 3 أحرف")]
         [Required(ErrorMessage = "يرجى إدخال التشخيص المبدئي")]
         //[BindProperty]
         //[DisplayFormat(ConvertEmptyStringToNull = false)]
@@ -118,7 +120,7 @@ namespace IDS.Models
         public bool HeartTrouble { get; set; } = false;
 
         [Display(Name = "Hypertention")]
-        public bool Hyperttention { get; set; } = false; 
+        public bool Hyperttention { get; set; } = false;
 
         [Display(Name = "Pregnancy")]
         public bool Pregnancy { get; set; } = false;
@@ -204,6 +206,50 @@ namespace IDS.Models
         [Display(Name = "X-ray")]
         public bool XRay { get; set; } = false;
 
+
+
+        /////////////////////////////  Teeht properties
+
+        // Upper Right (Quadrant 1)
+        public bool tooth11 { get; set; } = false;
+        public bool tooth12 { get; set; } = false;
+        public bool tooth13 { get; set; } = false;
+        public bool tooth14 { get; set; } = false;
+        public bool tooth15 { get; set; } = false;
+        public bool tooth16 { get; set; } = false;
+        public bool tooth17 { get; set; } = false;
+        public bool tooth18 { get; set; } = false;
+
+        // Upper Left (Quadrant 2)
+
+        public bool tooth21 { get; set; } = false;
+        public bool tooth22 { get; set; } = false;
+        public bool tooth23 { get; set; } = false;
+        public bool tooth24 { get; set; } = false;
+        public bool tooth25 { get; set; } = false;
+        public bool tooth26 { get; set; } = false;
+        public bool tooth27 { get; set; } = false;
+        public bool tooth28 { get; set; } = false;
+
+        // Lower Left (Quadrant 3)
+        public bool tooth31 { get; set; } = false;
+        public bool tooth32 { get; set; } = false;
+        public bool tooth33 { get; set; } = false;
+        public bool tooth34 { get; set; } = false;
+        public bool tooth35 { get; set; } = false;
+        public bool tooth36 { get; set; } = false;
+        public bool tooth37 { get; set; } = false;
+        public bool tooth38 { get; set; } = false;
+
+        // Lower Right (Quadrant 4)
+        public bool tooth41 { get; set; } = false;
+        public bool tooth42 { get; set; } = false;
+        public bool tooth43 { get; set; } = false;
+        public bool tooth44 { get; set; } = false;
+        public bool tooth45 { get; set; } = false;
+        public bool tooth46 { get; set; } = false;
+        public bool tooth47 { get; set; } = false;
+        public bool tooth48 { get; set; } = false;
 
 
     }

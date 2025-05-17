@@ -1,5 +1,6 @@
 ﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 using System;
+using IDS.Models;
 
 namespace IDS
 {
@@ -101,4 +102,50 @@ namespace IDS
     //    }
     //};
     //</script>
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ///////////////////////////////////
+    ///
+    // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
+    // then EF Core automatically updates the Id property of the referredTo object with the generated
+    // value.
+    // So, after calling _context.SaveChanges(), you can access referredTo.Id,
+    // and it will contain the new database- generated identity value.
+
+
+    
+                //var referredTo = new ReferredTo
+                //{ 
+                //    Oral = ticket.Oral,
+                //    RemovableProsth = ticket.RemovableProsth,
+                //    Operative = ticket.Operative,
+                //    Endodontic = ticket.Endodontic,
+                //    Ortho = ticket.Ortho,
+                //    CrownAndBridge = ticket.CrownAndBridge,
+                //    Surgery = ticket.Surgery,
+                //    Pedo = ticket.Pedo,
+                //    XRay = ticket.XRay,
+                //};
+
+
+
+                //_context.AddRange(patient, referredTo, medicalHistory, asnan);
+                //_context.SaveChanges();
+                //newTicket.ReferredToId = referredTo.Id;
+                //_context.Add(newTicket);
+
+    }

@@ -6,8 +6,8 @@ namespace IDS.Models
 {
     public class ReferredTo
     {
-        [Key]
-        public int Id { get; set; }
+        [Key, ForeignKey("Ticket")]
+        public string Id { get; set; }
 
         //[ForeignKey("Ticket"), Required]
         //public string TicketID { get; set; }

@@ -34,12 +34,6 @@ namespace IDS.Models
         [ForeignKey("Patient"), Required]
         public string PatientId { get; set; }
 
-        [ForeignKey("MedicalHistory")]
-        public int MedicalHistoryId { get; set; }
-
-        [ForeignKey("ReferredTo")]
-        public int ReferredToId { get; set; }
-
 
 
 
@@ -67,6 +61,7 @@ namespace IDS.Models
         //Second version in the model
         public DateTime? NextDate { get; set; }
         public string Status { get; set; } = "Reception"; // part of third changes
+
         public bool IsValid { get; set; } = true;
 
         public string? LevelOfCompletness { get; set; }  // part of third changes
@@ -77,6 +72,8 @@ namespace IDS.Models
         public MedicalHistory MedicalHistory { get; set; }
         public ReferredTo ReferredTo { get; set; }
         public TicketAccountancy Accountancy { get; set; }  // part of third changes
+
+        public Asnan Asnan { get; set; }  // part of fourth changes
 
 
 

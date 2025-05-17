@@ -6,7 +6,7 @@ using DocumentFormat.OpenXml.Office2010.Excel;
 using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Spreadsheet;
-using IDS.Migrations;
+//using IDS.Migrations;
 using IDS.Models;
 using IDS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -25,8 +25,7 @@ namespace IDS.Controllers
     {
 
         private readonly AppDbContext _context;
-        private readonly IEnumerable<Patient> Patients;
-        private readonly IEnumerable<string> PatientsIds;
+
         private readonly IEnumerable<Ticket> tickets;
 
 
@@ -34,8 +33,7 @@ namespace IDS.Controllers
         public ReceptionController(AppDbContext context)
         {
             _context = context;
-            Patients = _context.patients.ToList();
-            PatientsIds = Patients.Select(p => p.PatientId).ToList();
+           
             tickets = _context.Tickets.ToList();
 
 
@@ -203,7 +201,7 @@ namespace IDS.Controllers
             //    Console.WriteLine(error.ErrorMessage);
             //}
 
-            if (PatientsIds.Contains(ticket.PatientId))
+            if (_context.patients.Select(p => p.PatientId).Contains(ticket.PatientId))
             {
                 TempData["Error"] = "عذرا , هذا المريض مسجل بالفعل";
                 return View("ReceptionTicket", ticket);
@@ -214,19 +212,28 @@ namespace IDS.Controllers
                 Patient patient = new Patient();
                 Ticket newTicket = new Ticket(_context);
 
+                // Ticket properties
+                {
+                    newTicket.PatientId = ticket.PatientId;
+                    newTicket.AppointmentDate = ticket.AppointmentDate;
+                }
 
-                patient.PatientId = ticket.PatientId;
-                patient.Name = ticket.Name;
-                patient.Address = ticket.Address;
-                patient.profession = ticket.profession;
-                patient.phoneNumber = ticket.phoneNumber;
-                patient.Gender = ticket.Gender;
-                patient.Age = ticket.Age;
+                // Patient properties
+                {
+                    patient.PatientId = ticket.PatientId;
+                    patient.Name = ticket.Name;
+                    patient.Address = ticket.Address;
+                    patient.profession = ticket.profession;
+                    patient.phoneNumber = ticket.phoneNumber;
+                    patient.Gender = ticket.Gender;
+                    patient.Age = ticket.Age;
+                }
 
-
+                // referredTo properties
 
                 var referredTo = new ReferredTo
                 {
+                    Id = newTicket.TicketId,
                     Oral = ticket.Oral,
                     RemovableProsth = ticket.RemovableProsth,
                     Operative = ticket.Operative,
@@ -238,9 +245,12 @@ namespace IDS.Controllers
                     XRay = ticket.XRay,
                 };
 
+                // medicalHistory properties
 
                 var medicalHistory = new MedicalHistory
                 {
+                    Id = newTicket.TicketId,
+
                     HeartTrouble = ticket.HeartTrouble,
                     Hyperttention = ticket.Hyperttention,
                     Pregnancy = ticket.Pregnancy,
@@ -260,22 +270,53 @@ namespace IDS.Controllers
                     MedicalHistoryText = ticket.MedicalHistoryText,
                 };
 
+                // asnan properties
 
-                // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
-                // then EF Core automatically updates the Id property of the medicalHistory object with the generated
-                // value.
-                // So, after calling _context.SaveChanges(), you can access medicalHistory.Id,
-                // and it will contain the new database- generated identity value.
-                _context.AddRange(patient, referredTo, medicalHistory);
-                _context.SaveChanges();
+                var asnan = new Asnan
+                {
+                    Id = newTicket.TicketId,
 
-                newTicket.PatientId = patient.PatientId;
-                newTicket.MedicalHistoryId = medicalHistory.Id;
-                newTicket.ReferredToId = referredTo.Id;
-                newTicket.AppointmentDate = ticket.AppointmentDate;
-                
+                    tooth11 = ticket.tooth11,
+                    tooth12 = ticket.tooth12,
+                    tooth13 = ticket.tooth13,
+                    tooth14 = ticket.tooth14,
+                    tooth15 = ticket.tooth15,
+                    tooth16 = ticket.tooth16,
+                    tooth17 = ticket.tooth17,
+                    tooth18 = ticket.tooth18,
 
-                _context.Add(newTicket);
+                    // Upper Left (Quadrant 2)
+                    tooth21 = ticket.tooth21,
+                    tooth22 = ticket.tooth22,
+                    tooth23 = ticket.tooth23,
+                    tooth24 = ticket.tooth24,
+                    tooth25 = ticket.tooth25,
+                    tooth26 = ticket.tooth26,
+                    tooth27 = ticket.tooth27,
+                    tooth28 = ticket.tooth28,
+
+                    // Lower Left (Quadrant 3)
+                    tooth31 = ticket.tooth31,
+                    tooth32 = ticket.tooth32,
+                    tooth33 = ticket.tooth33,
+                    tooth34 = ticket.tooth34,
+                    tooth35 = ticket.tooth35,
+                    tooth36 = ticket.tooth36,
+                    tooth37 = ticket.tooth37,
+                    tooth38 = ticket.tooth38,
+
+                    // Lower Right (Quadrant 4)
+                    tooth41 = ticket.tooth41,
+                    tooth42 = ticket.tooth42,
+                    tooth43 = ticket.tooth43,
+                    tooth44 = ticket.tooth44,
+                    tooth45 = ticket.tooth45,
+                    tooth46 = ticket.tooth46,
+                    tooth47 = ticket.tooth47,
+                    tooth48 = ticket.tooth48,
+                };
+
+                // ticketAccountacy properties
 
                 var ticketAccountacy = new TicketAccountancy
                 {
@@ -283,8 +324,9 @@ namespace IDS.Controllers
                     ReceptionEmpId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
 
                 };
-                _context.Add(ticketAccountacy);
 
+
+                _context.AddRange(newTicket, patient, referredTo, medicalHistory, asnan, ticketAccountacy);
                 await _context.SaveChangesAsync();
 
                 TempData["Success"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكرة لعيادة التشخيص";
@@ -311,13 +353,13 @@ namespace IDS.Controllers
             {
                 return NotFound();
             }
-            if (!PatientsIds.Contains(id))
+            if (!_context.patients.Select(p => p.PatientId).Contains(id))
             {
                 TempData["Error"] = "عذرا , هذا المريض  غير موجود";
                 return RedirectToAction(nameof(Index));
             }
 
-            var patient = Patients.FirstOrDefault(p => p.PatientId == id);
+            var patient = _context.patients.FirstOrDefault(p => p.PatientId == id);
 
             var ticket = new TicketVM();
             ticket.PatientId = patient.PatientId;
@@ -344,8 +386,17 @@ namespace IDS.Controllers
             {
                 Ticket newTicket = new Ticket(_context);
 
+                // Ticket properties
+                {
+                    newTicket.PatientId = ticket.PatientId;
+                    newTicket.AppointmentDate = ticket.AppointmentDate;
+                }
+
+                // referredTo properties
+
                 var referredTo = new ReferredTo
                 {
+                    Id = newTicket.TicketId,
                     Oral = ticket.Oral,
                     RemovableProsth = ticket.RemovableProsth,
                     Operative = ticket.Operative,
@@ -357,9 +408,12 @@ namespace IDS.Controllers
                     XRay = ticket.XRay,
                 };
 
+                // medicalHistory properties
 
                 var medicalHistory = new MedicalHistory
                 {
+                    Id = newTicket.TicketId,
+
                     HeartTrouble = ticket.HeartTrouble,
                     Hyperttention = ticket.Hyperttention,
                     Pregnancy = ticket.Pregnancy,
@@ -379,20 +433,53 @@ namespace IDS.Controllers
                     MedicalHistoryText = ticket.MedicalHistoryText,
                 };
 
-                // Yes! When you call _context.SaveChanges(), the database generates the identity value for Id and
-                // then EF Core automatically updates the Id property of the medicalHistory object with the generated
-                // value.
-                // So, after calling _context.SaveChanges(), you can access medicalHistory.Id,
-                // and it will contain the new database- generated identity value.
-                _context.AddRange(referredTo, medicalHistory);
-                _context.SaveChanges();
+                // asnan properties
 
-                newTicket.PatientId = ticket.PatientId;
-                newTicket.MedicalHistoryId = medicalHistory.Id;
-                newTicket.ReferredToId = referredTo.Id;
-                newTicket.AppointmentDate = ticket.AppointmentDate;
+                var asnan = new Asnan
+                {
+                    Id = newTicket.TicketId,
 
-                _context.Add(newTicket);
+                    tooth11 = ticket.tooth11,
+                    tooth12 = ticket.tooth12,
+                    tooth13 = ticket.tooth13,
+                    tooth14 = ticket.tooth14,
+                    tooth15 = ticket.tooth15,
+                    tooth16 = ticket.tooth16,
+                    tooth17 = ticket.tooth17,
+                    tooth18 = ticket.tooth18,
+
+                    // Upper Left (Quadrant 2)
+                    tooth21 = ticket.tooth21,
+                    tooth22 = ticket.tooth22,
+                    tooth23 = ticket.tooth23,
+                    tooth24 = ticket.tooth24,
+                    tooth25 = ticket.tooth25,
+                    tooth26 = ticket.tooth26,
+                    tooth27 = ticket.tooth27,
+                    tooth28 = ticket.tooth28,
+
+                    // Lower Left (Quadrant 3)
+                    tooth31 = ticket.tooth31,
+                    tooth32 = ticket.tooth32,
+                    tooth33 = ticket.tooth33,
+                    tooth34 = ticket.tooth34,
+                    tooth35 = ticket.tooth35,
+                    tooth36 = ticket.tooth36,
+                    tooth37 = ticket.tooth37,
+                    tooth38 = ticket.tooth38,
+
+                    // Lower Right (Quadrant 4)
+                    tooth41 = ticket.tooth41,
+                    tooth42 = ticket.tooth42,
+                    tooth43 = ticket.tooth43,
+                    tooth44 = ticket.tooth44,
+                    tooth45 = ticket.tooth45,
+                    tooth46 = ticket.tooth46,
+                    tooth47 = ticket.tooth47,
+                    tooth48 = ticket.tooth48,
+                };
+
+                // ticketAccountacy properties
 
                 var ticketAccountacy = new TicketAccountancy
                 {
@@ -400,7 +487,9 @@ namespace IDS.Controllers
                     ReceptionEmpId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
 
                 };
-                _context.Add(ticketAccountacy);
+
+
+                _context.AddRange(newTicket, referredTo, medicalHistory, asnan, ticketAccountacy);
                 await _context.SaveChangesAsync();
 
                 TempData["Success"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكرة لعيادة التشخيص";
@@ -416,10 +505,10 @@ namespace IDS.Controllers
         }
 
 
-     
 
 
-    
+
+
 
 
     }

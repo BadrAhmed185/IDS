@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IDS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250310005228_addingHistoryAndRefferedTo")]
-    partial class addingHistoryAndRefferedTo
+    [Migration("20250517162441_EditTicketAccountanct")]
+    partial class EditTicketAccountanct
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,11 +47,19 @@ namespace IDS.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NationalId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -96,13 +104,116 @@ namespace IDS.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("IDS.Models.Asnan", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("tooth11")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth12")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth13")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth14")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth15")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth16")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth17")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth18")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth21")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth22")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth23")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth24")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth25")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth26")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth27")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth28")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth31")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth32")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth33")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth34")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth35")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth36")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth37")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth38")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth41")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth42")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth43")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth44")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth45")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth46")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth47")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("tooth48")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Asnans");
+                });
+
             modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("AIDs")
                         .HasColumnType("bit");
@@ -131,8 +242,9 @@ namespace IDS.Migrations
                     b.Property<bool>("HeartTrouble")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Hepatitis")
-                        .HasColumnType("bit");
+                    b.Property<string>("Hepatitis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Hyperttention")
                         .HasColumnType("bit");
@@ -201,11 +313,8 @@ namespace IDS.Migrations
 
             modelBuilder.Entity("IDS.Models.ReferredTo", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("CrownAndBridge")
                         .HasColumnType("bit");
@@ -255,8 +364,8 @@ namespace IDS.Migrations
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MedicalHistoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("LevelOfCompletness")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("NextDate")
                         .HasColumnType("datetime2");
@@ -270,23 +379,36 @@ namespace IDS.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<int>("ReferredToId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TicketId");
 
-                    b.HasIndex("MedicalHistoryId")
-                        .IsUnique();
-
                     b.HasIndex("PatientId");
 
-                    b.HasIndex("ReferredToId")
-                        .IsUnique();
-
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("IDS.Models.TicketAccountancy", b =>
+                {
+                    b.Property<string>("TicketId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DiagnosisDocId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ReceptionEmpId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("TicketId");
+
+                    b.HasIndex("DiagnosisDocId");
+
+                    b.HasIndex("ReceptionEmpId");
+
+                    b.ToTable("ticketAccountancies");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -422,31 +544,73 @@ namespace IDS.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("IDS.Models.Ticket", b =>
+            modelBuilder.Entity("IDS.Models.Asnan", b =>
                 {
-                    b.HasOne("IDS.Models.MedicalHistory", "MedicalHistory")
-                        .WithOne("Ticket")
-                        .HasForeignKey("IDS.Models.Ticket", "MedicalHistoryId")
+                    b.HasOne("IDS.Models.Ticket", "Ticket")
+                        .WithOne("Asnan")
+                        .HasForeignKey("IDS.Models.Asnan", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Ticket");
+                });
+
+            modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
+                {
+                    b.HasOne("IDS.Models.Ticket", "Ticket")
+                        .WithOne("MedicalHistory")
+                        .HasForeignKey("IDS.Models.MedicalHistory", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ticket");
+                });
+
+            modelBuilder.Entity("IDS.Models.ReferredTo", b =>
+                {
+                    b.HasOne("IDS.Models.Ticket", "Ticket")
+                        .WithOne("ReferredTo")
+                        .HasForeignKey("IDS.Models.ReferredTo", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ticket");
+                });
+
+            modelBuilder.Entity("IDS.Models.Ticket", b =>
+                {
                     b.HasOne("IDS.Models.Patient", "Patient")
                         .WithMany("Tickets")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IDS.Models.ReferredTo", "ReferredTo")
-                        .WithOne("Ticket")
-                        .HasForeignKey("IDS.Models.Ticket", "ReferredToId")
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("IDS.Models.TicketAccountancy", b =>
+                {
+                    b.HasOne("IDS.Models.ApplicationUser", "DiagnosisDoc")
+                        .WithMany()
+                        .HasForeignKey("DiagnosisDocId");
+
+                    b.HasOne("IDS.Models.ApplicationUser", "ReceptionEmployee")
+                        .WithMany()
+                        .HasForeignKey("ReceptionEmpId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("MedicalHistory");
+                    b.HasOne("IDS.Models.Ticket", "Ticket")
+                        .WithOne("Accountancy")
+                        .HasForeignKey("IDS.Models.TicketAccountancy", "TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Patient");
+                    b.Navigation("DiagnosisDoc");
 
-                    b.Navigation("ReferredTo");
+                    b.Navigation("ReceptionEmployee");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -500,20 +664,23 @@ namespace IDS.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
-                {
-                    b.Navigation("Ticket")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("IDS.Models.Patient", b =>
                 {
                     b.Navigation("Tickets");
                 });
 
-            modelBuilder.Entity("IDS.Models.ReferredTo", b =>
+            modelBuilder.Entity("IDS.Models.Ticket", b =>
                 {
-                    b.Navigation("Ticket")
+                    b.Navigation("Accountancy")
+                        .IsRequired();
+
+                    b.Navigation("Asnan")
+                        .IsRequired();
+
+                    b.Navigation("MedicalHistory")
+                        .IsRequired();
+
+                    b.Navigation("ReferredTo")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

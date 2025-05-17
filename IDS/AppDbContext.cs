@@ -18,6 +18,9 @@
 
         public DbSet<ReferredTo> ReferredTo { get; set; }
         public DbSet<MedicalHistory> MedicalHistories { get; set; }
+        public DbSet<Asnan> Asnans { get; set; }
+        public DbSet<TicketAccountancy> ticketAccountancies { get; set; }
+
 
 
     }
