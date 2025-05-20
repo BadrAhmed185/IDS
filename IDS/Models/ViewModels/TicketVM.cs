@@ -77,7 +77,6 @@ namespace IDS.Models
 
         [Required(ErrorMessage = "تاريخ الكشف مطلوب.")]
         [DataType(DataType.DateTime)]
-        [FutureDate(ErrorMessage = "تاريخ الكشف يجب أن يكون اليوم أو في المستقبل")]
         [Display(Name = "تاريخ الكشف.")]
         public DateTime AppointmentDate { get; set; } = DateTime.Now;
 
@@ -85,21 +84,18 @@ namespace IDS.Models
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
         //[MinLength(3, ErrorMessage = " .يجب أن تكون شكوي المريض على الأقل 3 أحرف")]
         [Required(ErrorMessage = "يرجى إدخال  شكوي المريض")]
-        //[BindProperty]
-        //[DisplayFormat(ConvertEmptyStringToNull = false)]
         public string ChiefComlant { get; set; } = "N/A";
 
         [Display(Name = "التشخيص المبدئي.")]
         [StringLength(1000, ErrorMessage = " .يجب ألا يتجاوز عدد الاحرف 1000 حرفًا")]
-        //  [MinLength(3, ErrorMessage = " .يجب أن يكون التشخيص المبدئي على الأقل 3 أحرف")]
         [Required(ErrorMessage = "يرجى إدخال التشخيص المبدئي")]
-        //[BindProperty]
-        //[DisplayFormat(ConvertEmptyStringToNull = false)]
         [DataType(DataType.MultilineText)]
         public string PrevisionalDiagnosis { get; set; } = "N/A";
 
 
         [Display(Name = "تاريخ الكشف القادم")]
+        [FutureDate(ErrorMessage = "تاريخ الكشف يجب أن يكون اليوم أو في المستقبل")]
+
         [DataType(DataType.DateTime)]
 
         public DateTime? NextDate { get; set; }
@@ -110,6 +106,12 @@ namespace IDS.Models
         [Display(Name = " تذكره صالحه ؟.")]
 
         public bool IsValid { get; set; } = true;
+
+
+
+        [Display(Name = "مسئول موظف الإستقبال")]
+        public string? ReceptionEmpName { get; set; }  /// part of third changes
+
 
 
         /// <summary>

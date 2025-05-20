@@ -216,6 +216,10 @@ namespace IDS.Controllers
                         {
                             return RedirectToAction("Index", "Reception");
                         }
+                        else if (userModel.Role == "Diagnosis-Doc")
+                        {
+                            return RedirectToAction("Index", "Diagnosis");
+                        }
                         else
                         { 
                             return RedirectToAction("Index", "Home");

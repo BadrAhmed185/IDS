@@ -37,30 +37,6 @@
       "PackagePath": "staticwebassets\\Icons\\medical-history.png"
     },
     {
-      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\Images\\IdsBackGround.jpg",
-      "PackagePath": "staticwebassets\\Images\\IdsBackGround.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\Images\\assiut.png",
-      "PackagePath": "staticwebassets\\Images\\assiut.png"
-    },
-    {
-      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\Images\\image.png",
-      "PackagePath": "staticwebassets\\Images\\image.png"
-    },
-    {
-      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\Images\\logo.png",
-      "PackagePath": "staticwebassets\\Images\\logo.png"
-    },
-    {
-      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\Images\\teeth.png",
-      "PackagePath": "staticwebassets\\Images\\teeth.png"
-    },
-    {
-      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\Images\\tooth.png",
-      "PackagePath": "staticwebassets\\Images\\tooth.png"
-    },
-    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\AddEmployee.css",
       "PackagePath": "staticwebassets\\css\\AddEmployee.css"
     },
@@ -137,6 +113,238 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\IdsBackGround.jpg",
+      "PackagePath": "staticwebassets\\images\\IdsBackGround.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\assiut.png",
+      "PackagePath": "staticwebassets\\images\\assiut.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\debug.png",
+      "PackagePath": "staticwebassets\\images\\debug.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-31.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-31.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-32.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-32.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-33.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-33.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-34.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-34.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-35.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-35.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-36.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-36.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-37.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-37.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-38.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-38.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-41.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-41.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-42.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-42.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-43.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-43.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-44.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-44.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-45.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-45.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-46.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-46.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-47.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-47.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-48.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-48.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-71.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-71.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-72.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-72.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-73.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-73.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-74.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-74.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-75.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-75.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-81.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-81.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-82.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-82.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-83.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-83.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-84.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-84.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-inf-85.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-inf-85.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-11.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-12.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-13.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-14.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-15.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-16.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-17.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-18.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-21.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-21.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-22.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-22.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-23.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-23.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-24.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-24.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-25.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-25.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-26.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-26.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-27.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-27.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-28.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-28.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-51.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-51.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-52.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-52.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-53.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-53.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-54.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-54.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-55.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-55.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-61.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-61.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-62.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-62.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-63.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-63.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\dentadura-sup-64.png",
+      "PackagePath": "staticwebassets\\images\\dentadura-sup-64.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\image.png",
+      "PackagePath": "staticwebassets\\images\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\teeth.png",
+      "PackagePath": "staticwebassets\\images\\teeth.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\images\\tooth.png",
+      "PackagePath": "staticwebassets\\images\\tooth.png"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\AddEntityPopUp.js",
       "PackagePath": "staticwebassets\\js\\AddEntityPopUp.js"
     },
@@ -149,12 +357,260 @@
       "PackagePath": "staticwebassets\\js\\UserSearchHandler.js"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\collisionHandler.js",
+      "PackagePath": "staticwebassets\\js\\collisionHandler.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\constants.js",
+      "PackagePath": "staticwebassets\\js\\constants.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\engine.js",
+      "PackagePath": "staticwebassets\\js\\engine.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\debug.png",
+      "PackagePath": "staticwebassets\\js\\images\\debug.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-31.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-31.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-32.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-32.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-33.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-33.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-34.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-34.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-35.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-35.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-36.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-36.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-37.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-37.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-38.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-38.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-41.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-41.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-42.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-42.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-43.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-43.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-44.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-44.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-45.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-45.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-46.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-46.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-47.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-47.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-48.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-48.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-71.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-71.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-72.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-72.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-73.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-73.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-74.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-74.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-75.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-75.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-81.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-81.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-82.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-82.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-83.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-83.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-84.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-84.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-inf-85.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-inf-85.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-11.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-12.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-13.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-14.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-15.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-16.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-17.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-18.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-21.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-21.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-22.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-22.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-23.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-23.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-24.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-24.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-25.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-25.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-26.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-26.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-27.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-27.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-28.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-28.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-51.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-51.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-52.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-52.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-53.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-53.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-54.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-54.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-55.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-55.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-61.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-61.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-62.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-62.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-63.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-63.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\images\\dentadura-sup-64.png",
+      "PackagePath": "staticwebassets\\js\\images\\dentadura-sup-64.png"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\menuItem.js",
+      "PackagePath": "staticwebassets\\js\\menuItem.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\odontogramaGenerator.js",
+      "PackagePath": "staticwebassets\\js\\odontogramaGenerator.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\rect.js",
+      "PackagePath": "staticwebassets\\js\\rect.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\renderer.js",
+      "PackagePath": "staticwebassets\\js\\renderer.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\settings.js",
+      "PackagePath": "staticwebassets\\js\\settings.js"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\textBox.js",
+      "PackagePath": "staticwebassets\\js\\textBox.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\tooth.js",
+      "PackagePath": "staticwebassets\\js\\tooth.js"
     },
     {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\lib\\bootstrap\\LICENSE",

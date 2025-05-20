@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxfVXNlclNlYXJjaFJlc3VsdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Huawei/OneDrive/سطح المكتب/IDS/IDS/Views/Diagnosis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhZ25vc2lzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Huawei/OneDrive/سطح المكتب/IDS/IDS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -122,6 +126,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Huawei/OneDrive/سطح المكتب/IDS/IDS/Views/Ticket/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Huawei/OneDrive/سطح المكتب/IDS/IDS/Views/Ticket/Edit2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEVkaXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Huawei/OneDrive/سطح المكتب/IDS/IDS/Views/Ticket/Fack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEZhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Huawei/OneDrive/سطح المكتب/IDS/IDS/Views/_ViewImports.cshtml]

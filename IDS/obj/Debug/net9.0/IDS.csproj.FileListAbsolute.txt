@@ -358,22 +358,10 @@ D:\IDS\IDS\obj\Debug\net9.0\compressed\br95axji1z-i5wnolhd92.gz
 D:\IDS\IDS\obj\Debug\net9.0\compressed\axjzn45qg4-7k2dtkif00.gz
 D:\IDS\IDS\obj\Debug\net9.0\compressed\ohy2y4di9o-7tkz7e9okv.gz
 D:\IDS\IDS\obj\Debug\net9.0\compressed\rxc4s9j94b-t3gsv0cdpf.gz
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.csproj.AssemblyReference.cache
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.AssemblyInfoInputs.cache
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.AssemblyInfo.cs
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.csproj.CoreCompileInputs.cache
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.RazorAssemblyInfo.cache
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.RazorAssemblyInfo.cs
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.sourcelink.json
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.dll
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\refint\IDS.dll
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.pdb
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\appsettings.json
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\IDS.staticwebassets.endpoints.json
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\IDS.staticwebassets.runtime.json
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\IDS.staticwebassets.endpoints.json
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\IDS.exe
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\IDS.deps.json
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\IDS.runtimeconfig.json
@@ -617,6 +605,15 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\runtimes\w
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.csproj.AssemblyReference.cache
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.AssemblyInfoInputs.cache
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.AssemblyInfo.cs
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.RazorAssemblyInfo.cache
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.RazorAssemblyInfo.cs
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.sourcelink.json
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\scopedcss\bundle\IDS.styles.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\scopedcss\projectbundle\IDS.bundle.scp.css
@@ -637,12 +634,20 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\gvtnixrk67-rniy6fnfd7.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\s08w11lzhm-b9sayid5wm.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\zq17vlroz6-f8i28tml2m.gz
-C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\6x7cogke7n-qj9k7zf2a8.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\6x7cogke7n-ejckamlhr8.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\2s71e2jnbl-61n19gt1b8.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\f4l7lj6cxs-enubmsstu6.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\9rvaejl8n8-fhhgn1kn6o.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\hwnw3mt66x-fo4jlxqut4.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\qiqe6i032a-5ipweew5fc.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\e8mwoklfez-k2fmviepfr.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\wi4gomn1tc-esf1zy6d6x.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\mg9eddh2k6-o1ybxae8pb.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\4ufpiwx4dg-0eze3r87hw.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\77k9h80di0-xtxxf3hu2r.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\6mem1hpwiq-y2i06yb00b.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\b635z2xmku-yc0i5g0qoo.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\kliotzm9oj-l2cy6ibyo6.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\gnz2vaue9j-csj1081n1a.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\5tddcbcz45-bqjiyaj88i.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\t0wzgrnf9e-c2jlpeoesf.gz
@@ -716,5 +721,10 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\staticweba
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.csproj.Up2Date
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.dll
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\refint\IDS.dll
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.pdb
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.genruntimeconfig.cache
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\ref\IDS.dll
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\bu9qku4jmo-ia77nu3ky4.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\6che797zt4-0ca1z7e0wp.gz

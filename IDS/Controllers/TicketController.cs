@@ -1,6 +1,7 @@
 ﻿//////////////// Ticket Controller //////////////////
 
 using IDS.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,21 +12,28 @@ namespace IDS.Controllers
 
 
         private readonly AppDbContext _context;
-        private readonly IEnumerable<Patient> Patients;
-        private readonly IEnumerable<string> PatientsIds;
         private readonly IEnumerable<Ticket> tickets;
+        private readonly UserManager<ApplicationUser> _userManager;
 
 
 
-        public TicketController(AppDbContext context)
+
+        public TicketController(UserManager<ApplicationUser> userManager, AppDbContext context)
         {
             _context = context;
-            Patients = _context.patients.ToList();
-            PatientsIds = Patients.Select(p => p.PatientId).ToList();
-            tickets = _context.Tickets.ToList();
+           // tickets = _context.Tickets.ToList();
+            _userManager = userManager;
 
 
         }
+
+
+
+        public IActionResult Fack()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -234,7 +242,7 @@ namespace IDS.Controllers
             //    Console.WriteLine(error.ErrorMessage);
             //}
 
-            if (PatientsIds.Contains(ticket.PatientId))
+            if (_context.patients.Select(p => p.PatientId).Contains(ticket.PatientId))
             {
                 TempData["Error"] = "عذرا , هذا المريض مسجل بالفعل";
                 return View("ReceptionTicket", ticket);
@@ -383,13 +391,13 @@ namespace IDS.Controllers
             {
                 return NotFound();
             }
-            if (!PatientsIds.Contains(id))
+            if (!_context.patients.Select(p => p.PatientId).Contains(id))
             {
                 TempData["Error"] = "عذرا , هذا المريض  غير موجود";
                 return RedirectToAction(nameof(Index));
             }
 
-            var patient = Patients.FirstOrDefault(p => p.PatientId == id);
+            var patient = _context.patients.FirstOrDefault(p => p.PatientId == id);
 
             var ticket = new TicketVM();
             ticket.PatientId = patient.PatientId;
@@ -572,6 +580,7 @@ namespace IDS.Controllers
                     .Include(t => t.Patient)
                     .Include(t => t.ReferredTo)
                     .Include(t => t.Asnan)
+                    .Include(t => t.TicketAccountancy)
                     .FirstOrDefaultAsync(t => t.TicketId == id); // ✅ Use FirstOrDefaultAsync
 
             string pId = ticket?.PatientId; // Step 2: Now it's safe to access PatientId
@@ -606,6 +615,7 @@ namespace IDS.Controllers
                 NextDate = ticket.NextDate,
                 Status = ticket.Status,
                 IsValid = ticket.IsValid,
+                ReceptionEmpName =await _userManager.Users.Where(u => u.Id == ticket.TicketAccountancy.ReceptionEmpId).Select(u => u.FullName).FirstOrDefaultAsync(),
 
 
 
@@ -694,14 +704,11 @@ namespace IDS.Controllers
         public async Task<IActionResult> Edit(string id, TicketVM newTicket)
         {
 
-
-
-
-            //foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-            //{
-            //    Console.WriteLine("Badrrrrrrrrr" + error.ErrorMessage);
-            //    Console.WriteLine(error.ToString());
-            //}
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine("Badrrrrrrrrr" + error.ErrorMessage);
+                Console.WriteLine(error.ToString());
+            }
 
 
             var ticket = await _context.Tickets
@@ -812,6 +819,8 @@ namespace IDS.Controllers
                 TempData["success"] = "تم تعديل التذكرة بنجاح";
                 return RedirectToAction("ShowPatientProfile", "Patient", new { id = pId });
             }
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+            TempData["Errors"] = errors;
             TempData["Error"] = "فشل التعديل,الرجاء مراجعه البيانات و المحاوله مره أخري";
             return View(newTicket);
         }

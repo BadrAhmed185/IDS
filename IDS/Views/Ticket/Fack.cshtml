@@ -1,0 +1,148 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetion-view</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+    <!-- <link rel="stylesheet" href="~/css/Ticket.css"> -->
+    <link href="/css/Ticket.css" rel="stylesheet">
+
+    <script src="/js/constants.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/rect.js"></script>
+    <script src="/js/tooth.js"></script>
+    <script src="/js/renderer.js"></script>
+    <script src="/js/odontogramaGenerator.js"></script>
+    <script src="/js/collisionHandler.js"></script>
+    <script src="/js/engine.js"></script>
+</head>
+
+<body>
+
+        <div class="view-toggle">
+            <div>
+                <button type="button" id="btnAdult" class="view-btn active">بالغ</button>
+            </div>
+            <div>
+                <button type="button" id="btnChild" class="view-btn">طفل</button>
+            </div>
+            <div>
+                <button type="button" id="btnReset" class="reset-btn">إعادة ضبط</button>
+            </div>
+            <div style=" margin-bottom: -5%; margin-top: -20%; text-align: right; margin-right: 3%;">
+                <canvas id="canvas" width="650" height="400" style="border:1px solid #ccc; border-radius:4px;">
+
+                </canvas>
+            </div>
+
+
+
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const canvas = document.getElementById('canvas');
+                    const engine = new Engine();
+                    engine.setCanvas(canvas);
+                    engine.init();
+
+                    canvas.addEventListener('contextmenu', e => e.preventDefault());
+
+                    const btnAdult = document.getElementById('btnAdult');
+                    const btnChild = document.getElementById('btnChild');
+                    const btnReset = document.getElementById('btnReset');
+                    const btnSubmit = document.querySelector('.submit-btn');
+
+                    function activateButton(activeBtn, inactiveBtn) {
+                        activeBtn.classList.add('active');
+                        inactiveBtn.classList.remove('active');
+                    }
+
+                    btnAdult.addEventListener('click', () => {
+                        engine.changeView('0');
+                        activateButton(btnAdult, btnChild);
+                        engine.reset();
+                    });
+
+                    btnChild.addEventListener('click', () => {
+                        engine.changeView('1');
+                        activateButton(btnChild, btnAdult);
+                        engine.reset();
+                    });
+
+                    btnReset.addEventListener('click', () => {
+                        engine.reset();
+                    });
+
+                    canvas.addEventListener('mousedown', e => engine.onMouseClick(e));
+                    canvas.addEventListener('mousemove', e => engine.onMouseMove(e));
+                    canvas.addEventListener('click', e => {
+                        const x = engine.getXpos(e);
+                        const y = engine.getYpos(e);
+                        engine.mouth.forEach(tooth => {
+                            if (tooth.checkCollision(x, y)) {
+                                const sel = !tooth.highlight;
+                                tooth.toggleSelected(sel);
+                                if (sel) tooth.highlightColor = engine.settings.COLOR_HIGHLIGHT;
+                            }
+                        });
+                        engine.update();
+                    });
+
+                    btnSubmit.addEventListener('click', () => {
+                        const selectedIds = engine.mouth
+                            .filter(tooth => tooth.highlight)
+                            .map(tooth => tooth.id);
+
+                        // selectedIds.forEach(teeth => {
+                        //     document.getElementById(`tooth${teeth}`).checked = true;
+
+
+                        // });
+
+                        // alert('Selected teeth: ' + (selectedIds.length ? selectedIds.join(', ') : 'None'));
+                    });
+                });
+            </script>
+
+
+
+            <!-- روابط مكتبات الجيكويري و Select2 -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    $('#namesSelect').select2({
+                        placeholder: "اختر التشخيص",
+                        allowClear: true,
+                        closeOnSelect: false, // ميخليش القائمة تقفل كل مرة تختار اسم
+                        tags: true              // هنا فعلت خاصية إضافة أسماء جديدة من المستخدم
+                    });
+                });
+            </script>
+
+
+            <!-- زر الإرسال -->
+            <div class="submit-container">
+                <button type="submit" class="submit-btn">حفظ و إرسال</button>
+            </div>
+
+    <!-- <script src="~/js/Recep.js"></script> -->
+
+    <script src="Teicket.js"></script>
+
+
+
+</body>
+
+</html>

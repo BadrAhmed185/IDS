@@ -4,7 +4,7 @@
 }
 
 @{
-    //ViewData["Title"] = ViewBag.thePluralEntity;
+    //ViewData["Title"] = ViewBag.thePluralEntity; Ticket/Edit/966029
     Layout = null;
 }
 
@@ -12,103 +12,136 @@
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetion-view</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/Ticket.css">
-    <link rel="stylesheet" href="~/css/popup.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+
+    <link rel="stylesheet" href="~/css/Ticket.css">
+    <link href="~/css/Error.css" rel="stylesheet">
+
+
+    <script src="~/js/constants.js"></script>
+    <script src="~/js/settings.js"></script>
+    <script src="~/js/rect.js"></script>
+    <script src="~/js/tooth.js"></script>
+    <script src="~/js/renderer.js"></script>
+    <script src="~/js/odontogramaGenerator.js"></script>
+    <script src="~/js/collisionHandler.js"></script>
+    <script src="~/js/engine.js"></script>
 
 
 </head>
+
 <body>
+    <!-- Success Container -->
+    <div class="success-container" id="successContainer">
+        @if (TempData["Success"] != null)
+        {
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <div class="success-content">
+                    <div class="success-title">Done.</div>
+                    <div class="success-details">@TempData["Success"]</div>
 
 
-                <!-- Error Popup -->
-            <div id="errorPopup" class="popup-overlay">
-                <div class="popup-content error">
-                    <h3>خطأ</h3>
-                    <p id="error-message">@TempData["Error"]</p>
-                    <button class="popup-button" onclick="closePopup('errorPopup')">إغلاق</button>
                 </div>
+                <button class="close-btn" onclick="closeMessage(this)">×</button>
             </div>
+        }
+    </div>
 
+    <!-- Error Container -->
+    <div class="error-container" id="errorContainer">
+        @if (TempData["Error"] != null)
+        {
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="error-content">
+                    <div class="error-title">فشل التسجيل  😕</div>
+                    <div class="error-details">@TempData["Error"]</div>
+                    @if (TempData["Errors"] is IEnumerable<string> errors && errors.Any())
+                    {
+                        <ul>
 
-        <img src="~/Images/logo.png" alt="logo">
-            <img src="~/Images/assiut.png" alt="assiut" id="assiut">
-                <img src="~/Images/teeth.png" alt="teeth" id="teeth">
-
-                <div class="text">
-                    <h1>Free Clinics Admission From OutPatient</h1>
+                            @foreach (var error in errors)
+                            {
+                                <li>@error</li>
+                            }
+                        </ul>
+                    }
                 </div>
-                <h1 id="fill">إستمارة دخول بالمجان للعيادات الخارجية</h1>
+                <button class="close-btn" onclick="closeMessage(this)">×</button>
+            </div>
+        }
+    </div>
 
 
-                <br>
-                <br>
-                <br>
+    <img src="~/Icons/logo.png" alt="logo">
+    <img src="~/Images/assiut.png" alt="assiut" id="assiut">
+    <img src="~/Images/teeth.png" alt="teeth" id="teeth">
+
+    <div class="text">
+        <h1>Free Clinics Admission From OutPatient</h1>
+    </div>
+    <h1 id="fill">إستمارة دخول بالمجان للعيادات الخارجية</h1>
+
+    <br>
+    <br>
+    <br>
 
 
-                <form asp-action="Edit" method="post">
-                    <input asp-for-id="@Model.TicketID" type="hidden" value="@Model.TicketID">
+    <form asp-action="Edit" method="post">
 
 
-                    <!-- الفورم الرئيسي -->
-                    <!-- بيانات الكشف -->
-                    <table class="date1">
-
-
-                        <tr>
-                            <th>تاريخ الكشف</th>
-                            <td colspan="6"><input type="date" name="تاريخ الكشف" class="date full-width" asp-for="AppointmentDate"></td>
-                        </tr>
-
-
-                        <tr>
-                            <th>تاريخ الكشف القادم</th>
-
-                         
-                <td colspan="6"><input type="date" name="NextDate" class="date full-width" asp-for="NextDate"></td>
-            </tr>
+        <!-- بيانات التذكرة -->
+        <table class="date2">
             <tr>
-                <th>يتوجه إلي</th>
-                <td colspan="6"><input type="number" name="status" class="date full-width"asp-for="Status"></td>
+                <th>رقم التذكرة</th>
+                <td colspan="6"> <input type="text" class="date full-width" asp-for-id="TicketID" asap-for="TicketID" value="@Model.TicketID" readonly></td>
             </tr>
-
         </table>
 
+        <table class="date1">
+            <tr>
+                <th>تاريخ الكشف</th>
+                <td colspan="6"><input type="date" class="date full-width" asp-for="AppointmentDate" readonly></td>
+
+            </tr>
+            <tr>
+                <th>تاريخ الكشف القادم</th>
+                <td colspan="6"><input type="date" class="date full-width" asp-for="NextDate"></td>
+            </tr>
+
+            <tr>
+                <th>مسؤول موظف الاستقبال</th>
+                <td colspan="6"><input type="text" class="date full-width" asp-for="ReceptionEmpName" readonly></td>
+
+            </tr>
+        </table>
+
+        <!--  <table class="date3">
+              <tr>
+                  <th>حالة التذكرة لدي الطبيب</th>
+                  <td colspan="6"><input type="text" name="تاريخ الكشف" class="date full-width"></td>
+              </tr>
+              <tr>
+                  <th>المحطة الحالية للتذكرة</th>
+                  <td colspan="6"><input type="text" name="تاريخ الكشف" class="date full-width"></td>
+              </tr>
+              <tr>
+                  <th>الطبيب المشخص</th>
+                  <td colspan="6"><input type="text" name="تاريخ الكشف" class="date full-width"></td>
+              </tr>
 
 
-
-
-
-
-        <!-- @*        
-          <tr>
-                    <th>رقم الكشف</th>
-                    <td><input type="text" name="رقم الكشف" class="num"></td>
-                    <td><input type="text" name="رقم الكشف" class="num"></td>
-                    <td><input type="text" name="رقم الكشف" class="num"></td>
-                    <td><input type="text" name="رقم الكشف" class="num"></td>
-                    <td><input type="text" name="رقم الكشف" class="num"></td>
-                    <td><input type="text" name="رقم الكشف" class="num"></td>
-                </tr> *
-                @ -->
-
-             <!-- @*  
-                <tr>
-                    <th>رقم تذكرة الكشف</th>
-                    <td colspan="6"><input type="text" name="رقم تذكرة الكشف" class="ticket full-width"></td>
-                </tr>
-                 *@ -->
-
-
+          </table> -->
 
 
         <div class="containers-wrapper">
@@ -163,17 +196,46 @@
                 <h3>:Referred to</h3>
                 <div class="checklist">
                     <div class="group">
-                        <div class="item"><input asp-for="Oral" type="checkbox" id="oral"><label for="oral"> Oral med. & Perio<br><span>طب الفم وعلاج اللثة</span></label></div>
-                        <div class="item"><input asp-for="RemovableProsth" type="checkbox" id="removable"><label for="removable"> Removable prosth<br><span>تركيبات متحركة</span></label></div>
-                        <div class="item"><input asp-for="Operative" type="checkbox" id="operative"><label for="operative"> Operative<br><span>حشو</span></label></div>
-                        <div class="item"><input asp-for="Endodontic" type="checkbox" id="endodont"><label for="endodont"> Endodont<br><span>علاج الجذور</span></label></div>
-                        <div class="item"><input asp-for="Ortho" type="checkbox" id="ortho"><label for="ortho"> Ortho<br><span>تقويم</span></label></div>
+                        <div class="item">
+                            <input asp-for="Oral" type="checkbox" id="oral"><label for="oral">
+                                Oral med. &
+                                Perio<br><span>طب الفم وعلاج اللثة</span>
+                            </label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="RemovableProsth" type="checkbox" id="removable"><label for="removable"> Removable prosth<br><span>تركيبات متحركة</span></label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="Operative" type="checkbox" id="operative"><label for="operative"> Operative<br><span>حشو</span></label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="Endodontic" type="checkbox" id="endodont"><label for="endodont"> Endodont<br><span>علاج الجذور</span></label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="Ortho" type="checkbox" id="ortho"><label for="ortho">
+                                Ortho<br><span>تقويم</span>
+                            </label>
+                        </div>
                     </div>
                     <div class="group">
-                        <div class="item"><input asp-for="CrownAndBridge" type="checkbox" id="crown"><label for="crown"> Crown & Bridge<br><span>تركيبات ثابتة</span></label></div>
-                        <div class="item"><input asp-for="Surgery" type="checkbox" id="surgery"><label for="surgery"> Surgery<br><span>جراحة</span></label></div>
-                        <div class="item"><input asp-for="Pedo" type="checkbox" id="pedo"><label for="pedo"> Pedo<br><span>أطفال</span></label></div>
-                        <div class="item"><input asp-for="XRay" type="checkbox" id="xray"><label for="xray"> X-ray<br><span>أشعة</span></label></div>
+                        <div class="item">
+                            <input asp-for="CrownAndBridge" type="checkbox" id="crown"><label for="crown">Fixed Synthesis<br><span>تركيبات ثابتة</span></label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="Surgery" type="checkbox" id="surgery"><label for="surgery">
+                                Surgery<br><span>جراحة</span>
+                            </label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="Pedo" type="checkbox" id="pedo"><label for="pedo">
+                                Pedo<br><span>أطفال</span>
+                            </label>
+                        </div>
+                        <div class="item">
+                            <input asp-for="XRay" type="checkbox" id="xray"><label for="xray">
+                                X-ray<br><span>أشعة</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,7 +262,8 @@
                     </td>
                     <td><input asp-for="Anemia" type="checkbox"> Anemia</td>
         </div>
-        <td><input asp-for="AspirinIntake" type="checkbox"> Aspirin Intake</td></div>
+        <td><input asp-for="AspirinIntake" type="checkbox"> Aspirin Intake</td>
+        </div>
         </tr>
         <tr>
             <td><input asp-for="Hyperttention" type="checkbox"> Hypertension</td>
@@ -220,8 +283,8 @@
             <td><input asp-for="Haemophilia" type="checkbox"> Haemophilia</td>
             <td><input asp-for="HayFever" type="checkbox"> Hay Fever</td>
         </tr>
-
         </table>
+
         <label class="text4">Medical History & Present Medication</label>
 
 
@@ -233,44 +296,192 @@
         <label class="text2">:Chief Complaint</label>
         <textarea class="ChiefComlant" asp-for="ChiefComlant"></textarea>
         <label class="text3">:Previsional Diagnosis</label>
-        <textarea asp-for="PrevisionalDiagnosis" class="diagnosis">1- ..........................................................
-    2- ..........................................................
-    3- ..........................................................
-    4- ..........................................................
-    5- ..........................................................</textarea>
+        <select id="namesSelect" multiple style="width: 300px;" asp-for="PrevisionalDiagnosis">
 
-        <div class="submit-container">
-            <button id="back" class="submit-btn" style="text-decoration : none;">تعديل</button>
+            <option value="Pain">Pin</option>
+            <option value="Swelling">Swelling</option>
 
 
-        </div>
+        </select>
 
+
+        <div class="view-toggle">
+            <div>
+                <button type="button" id="btnAdult" class="view-btn active">بالغ</button>
+            </div>
+            <div>
+                <button type="button" id="btnChild" class="view-btn">طفل</button>
+            </div>
+            <div>
+                <button type="button" id="btnReset" class="reset-btn">إعادة ضبط</button>
+            </div>
+            <div style=" margin-bottom: -5%; margin-top: -20%; text-align: right; margin-right: 3%;">
+                <canvas id="canvas" width="650" height="400" style="border:1px solid #ccc; border-radius:4px;">
+                </canvas>
+            </div>
+
+
+            <div class="mouth" style="display: none;">
+                @* Upper Right (Quadrant 1) *@
+                <input type="checkbox" asp-for="tooth11" class="tooth-checkbox" id="tooth11" hidden />
+                <input type="checkbox" asp-for="tooth12" class="tooth-checkbox" id="tooth12" hidden />
+                <input type="checkbox" asp-for="tooth13" class="tooth-checkbox" id="tooth13" hidden />
+                <input type="checkbox" asp-for="tooth14" class="tooth-checkbox" id="tooth14" hidden />
+                <input type="checkbox" asp-for="tooth15" class="tooth-checkbox" id="tooth15" hidden />
+                <input type="checkbox" asp-for="tooth16" class="tooth-checkbox" id="tooth16" hidden />
+                <input type="checkbox" asp-for="tooth17" class="tooth-checkbox" id="tooth17" hidden />
+                <input type="checkbox" asp-for="tooth18" class="tooth-checkbox" id="tooth18" hidden />
+
+                @* Upper Left (Quadrant 2) *@
+                <input type="checkbox" asp-for="tooth21" class="tooth-checkbox" id="tooth21" hidden />
+                <input type="checkbox" asp-for="tooth22" class="tooth-checkbox" id="tooth22" hidden />
+                <input type="checkbox" asp-for="tooth23" class="tooth-checkbox" id="tooth23" hidden />
+                <input type="checkbox" asp-for="tooth24" class="tooth-checkbox" id="tooth24" hidden />
+                <input type="checkbox" asp-for="tooth25" class="tooth-checkbox" id="tooth25" hidden />
+                <input type="checkbox" asp-for="tooth26" class="tooth-checkbox" id="tooth26" hidden />
+                <input type="checkbox" asp-for="tooth27" class="tooth-checkbox" id="tooth27" hidden />
+                <input type="checkbox" asp-for="tooth28" class="tooth-checkbox" id="tooth28" hidden />
+
+                @* Lower Left (Quadrant 3) *@
+                <input type="checkbox" asp-for="tooth31" class="tooth-checkbox" id="tooth31" hidden />
+                <input type="checkbox" asp-for="tooth32" class="tooth-checkbox" id="tooth32" hidden />
+                <input type="checkbox" asp-for="tooth33" class="tooth-checkbox" id="tooth33" hidden />
+                <input type="checkbox" asp-for="tooth34" class="tooth-checkbox" id="tooth34" hidden />
+                <input type="checkbox" asp-for="tooth35" class="tooth-checkbox" id="tooth35" hidden />
+                <input type="checkbox" asp-for="tooth36" class="tooth-checkbox" id="tooth36" hidden />
+                <input type="checkbox" asp-for="tooth37" class="tooth-checkbox" id="tooth37" hidden />
+                <input type="checkbox" asp-for="tooth38" class="tooth-checkbox" id="tooth38" hidden />
+
+                @* Lower Right (Quadrant 4) *@
+                <input type="checkbox" asp-for="tooth41" class="tooth-checkbox" id="tooth41" hidden />
+                <input type="checkbox" asp-for="tooth42" class="tooth-checkbox" id="tooth42" hidden />
+                <input type="checkbox" asp-for="tooth43" class="tooth-checkbox" id="tooth43" hidden />
+                <input type="checkbox" asp-for="tooth44" class="tooth-checkbox" id="tooth44" hidden />
+                <input type="checkbox" asp-for="tooth45" class="tooth-checkbox" id="tooth45" hidden />
+                <input type="checkbox" asp-for="tooth46" class="tooth-checkbox" id="tooth46" hidden />
+                <input type="checkbox" asp-for="tooth47" class="tooth-checkbox" id="tooth47" hidden />
+                <input type="checkbox" asp-for="tooth48" class="tooth-checkbox" id="tooth48" hidden />
+
+
+            </div>
+
+      
+
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const canvas = document.getElementById('canvas');
+                    const engine = new Engine();
+                    engine.setCanvas(canvas);
+                    engine.init();
+
+                         const teethIds = engine.mouth
+                            .map(tooth => tooth.id);
+
+                            let counter = 0;
+                        teethIds.forEach(tooth => {
+                            if(document.getElementById(`tooth${tooth}`).checked)
+                            {
+                              engine.mouth[counter].highlight = engine.settings.COLOR_HIGHLIGHT;
+                              counter++;
+                            }
+                            else
+                            {
+                                counter++;
+                            }
+                        });
+
+
+                    canvas.addEventListener('contextmenu', e => e.preventDefault());
+
+
+                    const btnAdult = document.getElementById('btnAdult');
+                    const btnChild = document.getElementById('btnChild');
+                    const btnReset = document.getElementById('btnReset');
+                    const btnSubmit = document.querySelector('.submit-btn');
+
+                    function activateButton(activeBtn, inactiveBtn) {
+                        activeBtn.classList.add('active');
+                        inactiveBtn.classList.remove('active');
+                    }
+
+                    btnAdult.addEventListener('click', () => {
+                        engine.changeView('0');
+                        activateButton(btnAdult, btnChild);
+                        engine.reset();
+                    });
+
+                    btnChild.addEventListener('click', () => {
+                        engine.changeView('1');
+                        activateButton(btnChild, btnAdult);
+                        engine.reset();
+                    });
+
+                    btnReset.addEventListener('click', () => {
+                        engine.reset();
+                    });
+
+
+                    canvas.addEventListener('mousedown', e => engine.onMouseClick(e));
+                    canvas.addEventListener('mousemove', e => engine.onMouseMove(e));
+                    canvas.addEventListener('click', e => {
+                        const x = engine.getXpos(e);
+                        const y = engine.getYpos(e);
+                        engine.mouth.forEach(tooth => {
+                            if (tooth.checkCollision(x, y)) {
+                                const sel = !tooth.highlight;
+                                tooth.toggleSelected(sel);
+                                if (sel) tooth.highlightColor = engine.settings.COLOR_HIGHLIGHT;
+                            }
+                        });
+                        engine.update();
+                    });
+
+                    btnSubmit.addEventListener('click', () => {
+                        const selectedIds = engine.mouth
+                            .filter(tooth => tooth.highlight)
+                            .map(tooth => tooth.id);
+
+                        selectedIds.forEach(teeth => {
+                            document.getElementById(`tooth${teeth}`).checked = true;
+
+
+                        });
+
+                        // alert('Selected teeth: ' + (selectedIds.length ? selectedIds.join(', ') : 'None'));
+                    });
+                });
+            </script>
+
+
+
+
+            <!-- روابط مكتبات الجيكويري و Select2 -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    $('#namesSelect').select2({
+                        placeholder: "اختر التشخيص",
+                        allowClear: true,
+                        closeOnSelect: false, // ميخليش القائمة تقفل كل مرة تختار اسم
+                        tags: true              // هنا فعلت خاصية إضافة أسماء جديدة من المستخدم
+                    });
+                });
+            </script>
+
+
+            <!-- زر الإرسال -->
+            <div class="submit-container">
+                <button type="submit" class="submit-btn">تعديل</button>
+            </div>
 
     </form>
 
 
 
-    <!-- Script -->
-    <script>
-        function closePopup(id) {
-            document.getElementById(id).style.display = "none";
-        }
-
-        window.onload = function () {
-            var error = "@TempData["Error"]";
-            // var success = "@TempData["success"]";
-
-            if (error && error.trim() !== "") {
-                document.getElementById("errorPopup").style.display = "flex";
-            }
-
-            // if (success && success.trim() !== "") {
-            //     document.getElementById("successPopup").style.display = "flex";
-            // }
-        };
-    </script>
-
-
-
 </body>
+
 </html>

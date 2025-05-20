@@ -71,7 +71,7 @@ namespace IDS.Models
         public Patient Patient { get; set; }
         public MedicalHistory MedicalHistory { get; set; }
         public ReferredTo ReferredTo { get; set; }
-        public TicketAccountancy Accountancy { get; set; }  // part of third changes
+        public TicketAccountancy TicketAccountancy { get; set; }  // part of third changes
 
         public Asnan Asnan { get; set; }  // part of fourth changes
 
