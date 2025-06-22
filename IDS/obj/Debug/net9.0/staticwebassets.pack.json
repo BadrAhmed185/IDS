@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\css\\AdminHome.css"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
+      "PackagePath": "staticwebassets\\css\\CPresident.css"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\EditPatient.css",
       "PackagePath": "staticwebassets\\css\\EditPatient.css"
     },

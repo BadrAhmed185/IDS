@@ -207,6 +207,90 @@ namespace IDS.Migrations
                     b.ToTable("Asnans");
                 });
 
+            modelBuilder.Entity("IDS.Models.Clinic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ArabicName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Supervisor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("TicketsCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Supervisor");
+
+                    b.ToTable("Clinics");
+                });
+
+            modelBuilder.Entity("IDS.Models.Developer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.PrimitiveCollection<string>("Links")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Photo")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Developers");
+                });
+
+            modelBuilder.Entity("IDS.Models.Doctor", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ActivePatientsUnderResposibility")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClinicId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Successfulcases")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClinicId");
+
+                    b.ToTable("Doctors");
+                });
+
             modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
                 {
                     b.Property<string>("Id")
@@ -358,6 +442,9 @@ namespace IDS.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
+                    b.Property<int?>("ClinicId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
 
@@ -382,6 +469,8 @@ namespace IDS.Migrations
 
                     b.HasKey("TicketId");
 
+                    b.HasIndex("ClinicId");
+
                     b.HasIndex("PatientId");
 
                     b.ToTable("Tickets");
@@ -392,6 +481,9 @@ namespace IDS.Migrations
                     b.Property<string>("TicketId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ClinicDocId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("DiagnosisDocId")
                         .HasColumnType("nvarchar(450)");
 
@@ -400,6 +492,8 @@ namespace IDS.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("TicketId");
+
+                    b.HasIndex("ClinicDocId");
 
                     b.HasIndex("DiagnosisDocId");
 
@@ -552,6 +646,34 @@ namespace IDS.Migrations
                     b.Navigation("Ticket");
                 });
 
+            modelBuilder.Entity("IDS.Models.Clinic", b =>
+                {
+                    b.HasOne("IDS.Models.ApplicationUser", "ClinicSupervisor")
+                        .WithMany()
+                        .HasForeignKey("Supervisor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ClinicSupervisor");
+                });
+
+            modelBuilder.Entity("IDS.Models.Doctor", b =>
+                {
+                    b.HasOne("IDS.Models.Clinic", "Clinic")
+                        .WithMany("Doctors")
+                        .HasForeignKey("ClinicId");
+
+                    b.HasOne("IDS.Models.ApplicationUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Clinic");
+                });
+
             modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
                 {
                     b.HasOne("IDS.Models.Ticket", "Ticket")
@@ -576,17 +698,27 @@ namespace IDS.Migrations
 
             modelBuilder.Entity("IDS.Models.Ticket", b =>
                 {
+                    b.HasOne("IDS.Models.Clinic", "Clinic")
+                        .WithMany("Tickets")
+                        .HasForeignKey("ClinicId");
+
                     b.HasOne("IDS.Models.Patient", "Patient")
                         .WithMany("Tickets")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Clinic");
+
                     b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("IDS.Models.TicketAccountancy", b =>
                 {
+                    b.HasOne("IDS.Models.ApplicationUser", "ClinicDoc")
+                        .WithMany()
+                        .HasForeignKey("ClinicDocId");
+
                     b.HasOne("IDS.Models.ApplicationUser", "DiagnosisDoc")
                         .WithMany()
                         .HasForeignKey("DiagnosisDocId");
@@ -598,10 +730,12 @@ namespace IDS.Migrations
                         .IsRequired();
 
                     b.HasOne("IDS.Models.Ticket", "Ticket")
-                        .WithOne("Accountancy")
+                        .WithOne("TicketAccountancy")
                         .HasForeignKey("IDS.Models.TicketAccountancy", "TicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ClinicDoc");
 
                     b.Navigation("DiagnosisDoc");
 
@@ -661,6 +795,13 @@ namespace IDS.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("IDS.Models.Clinic", b =>
+                {
+                    b.Navigation("Doctors");
+
+                    b.Navigation("Tickets");
+                });
+
             modelBuilder.Entity("IDS.Models.Patient", b =>
                 {
                     b.Navigation("Tickets");
@@ -668,9 +809,6 @@ namespace IDS.Migrations
 
             modelBuilder.Entity("IDS.Models.Ticket", b =>
                 {
-                    b.Navigation("Accountancy")
-                        .IsRequired();
-
                     b.Navigation("Asnan")
                         .IsRequired();
 
@@ -678,6 +816,9 @@ namespace IDS.Migrations
                         .IsRequired();
 
                     b.Navigation("ReferredTo")
+                        .IsRequired();
+
+                    b.Navigation("TicketAccountancy")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

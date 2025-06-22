@@ -1,0 +1,105 @@
+﻿@model IEnumerable<IDS.Models.Ticket>
+
+@{
+	ViewData["Title"] = "CPrisident page";
+	Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ًصفحة النائب</title>
+    <link rel="stylesheet" href="~/css/CPresident.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="~/images/logo.png" alt="شعار العيادة" class="logo-img">
+                </div>
+                <div class="header-main">
+                    <div class="header-text">
+                        <h1>مرحبًا بكم</h1>
+                        <h2>ملف الحالات الطبية</h2>
+                        <p>د/@User.FindFirst("DocName")?.Value</p>
+                    </div>
+                    <div class="search-container">
+                        <form action="#" method="get">
+                            <input type="text" placeholder="ابحث باسم المريض أو رقم المذكرة..." class="search-input">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>رقم المذكرة</th>
+                        <th>تاريخ الزيارة</th>
+                        <th>اسم المريض</th>
+                        <th>رقم الهاتف</th>
+                        <th>الطبيب المعالج </th>
+                        <th class="actions-header">الإجراءات</th>
+                    </tr>
+                </thead>
+
+                
+
+                <tbody>
+                    @{
+                        foreach (var entity in Model)
+                        {
+                            <td>@entity.TicketId</td>
+                            <td>@entity.AppointmentDate</td>
+                            <td>@entity.Patient.Name</td>
+                            <td>@entity.Patient.phoneNumber</td>
+
+
+
+                             <td class="doctor-select">
+                            <form asp-action="AssignDoctor" asp-asp-controller="ClinicPresident" asp-route-id="@entity.TicketId" method="post">
+
+                         
+                            <select class="doctor-select" name="docId" asp-items="@ViewBag.Doctors">
+                                <option value="dr2">إختر الطبيب المناسب</option>                           
+                            </select>
+                            <button type="submit" class="action-link view"><i class="fas fa-eye"></i>إرسال للطبيب</button>
+
+                            </form>    
+                            
+                            </td>
+
+                        <td class="actions">
+
+                            <a  class="action-link view"><i class="fas fa-eye" asp-action="ShowFullTicket" asp-Controller="Ticket" asp-route-id="@entity.TicketId"></i> عرض</a>
+                            <a  class="action-link view"><i class="fas fa-eye" asp-action="ُEdit" asp-Controller="Ticket" asp-route-id="@entity.TicketId"></i>فحص</a>
+                            <a  class="action-link view"><i class="fas fa-eye" asp-action="ShowPatientProfile" asp-Controller="Ticket" asp-route-id="@entity.Patient.PatientId"></i>عرص ملف المريض</a>
+
+              
+                            </td>
+
+
+                        }
+
+                    }             
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>جميع الحقوق محفوظة 2025 © فريق تطوير نظام "IDS"</p>
+        </div>
+    </div>
+</body>
+</html>
+

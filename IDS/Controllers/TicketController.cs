@@ -775,6 +775,18 @@ namespace IDS.Controllers
                 ticket.ReferredTo.Pedo = newTicket.Pedo;
                 ticket.ReferredTo.XRay = newTicket.XRay;
 
+                {
+                    if (ticket.ReferredTo.Endodontic)
+                    {
+                        ticket.ClinicId = _context.Clinics.Where(c => c.Name == "Endodont").FirstOrDefault().Id;
+                    }
+
+                    else if (ticket.ReferredTo.Surgery)
+                    {
+                        ticket.ClinicId = _context.Clinics.Where(c => c.Name == "Surgery").FirstOrDefault().Id;
+                    }
+                }
+
                 // Asnan Properties
 
                 // Upper Right (Quadrant 1)

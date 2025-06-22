@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d7aLCtW3QVJHXeKtm/rI7Adc19nqwccSdY9ZBkjZDjY=",
+  "Hash": "YF4Spe9qZhS1A/6BEZRcH4x0a14UGazZtYNIpPBDzcY=",
   "Source": "IDS",
   "BasePath": "_content/IDS",
   "Mode": "Default",
@@ -918,6 +918,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\IndexForDicts.css"
+    },
+    {
+      "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\g2sgmgvacn-5kxh69s0rv.gz",
+      "SourceId": "IDS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/IDS",
+      "RelativePath": "css/CPresident#[.{fingerprint=5kxh69s0rv}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "1r9wrtml3z",
+      "Integrity": "XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\CPresident.css"
     },
     {
       "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\ghjlhj4db2-jj8uyg4cgr.gz",
@@ -2136,6 +2157,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\all.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
+      "SourceId": "IDS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\",
+      "BasePath": "_content/IDS",
+      "RelativePath": "css/CPresident#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5kxh69s0rv",
+      "Integrity": "JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\CPresident.css"
     },
     {
       "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\EditPatient.css",
@@ -7864,6 +7906,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-rYqT7zP4sLTjynZqHGtty6ZKV74l9FCQWa8EUBr8OG4="
+        }
+      ]
+    },
+    {
+      "Route": "css/CPresident.5kxh69s0rv.css",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\g2sgmgvacn-5kxh69s0rv.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000580383053"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1722"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Jun 2025 03:19:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5kxh69s0rv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/CPresident.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY="
+        }
+      ]
+    },
+    {
+      "Route": "css/CPresident.5kxh69s0rv.css",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6462"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Jun 2025 03:19:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5kxh69s0rv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/CPresident.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY="
+        }
+      ]
+    },
+    {
+      "Route": "css/CPresident.5kxh69s0rv.css.gz",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\g2sgmgvacn-5kxh69s0rv.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1722"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Jun 2025 03:19:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5kxh69s0rv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/CPresident.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0="
+        }
+      ]
+    },
+    {
+      "Route": "css/CPresident.css",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\g2sgmgvacn-5kxh69s0rv.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000580383053"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1722"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Jun 2025 03:19:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY="
+        }
+      ]
+    },
+    {
+      "Route": "css/CPresident.css",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6462"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Jun 2025 03:19:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JQ4jfHTprngB5cgc+C344rL/gPGwtEUxk4ARJxL5HuY="
+        }
+      ]
+    },
+    {
+      "Route": "css/CPresident.css.gz",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\g2sgmgvacn-5kxh69s0rv.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1722"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 21 Jun 2025 03:19:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XShlyzqqdwtknI9v6TBlJrxIpZDMFzseTjgYB188kf0="
         }
       ]
     },

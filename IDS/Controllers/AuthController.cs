@@ -159,6 +159,8 @@ namespace IDS.Controllers
 
 
 
+ 
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult LogIn()
@@ -184,28 +186,17 @@ namespace IDS.Controllers
                 if (userModel != null)
                 {
                     Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(userModel, user.Password, user.RememberMe, false);
-                    //Adding customized cookie when user Sign in
-                    {
-                        string phoneNum = userModel.PhoneNumber;
-                        List<Claim> claims = new List<Claim>();
-                      //  claims.Add(new Claim("Phone", phoneNum));
-                        claims.Add(new Claim("Role", userModel.Role));
-                     //   claims.Add(new Claim("Department", userModel.Department));
-
-
-
-                        await _signInManager.SignInWithClaimsAsync(userModel, new AuthenticationProperties
-                        {
-                            IsPersistent = false, // Ensures session-based authentication
-                            AllowRefresh = true // Allows the session to be refreshed while the browser is open
-                        }, claims);
-
-                    }
+         
 
 
 
                     if (result.Succeeded)
                     {
+                        //Adding customized cookie when Doctor Sign in
+                        
+                            List<Claim> claims = new List<Claim>();
+                            claims.Add(new Claim("Role", userModel.Role));
+                    
 
                         if (userModel.Role == "Admin")
                         {
@@ -220,12 +211,36 @@ namespace IDS.Controllers
                         {
                             return RedirectToAction("Index", "Diagnosis");
                         }
+                        else if (userModel.Role == "CPresident")
+                        {
+                            var clinic = await _context.Clinics.Where(d => d.Supervisor == userModel.Id).FirstOrDefaultAsync();
+                       
+
+                            claims.Add(new Claim("ClinicName", clinic.Name));
+                            claims.Add(new Claim("ClinicId", clinic.Id.ToString()));
+                         
+                            claims.Add(new Claim("DocName", userModel.FullName));
+                            claims.Add(new Claim("DocId", userModel.Id));
+
+
+                            //  Ending the Cookie Making proccess
+                            await _signInManager.SignInWithClaimsAsync(userModel, new AuthenticationProperties
+                            {
+                                IsPersistent = false, // Ensures session-based authentication
+                                AllowRefresh = true // Allows the session to be refreshed while the browser is open
+                            }, claims);
+
+                            return RedirectToAction("Index", "ClinicPresident");
+                        }
+
+                        
                         else
                         { 
                             return RedirectToAction("Index", "Home");
 
                         }
 
+                     
                     }
                     else {
 

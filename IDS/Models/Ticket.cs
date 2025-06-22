@@ -9,6 +9,8 @@ namespace IDS.Models
 
         public Ticket(AppDbContext context)
         {
+            // when ticket is created we give the id of the diganosis clinic to the clinicId column of the ticket
+           //  ClinicId = _context.Clinics.Where(c => c.Name == "Diagnosis").FirstOrDefault().Id;
             bool ValidId = true;
             _context = context;
 
@@ -33,6 +35,10 @@ namespace IDS.Models
 
         [ForeignKey("Patient"), Required]
         public string PatientId { get; set; }
+
+        [ForeignKey("Clinic")]
+     
+        public int? ClinicId { get; set; } // part of fifth changes
 
 
 
@@ -74,6 +80,8 @@ namespace IDS.Models
         public TicketAccountancy TicketAccountancy { get; set; }  // part of third changes
 
         public Asnan Asnan { get; set; }  // part of fourth changes
+
+        public Clinic? Clinic { get; set; }  // part of fifth changes
 
 
 

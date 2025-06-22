@@ -48,6 +48,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt\u002B7GnZCIo="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"73890"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt\u002B7GnZCIo=\u0022"},{"Name":"Last-Modified","Value":"Sun, 09 Mar 2025 04:41:43 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/IDS/css/CPresident.5kxh69s0rv.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\CPresident.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5kxh69s0rv"},{"Name":"integrity","Value":"sha256-JQ4jfHTprngB5cgc\u002BC344rL/gPGwtEUxk4ARJxL5HuY="},{"Name":"label","Value":"_content/IDS/css/CPresident.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6462"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022JQ4jfHTprngB5cgc\u002BC344rL/gPGwtEUxk4ARJxL5HuY=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Jun 2025 03:19:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/IDS/css/CPresident.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\CPresident.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-JQ4jfHTprngB5cgc\u002BC344rL/gPGwtEUxk4ARJxL5HuY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6462"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022JQ4jfHTprngB5cgc\u002BC344rL/gPGwtEUxk4ARJxL5HuY=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Jun 2025 03:19:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/IDS/css/EditPatient.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\EditPatient.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

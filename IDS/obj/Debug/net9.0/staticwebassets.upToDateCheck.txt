@@ -41,6 +41,7 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\menuItem.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\AddEntityPopUp.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\IndexForDicts.css
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\CPresident.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\UserSearchHandler.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\Role.css
@@ -95,6 +96,7 @@ wwwroot\css\AddEmployee.css
 wwwroot\css\AdminHome.css
 wwwroot\css\all.css
 wwwroot\css\all.min.css
+wwwroot\css\CPresident.css
 wwwroot\css\EditPatient.css
 wwwroot\css\EmployeeDetails.css
 wwwroot\css\Error.css

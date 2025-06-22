@@ -18,14 +18,14 @@ namespace IDS.Models
         [ForeignKey(nameof(DiagnosisDoc))]
         public string? DiagnosisDocId { get; set; }
 
-        //  [ForeignKey(nameof(ClinicDoc))]
-        //  public string ClinicDocId { get; set; }
+          [ForeignKey(nameof(ClinicDoc))]
+          public string? ClinicDocId { get; set; }
 
         // Navigation properties
-        public ApplicationUser ReceptionEmployee { get; set; }
+        public ApplicationUser? ReceptionEmployee { get; set; }
         public ApplicationUser? DiagnosisDoc { get; set; }
 
-        // public ApplicationUser ClinicDoc { get; set; }
+         public ApplicationUser? ClinicDoc { get; set; }
 
         public Ticket Ticket { get; set; }
     }

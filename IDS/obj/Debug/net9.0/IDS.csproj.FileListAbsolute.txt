@@ -728,3 +728,4 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\IDS.genrun
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\ref\IDS.dll
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\bu9qku4jmo-ia77nu3ky4.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\6che797zt4-0ca1z7e0wp.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\g2sgmgvacn-5kxh69s0rv.gz

@@ -22,7 +22,7 @@ namespace IDS.Models
         public bool Operative { get; set; } = false;
 
         [Display(Name = "Endodontic")]
-        public bool Endodontic { get; set; } = false;
+        public bool Endodontic { get; set; } = false; 
 
         [Display(Name = "Ortho")]
         public bool Ortho { get; set; } = false;

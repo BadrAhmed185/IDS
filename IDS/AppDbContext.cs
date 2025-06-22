@@ -21,6 +21,11 @@
         public DbSet<Asnan> Asnans { get; set; }
         public DbSet<TicketAccountancy> ticketAccountancies { get; set; }
 
+        //FifthUpdate
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Clinic> Clinics { get; set; }
+        public DbSet<Developer> Developers { get; set; } //sixth
+
 
 
     }
