@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هيئة التسجيل و الإحصاء</title>
+    <title>  عيادة التشخيص </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
 
     <link rel="stylesheet" href="~/css/Reception.css">
@@ -66,11 +66,11 @@
 
                 <!-- بحث عن تذكرة -->
                 <div class="col">
-                    <div class="feature-box form-type" data-controller="Reception" data-action="ShowFullTicket">
+                    <div class="feature-box form-type" data-controller="Diagnosis" data-action="Edit">
                         <i class="fa-solid fa-search icon"></i>
                         <h3>تشخيص حالة</h3>
                         <p>من هنا يمكنك تشخيص المريض الذي امامك</p>
-                        <form asp-controller="Ticket" asp-action="Edit"  method="Get">
+                        <form asp-controller="Diagnosis" asp-action="Edit"  method="Get">
                             <input type="text" name="id" class="form-control mb-2" placeholder="رقم التذكرة" required>
                             <button type="submit" class="btn btn-dark w-100">إرسال</button>
                         </form>
@@ -83,7 +83,7 @@
                             <i class="fa-solid fa-folder icon"></i>
                             <h3>ملف المريض</h3>
                             <p>عرض بيانات المريض والتذاكر الخاصة به</p>
-                        <form asp-controller="Patient" asp-action="ShowPatientProfile" method="get">
+                        <form asp-controller="Diagnosis" asp-action="ShowPatientProfile" method="get">
                                 <input type="text" name="Id" class="form-control mb-2" placeholder="الرقم القومي" required>
                                 <button type="submit" class="btn btn-dark w-100">إرسال</button>
                             </form>

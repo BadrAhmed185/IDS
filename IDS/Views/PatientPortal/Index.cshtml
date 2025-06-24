@@ -1,0 +1,62 @@
+﻿@model IDS.Models.Patient
+
+<h2>Your Profile</h2>
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Phone:</strong> @Model.phoneNumber</p>
+<p><strong>Age:</strong> @Model.Age</p>
+
+<h3>Medical History</h3>
+@* @foreach (var history in Model.MedicalHistory)
+{
+    <li>Heart Trouble: @(history.HeartTrouble ? "Yes" : "No")</li>
+    <li>Diabetes: @(history.Diabetes ? "Yes" : "No")</li>
+    <hr />
+} *@
+
+@if (Model.MedicalHistory != null)
+{
+    <ul>
+        <li>Heart Trouble: @(Model.MedicalHistory.HeartTrouble ? "Yes" : "No")</li>
+        <li>Hyperttention: @(Model.MedicalHistory.Hyperttention ? "Yes" : "No")</li>
+        <li>Pregnancy: @(Model.MedicalHistory.Pregnancy ? "Yes" : "No")</li>
+        <li>Diabetes: @(Model.MedicalHistory.Diabetes ? "Yes" : "No")</li>
+        <li>Hepatitis: @(Model.MedicalHistory.Hepatitis)</li>
+        <li>AIDs: @(Model.MedicalHistory.AIDs ? "Yes" : "No")</li>
+        <li>Tuberculosis: @(Model.MedicalHistory.Tuberculosis ? "Yes" : "No")</li>
+        <li>Allergies: @(Model.MedicalHistory.Allergies ? "Yes" : "No")</li>
+        <li>Anemia: @(Model.MedicalHistory.Anemia ? "Yes" : "No")</li>
+        <li>Rheumatism: @(Model.MedicalHistory.Rheumatism ? "Yes" : "No")</li>
+        <li>Radiation Therapy: @(Model.MedicalHistory.RadTherapy ? "Yes" : "No")</li>
+        <li>Haemophilia: @(Model.MedicalHistory.Haemophilia ? "Yes" : "No")</li>
+        <li>Aspirin Intake: @(Model.MedicalHistory.AspirinIntake ? "Yes" : "No")</li>
+        <li>Kidney Troubles: @(Model.MedicalHistory.KidneyTroubles ? "Yes" : "No")</li>
+        <li>Asthma: @(Model.MedicalHistory.Asthma ? "Yes" : "No")</li>
+        <li>Hay Fever: @(Model.MedicalHistory.HayFever ? "Yes" : "No")</li>
+        <li>Other Notes: @Model.MedicalHistory.MedicalHistoryText</li>
+    </ul>
+}
+
+<hr />
+
+<h3>Previous Tickets</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Complaint</th>
+            <th>Diagnosis</th>
+            <th>Referred To</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model.Tickets)
+        {
+            <tr>
+                <td>@ticket.AppointmentDate.ToShortDateString()</td>
+                <td>@ticket.ChiefComlant</td>
+                <td>@ticket.PrevisionalDiagnosis</td>
+                <td>@ticket.ReferredTo?.Oral</td> <!-- عدّل حسب التصميم -->
+            </tr>
+        }
+    </tbody>
+</table>

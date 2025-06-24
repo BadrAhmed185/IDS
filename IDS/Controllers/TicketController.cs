@@ -21,7 +21,7 @@ namespace IDS.Controllers
         public TicketController(UserManager<ApplicationUser> userManager, AppDbContext context)
         {
             _context = context;
-           // tickets = _context.Tickets.ToList();
+            // tickets = _context.Tickets.ToList();
             _userManager = userManager;
 
 
@@ -39,7 +39,7 @@ namespace IDS.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ShowFullTicket(string id)
+        public async Task<IActionResult> DisplayTicket(string id)
         {
             TempData["New"] = false;
 
@@ -111,8 +111,8 @@ namespace IDS.Controllers
 
             var ticket = await _context.Tickets
                 .AsNoTracking()
-                .Include(t => t.MedicalHistory)
                 .Include(t => t.Patient)
+                .ThenInclude(t => t.MedicalHistory)
                 .Include(t => t.ReferredTo)
                 .Include(t => t.Asnan)
                 .FirstOrDefaultAsync(t => t.TicketId == id); // ✅ Use FirstOrDefaultAsync
@@ -140,23 +140,23 @@ namespace IDS.Controllers
                 Age = ticket.Patient?.Age ?? 0,
 
                 // Medical History Properties (Null check added)
-                HeartTrouble = ticket.MedicalHistory?.HeartTrouble ?? false,
-                Hyperttention = ticket.MedicalHistory?.Hyperttention ?? false,
-                Pregnancy = ticket.MedicalHistory?.Pregnancy ?? false,
-                Diabetes = ticket.MedicalHistory?.Diabetes ?? false,
-                Hepatitis = ticket.MedicalHistory.Hepatitis,
-                AIDs = ticket.MedicalHistory?.AIDs ?? false,
-                Tuberculosis = ticket.MedicalHistory?.Tuberculosis ?? false,
-                Allergies = ticket.MedicalHistory?.Allergies ?? false,
-                Anemia = ticket.MedicalHistory?.Anemia ?? false,
-                Rheumatism = ticket.MedicalHistory?.Rheumatism ?? false,
-                RadTherapy = ticket.MedicalHistory?.RadTherapy ?? false,
-                Haemophilia = ticket.MedicalHistory?.Haemophilia ?? false,
-                AspirinIntake = ticket.MedicalHistory?.AspirinIntake ?? false,
-                KidneyTroubles = ticket.MedicalHistory?.KidneyTroubles ?? false,
-                Asthma = ticket.MedicalHistory?.Asthma ?? false,
-                HayFever = ticket.MedicalHistory?.HayFever ?? false,
-                MedicalHistoryText = ticket.MedicalHistory?.MedicalHistoryText ?? "N/A",
+                HeartTrouble = ticket.Patient.MedicalHistory?.HeartTrouble ?? false,
+                Hyperttention = ticket.Patient.MedicalHistory?.Hyperttention ?? false,
+                Pregnancy = ticket.Patient.MedicalHistory?.Pregnancy ?? false,
+                Diabetes = ticket.Patient.MedicalHistory?.Diabetes ?? false,
+                Hepatitis = ticket.Patient.MedicalHistory?.Hepatitis,
+                AIDs = ticket.Patient.MedicalHistory?.AIDs ?? false,
+                Tuberculosis = ticket.Patient.MedicalHistory?.Tuberculosis ?? false,
+                Allergies = ticket.Patient.MedicalHistory?.Allergies ?? false,
+                Anemia = ticket.Patient.MedicalHistory?.Anemia ?? false,
+                Rheumatism = ticket.Patient.MedicalHistory?.Rheumatism ?? false,
+                RadTherapy = ticket.Patient.MedicalHistory?.RadTherapy ?? false,
+                Haemophilia = ticket.Patient.MedicalHistory?.Haemophilia ?? false,
+                AspirinIntake = ticket.Patient.MedicalHistory?.AspirinIntake ?? false,
+                KidneyTroubles = ticket.Patient.MedicalHistory?.KidneyTroubles ?? false,
+                Asthma = ticket.Patient.MedicalHistory?.Asthma ?? false,
+                HayFever = ticket.Patient.MedicalHistory?.HayFever ?? false,
+                MedicalHistoryText = ticket.Patient.MedicalHistory?.MedicalHistoryText ?? "N/A",
 
                 // Referred To Properties (Null check added)
                 Oral = ticket.ReferredTo?.Oral ?? false,
@@ -213,7 +213,7 @@ namespace IDS.Controllers
                 //  sen1=  ticket.dentals?.sen1 ?? false,
             };
 
-            return View("Ticket", ticketVm);
+            return View(ticketVm);
         }
 
 
@@ -224,7 +224,9 @@ namespace IDS.Controllers
         {
             TempData["New"] = true;
 
-            return View("ReceptionTicket");
+            var vm = new TicketVM();
+
+            return View("ReceptionTicket", vm);
         }
 
 
@@ -232,6 +234,9 @@ namespace IDS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateTicketForNewPatient(TicketVM ticket)
         {
+
+            TempData["New"] = true;
+
 
             var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
             TempData["Errors"] = errors;
@@ -253,11 +258,6 @@ namespace IDS.Controllers
                 Patient patient = new Patient();
                 Ticket newTicket = new Ticket(_context);
 
-                // Ticket properties
-                {
-                    newTicket.PatientId = patient.PatientId;
-                    newTicket.AppointmentDate = ticket.AppointmentDate;
-                }
 
                 // Patient properties
                 {
@@ -269,6 +269,12 @@ namespace IDS.Controllers
                     patient.Gender = ticket.Gender;
                     patient.Age = ticket.Age;
                 }
+                // Ticket properties
+                {
+                    newTicket.PatientId = patient.PatientId;
+                    newTicket.AppointmentDate = ticket.AppointmentDate;
+                }
+
 
                 // referredTo properties
 
@@ -290,7 +296,7 @@ namespace IDS.Controllers
 
                 var medicalHistory = new MedicalHistory
                 {
-                    Id = newTicket.TicketId,
+                    Id = newTicket.PatientId,
 
                     HeartTrouble = ticket.HeartTrouble,
                     Hyperttention = ticket.Hyperttention,
@@ -367,7 +373,7 @@ namespace IDS.Controllers
                 };
 
 
-                _context.AddRange(newTicket ,patient, referredTo, medicalHistory, asnan , ticketAccountacy);
+                _context.AddRange(newTicket, patient, referredTo, medicalHistory, asnan, ticketAccountacy);
                 await _context.SaveChangesAsync();
 
                 TempData["Success"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكرة لعيادة التشخيص";
@@ -397,9 +403,10 @@ namespace IDS.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var patient = _context.patients.FirstOrDefault(p => p.PatientId == id);
+            var patient = _context.patients.Include(p => p.MedicalHistory).FirstOrDefault(p => p.PatientId == id);
 
             var ticket = new TicketVM();
+
             ticket.PatientId = patient.PatientId;
             ticket.Name = patient.Name;
             ticket.Address = patient.Address;
@@ -407,6 +414,25 @@ namespace IDS.Controllers
             ticket.phoneNumber = patient.phoneNumber;
             ticket.Gender = patient.Gender;
             ticket.Age = patient.Age;
+
+            ticket.HeartTrouble = patient.MedicalHistory.HeartTrouble;
+            ticket.Hyperttention = patient.MedicalHistory.Hyperttention;
+            ticket.Pregnancy = patient.MedicalHistory.Pregnancy;
+            ticket.Diabetes = patient.MedicalHistory.Diabetes;
+            ticket.Hepatitis = patient.MedicalHistory.Hepatitis;
+            ticket.AIDs = patient.MedicalHistory.AIDs;
+            ticket.Tuberculosis = patient.MedicalHistory.Tuberculosis;
+            ticket.Allergies = patient.MedicalHistory.Allergies;
+            ticket.Anemia = patient.MedicalHistory.Anemia;
+            ticket.Rheumatism = patient.MedicalHistory.Rheumatism;
+            ticket.RadTherapy = patient.MedicalHistory.RadTherapy;
+            ticket.Haemophilia = patient.MedicalHistory.Haemophilia;
+            ticket.AspirinIntake = patient.MedicalHistory.AspirinIntake;
+            ticket.KidneyTroubles = patient.MedicalHistory.KidneyTroubles;
+            ticket.Asthma = patient.MedicalHistory.Asthma;
+            ticket.HayFever = patient.MedicalHistory.HayFever;
+            ticket.MedicalHistoryText = patient.MedicalHistory.MedicalHistoryText;
+
 
             return View("ReceptionTicket", ticket);
         }
@@ -416,6 +442,9 @@ namespace IDS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateTicketForExistingPatient(TicketVM ticket)
         {
+
+            TempData["New"] = false;
+
             var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
             TempData["Errors"] = errors;
 
@@ -423,6 +452,7 @@ namespace IDS.Controllers
             if (ModelState.IsValid)
             {
                 Ticket newTicket = new Ticket(_context);
+                var medicalHistory = _context.MedicalHistories.Where(m => m.Id == ticket.PatientId).FirstOrDefault();
 
                 // Ticket properties
                 {
@@ -448,28 +478,32 @@ namespace IDS.Controllers
 
                 // medicalHistory properties
 
-                var medicalHistory = new MedicalHistory
-                {
-                    Id = newTicket.TicketId,
 
-                    HeartTrouble = ticket.HeartTrouble,
-                    Hyperttention = ticket.Hyperttention,
-                    Pregnancy = ticket.Pregnancy,
-                    Diabetes = ticket.Diabetes,
-                    Hepatitis = ticket.Hepatitis,
-                    AIDs = ticket.AIDs,
-                    Tuberculosis = ticket.Tuberculosis,
-                    Allergies = ticket.Allergies,
-                    Anemia = ticket.Anemia,
-                    Rheumatism = ticket.Rheumatism,
-                    RadTherapy = ticket.RadTherapy,
-                    Haemophilia = ticket.Haemophilia,
-                    AspirinIntake = ticket.AspirinIntake,
-                    KidneyTroubles = ticket.KidneyTroubles,
-                    Asthma = ticket.Asthma,
-                    HayFever = ticket.HayFever,
-                    MedicalHistoryText = ticket.MedicalHistoryText,
-                };
+                //if (medicalHistory != null)
+                //{
+                //    medicalHistory.HeartTrouble = ticket.HeartTrouble;
+                //    medicalHistory.Hyperttention = ticket.Hyperttention;
+                //    medicalHistory.Pregnancy = ticket.Pregnancy;
+                //    medicalHistory.Diabetes = ticket.Diabetes;
+                //    medicalHistory.Hepatitis = ticket.Hepatitis;
+                //    medicalHistory.AIDs = ticket.AIDs;
+                //    medicalHistory.Tuberculosis = ticket.Tuberculosis;
+                //    medicalHistory.Allergies = ticket.Allergies;
+                //    medicalHistory.Anemia = ticket.Anemia;
+                //    medicalHistory.Rheumatism = ticket.Rheumatism;
+                //    medicalHistory.RadTherapy = ticket.RadTherapy;
+                //    medicalHistory.Haemophilia = ticket.Haemophilia;
+                //    medicalHistory.AspirinIntake = ticket.AspirinIntake;
+                //    medicalHistory.KidneyTroubles = ticket.KidneyTroubles;
+                //    medicalHistory.Asthma = ticket.Asthma;
+                //    medicalHistory.HayFever = ticket.HayFever;
+                //    medicalHistory.MedicalHistoryText = ticket.MedicalHistoryText;
+
+                //    // _context.MedicalHistories.Update(medicalHistory);
+                //    // await _context.SaveChangesAsync();
+                //}
+
+
 
                 // asnan properties
 
@@ -527,7 +561,7 @@ namespace IDS.Controllers
                 };
 
 
-                _context.AddRange(newTicket, referredTo, medicalHistory, asnan, ticketAccountacy);
+                _context.AddRange(newTicket, referredTo, asnan, ticketAccountacy);
                 await _context.SaveChangesAsync();
 
                 TempData["Success"] = "تم تسجيل بيانات المريض بنجاح و تحويل التذكرة لعيادة التشخيص";
@@ -576,8 +610,8 @@ namespace IDS.Controllers
             }
 
             var ticket = await _context.Tickets
-                    .Include(t => t.MedicalHistory)
                     .Include(t => t.Patient)
+                    .ThenInclude(t => t.MedicalHistory)
                     .Include(t => t.ReferredTo)
                     .Include(t => t.Asnan)
                     .Include(t => t.TicketAccountancy)
@@ -615,30 +649,30 @@ namespace IDS.Controllers
                 NextDate = ticket.NextDate,
                 Status = ticket.Status,
                 IsValid = ticket.IsValid,
-                ReceptionEmpName =await _userManager.Users.Where(u => u.Id == ticket.TicketAccountancy.ReceptionEmpId).Select(u => u.FullName).FirstOrDefaultAsync(),
+                ReceptionEmpName = await _userManager.Users.Where(u => u.Id == ticket.TicketAccountancy.ReceptionEmpId).Select(u => u.FullName).FirstOrDefaultAsync(),
 
 
 
 
 
                 // Medical History Properties (Null check added)
-                HeartTrouble = ticket.MedicalHistory?.HeartTrouble ?? false,
-                Hyperttention = ticket.MedicalHistory?.Hyperttention ?? false,
-                Pregnancy = ticket.MedicalHistory?.Pregnancy ?? false,
-                Diabetes = ticket.MedicalHistory?.Diabetes ?? false,
-                Hepatitis = ticket.MedicalHistory.Hepatitis,
-                AIDs = ticket.MedicalHistory?.AIDs ?? false,
-                Tuberculosis = ticket.MedicalHistory?.Tuberculosis ?? false,
-                Allergies = ticket.MedicalHistory?.Allergies ?? false,
-                Anemia = ticket.MedicalHistory?.Anemia ?? false,
-                Rheumatism = ticket.MedicalHistory?.Rheumatism ?? false,
-                RadTherapy = ticket.MedicalHistory?.RadTherapy ?? false,
-                Haemophilia = ticket.MedicalHistory?.Haemophilia ?? false,
-                AspirinIntake = ticket.MedicalHistory?.AspirinIntake ?? false,
-                KidneyTroubles = ticket.MedicalHistory?.KidneyTroubles ?? false,
-                Asthma = ticket.MedicalHistory?.Asthma ?? false,
-                HayFever = ticket.MedicalHistory?.HayFever ?? false,
-                MedicalHistoryText = ticket.MedicalHistory?.MedicalHistoryText ?? "N/A",
+                HeartTrouble = ticket.Patient.MedicalHistory?.HeartTrouble ?? false,
+                Hyperttention = ticket.Patient.MedicalHistory?.Hyperttention ?? false,
+                Pregnancy = ticket.Patient.MedicalHistory?.Pregnancy ?? false,
+                Diabetes = ticket.Patient.MedicalHistory?.Diabetes ?? false,
+                Hepatitis = ticket.Patient.MedicalHistory?.Hepatitis,
+                AIDs = ticket.Patient.MedicalHistory?.AIDs ?? false,
+                Tuberculosis = ticket.Patient.MedicalHistory?.Tuberculosis ?? false,
+                Allergies = ticket.Patient.MedicalHistory?.Allergies ?? false,
+                Anemia = ticket.Patient.MedicalHistory?.Anemia ?? false,
+                Rheumatism = ticket.Patient.MedicalHistory?.Rheumatism ?? false,
+                RadTherapy = ticket.Patient.MedicalHistory?.RadTherapy ?? false,
+                Haemophilia = ticket.Patient.MedicalHistory?.Haemophilia ?? false,
+                AspirinIntake = ticket.Patient.MedicalHistory?.AspirinIntake ?? false,
+                KidneyTroubles = ticket.Patient.MedicalHistory?.KidneyTroubles ?? false,
+                Asthma = ticket.Patient.MedicalHistory?.Asthma ?? false,
+                HayFever = ticket.Patient.MedicalHistory?.HayFever ?? false,
+                MedicalHistoryText = ticket.Patient.MedicalHistory?.MedicalHistoryText ?? "N/A",
 
                 // Referred To Properties (Null check added)
                 Oral = ticket.ReferredTo?.Oral ?? false,
@@ -712,8 +746,8 @@ namespace IDS.Controllers
 
 
             var ticket = await _context.Tickets
-               .Include(t => t.MedicalHistory)
                .Include(t => t.Patient)
+               .ThenInclude(t => t.MedicalHistory)
                .Include(t => t.ReferredTo)
                .Include(t => t.Asnan)
                .FirstOrDefaultAsync(t => t.TicketId == id); // ✅ Use FirstOrDefaultAsync
@@ -746,23 +780,24 @@ namespace IDS.Controllers
 
 
                 // Medical History Properties (Null check added)
-                ticket.MedicalHistory.HeartTrouble = newTicket.HeartTrouble;
-                ticket.MedicalHistory.Hyperttention = newTicket.Hyperttention;
-                ticket.MedicalHistory.Pregnancy = newTicket.Pregnancy;
-                ticket.MedicalHistory.Diabetes = newTicket.Diabetes;
-                ticket.MedicalHistory.Hepatitis = newTicket.Hepatitis;
-                ticket.MedicalHistory.AIDs = newTicket.AIDs;
-                ticket.MedicalHistory.Tuberculosis = newTicket.Tuberculosis;
-                ticket.MedicalHistory.Allergies = newTicket.Allergies;
-                ticket.MedicalHistory.Anemia = newTicket.Anemia;
-                ticket.MedicalHistory.Rheumatism = newTicket.Rheumatism;
-                ticket.MedicalHistory.RadTherapy = newTicket.RadTherapy;
-                ticket.MedicalHistory.Haemophilia = newTicket.Haemophilia;
-                ticket.MedicalHistory.AspirinIntake = newTicket.AspirinIntake;
-                ticket.MedicalHistory.KidneyTroubles = newTicket.KidneyTroubles;
-                ticket.MedicalHistory.Asthma = newTicket.Asthma;
-                ticket.MedicalHistory.HayFever = newTicket.HayFever;
-                ticket.MedicalHistory.MedicalHistoryText = newTicket.MedicalHistoryText ?? "N/A";
+                ticket.Patient.MedicalHistory.HeartTrouble = newTicket.HeartTrouble;
+                ticket.Patient.MedicalHistory.Hyperttention = newTicket.Hyperttention;
+                ticket.Patient.MedicalHistory.Pregnancy = newTicket.Pregnancy;
+                ticket.Patient.MedicalHistory.Diabetes = newTicket.Diabetes;
+                ticket.Patient.MedicalHistory.Hepatitis = newTicket.Hepatitis;
+                ticket.Patient.MedicalHistory.AIDs = newTicket.AIDs;
+                ticket.Patient.MedicalHistory.Tuberculosis = newTicket.Tuberculosis;
+                ticket.Patient.MedicalHistory.Allergies = newTicket.Allergies;
+                ticket.Patient.MedicalHistory.Anemia = newTicket.Anemia;
+                ticket.Patient.MedicalHistory.Rheumatism = newTicket.Rheumatism;
+                ticket.Patient.MedicalHistory.RadTherapy = newTicket.RadTherapy;
+                ticket.Patient.MedicalHistory.Haemophilia = newTicket.Haemophilia;
+                ticket.Patient.MedicalHistory.AspirinIntake = newTicket.AspirinIntake;
+                ticket.Patient.MedicalHistory.KidneyTroubles = newTicket.KidneyTroubles;
+                ticket.Patient.MedicalHistory.Asthma = newTicket.Asthma;
+                ticket.Patient.MedicalHistory.HayFever = newTicket.HayFever;
+                ticket.Patient.MedicalHistory.MedicalHistoryText = newTicket.MedicalHistoryText ?? "N/A";
+
 
                 // Referred To Properties (Null check added)
                 ticket.ReferredTo.Oral = newTicket.Oral;
@@ -846,9 +881,9 @@ namespace IDS.Controllers
         public async Task<IActionResult> Delete(string id)
         {
 
-            var ticket = await _context.Tickets
-        .Include(t => t.MedicalHistory)
+           var ticket = await _context.Tickets
         .Include(t => t.Patient)
+          .ThenInclude(t => t.MedicalHistory)
         .Include(t => t.ReferredTo)
         .Include(t => t.Asnan)
         .FirstOrDefaultAsync(t => t.TicketId == id); // ✅ Use FirstOrDefaultAsync
@@ -856,10 +891,20 @@ namespace IDS.Controllers
             string pId = ticket?.PatientId; // Step 2: Now it's safe to access PatientId
 
 
-            if (!tickets.Select(t => t.TicketId).Contains(id))
+            if (ticket == null)
+            {
+                TempData["Error"] = "فشل الحذف, الرجاء المحاوله مره أخري";
+                return RedirectToAction("ShowPatientProfile", "Patient", new { id = pId });
+
+
+                //  return NotFound();
+            }
+
+
+            if (!_context.Tickets.Select(t => t.TicketId).Contains(id))
             {
 
-                TempData["success"] = "عذرا  هذه التذكره غير موجودة";
+                TempData["Error"] = "عذرا  هذه التذكره غير موجودة";
                 return RedirectToAction("ShowPatientProfile", "Patient", new { id = pId });
 
                 //  return RedirectToAction(nameof(Index));
@@ -867,23 +912,15 @@ namespace IDS.Controllers
 
 
 
-            if (ticket == null)
-            {
-                TempData["success"] = "فشل الحذف, الرجاء المحاوله مره أخري";
-                return RedirectToAction("ShowPatientProfile", "Patient", new { id = pId });
 
-
-                //  return NotFound();
-            }
 
             _context.Tickets.Remove(ticket);
-            _context.SaveChangesAsync();
+         await   _context.SaveChangesAsync();
             TempData["Success"] = "تم حذف التذكرة بنجاح";
             return RedirectToAction("ShowPatientProfile", "Patient", new { id = pId });
 
 
 
         }
-
     }
 }

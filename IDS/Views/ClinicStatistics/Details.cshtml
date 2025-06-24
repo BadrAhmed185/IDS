@@ -1,0 +1,36 @@
+﻿@model dynamic
+
+<h2>📍 Clinic: @Model.ClinicName</h2>
+
+<ul>
+    <li><strong>Number of Patients:</strong> @Model.PatientCount</li>
+    <li><strong>Total Visits:</strong> @Model.VisitCount</li>
+</ul>
+
+<h3>🗣️ Top Complaints</h3>
+<table class="table">
+    <thead><tr><th>Complaint</th><th>Count</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model.TopComplaints)
+        {
+            <tr><td>@item.Complaint</td><td>@item.Count</td></tr>
+        }
+    </tbody>
+</table>
+
+<h3>🩺 Top Diagnoses</h3>
+<table class="table">
+    <thead><tr><th>Diagnosis</th><th>Count</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model.TopDiagnoses)
+        {
+            <tr><td>@item.Diagnosis</td><td>@item.Count</td></tr>
+        }
+
+    </tbody>
+</table>
+<div class="mb-3">
+    <button class="btn btn-secondary" onclick="loadPartialView('/Reports/Index')">
+        🔙 رجوع إلى قائمة الإحصائيات
+    </button>
+</div>

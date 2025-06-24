@@ -101,7 +101,7 @@ namespace IDS.Models
         public DateTime? NextDate { get; set; }
 
         [Display(Name = "يتوجه إالي.")]
-        public string Status { get; set; } = "Reception";
+        public string Status { get; set; } = "1";
 
         [Display(Name = " تذكره صالحه ؟.")]
 

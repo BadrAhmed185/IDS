@@ -66,7 +66,7 @@ namespace IDS.Models
 
         //Second version in the model
         public DateTime? NextDate { get; set; }
-        public string Status { get; set; } = "Reception"; // part of third changes
+        public string Status { get; set; } = "1"; // part of third changes
 
         public bool IsValid { get; set; } = true;
 
@@ -75,7 +75,7 @@ namespace IDS.Models
 
         //Navigation properties
         public Patient Patient { get; set; }
-        public MedicalHistory MedicalHistory { get; set; }
+       // public MedicalHistory MedicalHistory { get; set; }
         public ReferredTo ReferredTo { get; set; }
         public TicketAccountancy TicketAccountancy { get; set; }  // part of third changes
 

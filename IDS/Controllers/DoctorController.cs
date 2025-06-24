@@ -47,7 +47,7 @@ namespace IDS.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpDoctorVm newUser)
         {
-            ViewData["Clinics"] = (new SelectList(_context.Clinics, "Id", "Name"));
+                    ViewData["Clinics"] = (new SelectList(_context.Clinics, "Id", "Name"));
 
 
             ViewBag.Roles = _roleManager.Roles.Select(r => r.Name).ToList();
@@ -91,7 +91,20 @@ namespace IDS.Controllers
                     Address = newUser.Address
                 };
 
+                Console.WriteLine($"UserName: [{newUser.UserName}]");
+
                 IdentityResult result = await _userManager.CreateAsync(userModel, newUser.Password);
+
+                if (!result.Succeeded)
+                {
+                    Console.WriteLine($"UserName: [{newUser.UserName}]");
+
+                    foreach (var error in result.Errors)
+                    {
+                        Console.WriteLine($"Error Code: {error.Code}, Description: {error.Description}");
+                    }
+                }
+
 
 
                 if (result.Succeeded)
@@ -107,6 +120,8 @@ namespace IDS.Controllers
                         Successfulcases = 0
 
                     };
+                    _context.Add(doctor);
+                    _context.SaveChanges();
                     return RedirectToAction("Index", "Admin");
                 }
                 else

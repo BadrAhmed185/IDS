@@ -1,0 +1,13 @@
+﻿@model IEnumerable<IDS.Models.Clinic>
+
+<h2>Select a Clinic</h2>
+<ul>
+    @foreach (var clinic in Model)
+    {
+        <li>
+            <a asp-action="Details" asp-route-id="@clinic.Id">
+                📍 @clinic.Name
+            </a>
+        </li>
+    }
+</ul>

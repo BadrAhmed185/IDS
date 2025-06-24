@@ -9,7 +9,7 @@ namespace IDS.Models
 {
     public class MedicalHistory
     {
-        [Key, ForeignKey("Ticket")]
+        [Key, ForeignKey("Patient")]
         public string Id { get; set; }
 
         //[ForeignKey("Ticket"), Required]
@@ -72,7 +72,7 @@ namespace IDS.Models
 
 
         //Navigation Properties
-        public Ticket Ticket { get; set; }
+        public Patient Patient { get; set; }
 
     }
 }

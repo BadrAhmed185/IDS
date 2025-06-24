@@ -47,6 +47,14 @@ namespace IDS.Models
         [Display(Name = "السن")]
         public int Age { get; set; }
 
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public string? UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public ApplicationUser? User { get; set; }
+
+        public MedicalHistory MedicalHistory { get; set; }
 
         public IEnumerable<Ticket>? Tickets { get; set; }
     }

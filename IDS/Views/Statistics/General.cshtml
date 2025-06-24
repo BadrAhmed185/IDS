@@ -1,0 +1,34 @@
+﻿@model dynamic
+@using System.Globalization
+
+<h2>📊 General Hospital Statistics</h2>
+
+<ul>
+    <li><strong>Total Patients:</strong> @Model.totalPatients</li>
+    <li><strong>Total Visits:</strong> @Model.totalTickets</li>
+    <li><strong>New Patients This Month:</strong> @Model.newPatientsThisMonth</li>
+    <li><strong>Visits This Month:</strong> @Model.visitsThisMonth</li>
+    <li><strong>Average Visits per Patient:</strong> @Model.avgVisitsPerPatient.ToString("0.00", CultureInfo.InvariantCulture)</li>
+</ul>
+
+<h3>🦷 Patients Per Clinic</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Clinic</th><th>Number of Patients</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var clinic in Model.patientsPerClinic)
+        {
+            <tr>
+                <td>@clinic.ClinicName</td>
+                <td>@clinic.PatientCount</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div class="mb-3">
+    <button class="btn btn-secondary" onclick="loadPartialView('/Reports/Index')">
+        🔙 رجوع إلى قائمة الإحصائيات
+    </button>
+</div>

@@ -294,7 +294,7 @@ namespace IDS.Migrations
             modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(14)");
 
                     b.Property<bool>("AIDs")
                         .HasColumnType("bit");
@@ -368,6 +368,9 @@ namespace IDS.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -376,6 +379,9 @@ namespace IDS.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("phoneNumber")
                         .IsRequired()
@@ -388,6 +394,8 @@ namespace IDS.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("PatientId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("patients");
                 });
@@ -676,13 +684,22 @@ namespace IDS.Migrations
 
             modelBuilder.Entity("IDS.Models.MedicalHistory", b =>
                 {
-                    b.HasOne("IDS.Models.Ticket", "Ticket")
+                    b.HasOne("IDS.Models.Patient", "Patient")
                         .WithOne("MedicalHistory")
                         .HasForeignKey("IDS.Models.MedicalHistory", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Ticket");
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("IDS.Models.Patient", b =>
+                {
+                    b.HasOne("IDS.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("IDS.Models.ReferredTo", b =>
@@ -804,15 +821,15 @@ namespace IDS.Migrations
 
             modelBuilder.Entity("IDS.Models.Patient", b =>
                 {
+                    b.Navigation("MedicalHistory")
+                        .IsRequired();
+
                     b.Navigation("Tickets");
                 });
 
             modelBuilder.Entity("IDS.Models.Ticket", b =>
                 {
                     b.Navigation("Asnan")
-                        .IsRequired();
-
-                    b.Navigation("MedicalHistory")
                         .IsRequired();
 
                     b.Navigation("ReferredTo")
