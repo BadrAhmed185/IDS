@@ -23,8 +23,11 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
-    <link rel="stylesheet" href="~/css/Ticket.css">
+    <link rel="stylesheet" href="~/css/Ticket.css" >
     <link href="~/css/Error.css" rel="stylesheet">
+
+    <link href="~/css/Print.css" rel="stylesheet" media="print">
+
 
 
     <script src="~/js/constants.js"></script>
@@ -82,7 +85,7 @@
         }
     </div>
 
-
+<div id="TicketPrint">
     <img src="~/Icons/logo.png" alt="logo">
     <img src="~/Images/assiut.png" alt="assiut" id="assiut">
     <img src="~/Images/teeth.png" alt="teeth" id="teeth">
@@ -94,11 +97,7 @@
 
     <br>
     <br>
-    <br>
-
- @*    <form asp-action="Edit" method="post"> *@
-
-
+  
         <!-- بيانات التذكرة -->
         <table class="date2">
             <tr>
@@ -212,70 +211,67 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
 
 
+    <div class="container4">
+        <h2>Medical History</h2>
+        <table border="1" class="table2">
+            <tr>
+                <td><input asp-for="HeartTrouble" type="checkbox" disabled> Heart trouble</td>
+                <td class="checkbox-row">
+                    <label>Hepatitis</label>
+                    <div class="checkbox-group">
+                        <label> A <input type="checkbox" id="A" disabled></label>
+                        <label> B <input type="checkbox" id="B" disabled></label>
+                        <label> C <input type="checkbox" id="C" disabled></label>
+                    </div>
+                </td>
+
+                <td><input asp-for="Anemia" type="checkbox" disabled> Anemia</td>
+                <td><input asp-for="AspirinIntake" type="checkbox" disabled> Aspirin Intake</td>
+            </tr>
 
 
 
-
-
-        <div class="container4">
-            <h2>Medical History</h2>
-            <table border="1" class="table2">
-                <tr>
-                    <td><input asp-for="HeartTrouble" type="checkbox" disabled> Heart trouble</td>
-                    <td class="checkbox-row">
-                        <label>Hepatitis</label>
-                        <div class="checkbox-group">
-                            <label> A <input type="checkbox" id="A" disabled></label>
-                            <label> B <input type="checkbox" id="B" disabled></label>
-                            <label> C <input type="checkbox" id="C" disabled></label>
-                        </div>
-                    </td>
-                    <td><input asp-for="Anemia" type="checkbox" disabled> Anemia</td>
-        </div>
-        <td><input asp-for="AspirinIntake" type="checkbox" disabled> Aspirin Intake</td>
-        </div>
-        </tr>
-        <tr>
-            <td><input asp-for="Hyperttention" type="checkbox" disabled> Hypertension</td>
-            <td><input asp-for="AIDs" type="checkbox" disabled> AIDs</td>
-            <td><input asp-for="Rheumatism" type="checkbox" disabled> Rheu. Arthritis</td>
-            <td><input asp-for="KidneyTroubles" type="checkbox" disabled> Kidney Troubles</td>
-        </tr>
-        <tr>
-            <td><input asp-for="Pregnancy" type="checkbox" disabled> Pregnancy</td>
-            <td><input asp-for="Tuberculosis" type="checkbox" disabled> Tuberculosis</td>
-            <td><input asp-for="RadTherapy" type="checkbox" disabled> Red. Therapy</td>
-            <td><input asp-for="Asthma" type="checkbox" disabled> Asthma</td>
-        </tr>
-        <tr>
-            <td><input asp-for="Diabetes" type="checkbox" disabled> Diabetes</td>
-            <td><input asp-for="Allergies" type="checkbox" disabled> Allergies</td>
-            <td><input asp-for="Haemophilia" type="checkbox" disabled> Haemophilia</td>
-            <td><input asp-for="HayFever" type="checkbox" disabled> Hay Fever</td>
-        </tr>
+            <tr>
+                <td><input asp-for="Hyperttention" type="checkbox" disabled> Hypertension</td>
+                <td><input asp-for="AIDs" type="checkbox" disabled> AIDs</td>
+                <td><input asp-for="Rheumatism" type="checkbox" disabled> Rheu. Arthritis</td>
+                <td><input asp-for="KidneyTroubles" type="checkbox" disabled> Kidney Troubles</td>
+            </tr>
+            <tr>
+                <td><input asp-for="Pregnancy" type="checkbox" disabled> Pregnancy</td>
+                <td><input asp-for="Tuberculosis" type="checkbox" disabled> Tuberculosis</td>
+                <td><input asp-for="RadTherapy" type="checkbox" disabled> Red. Therapy</td>
+                <td><input asp-for="Asthma" type="checkbox" disabled> Asthma</td>
+            </tr>
+            <tr>
+                <td><input asp-for="Diabetes" type="checkbox" disabled> Diabetes</td>
+                <td><input asp-for="Allergies" type="checkbox" disabled> Allergies</td>
+                <td><input asp-for="Haemophilia" type="checkbox" disabled> Haemophilia</td>
+                <td><input asp-for="HayFever" type="checkbox" disabled> Hay Fever</td>
+            </tr>
         </table>
 
         <label class="text4">Medical History & Present Medication</label>
 
 
         <textarea asp-for="MedicalHistoryText" disabled></textarea>
+    </div>
+        <div class="container5">
+            <label class="text2">:Chief Complaint</label>
+            <textarea class="ChiefComlant" asp-for="ChiefComlant" disabled></textarea>
+            <label class="text3">:Previsional Diagnosis</label>
+            <select id="namesSelect" multiple style="width: 300px;" asp-for="PrevisionalDiagnosis" disabled>
+
+                <option value="Pain">Pin</option>
+                <option value="Swelling">Swelling</option>
+
+            </select>
         </div>
-        <br>
-        <br>
-        <br>
-        <label class="text2">:Chief Complaint</label>
-        <textarea class="ChiefComlant" asp-for="ChiefComlant" disabled></textarea>
-        <label class="text3">:Previsional Diagnosis</label>
-        <select id="namesSelect" multiple style="width: 300px;" asp-for="PrevisionalDiagnosis" disabled>
-
-            <option value="Pain">Pin</option>
-            <option value="Swelling">Swelling</option>
-
-
-        </select>
 
 
         <div class="view-toggle">
@@ -288,170 +284,102 @@
             <div>
                 <button type="button" id="btnReset" class="reset-btn">إعادة ضبط</button>
             </div> *@
-            <div style=" margin-bottom: -5%; margin-top: -20%; text-align: right; margin-right: 3%;">
+            <div style=" margin-bottom: -5%; margin-top: -8%; text-align: right; margin-right: 7%;">
                 <canvas id="canvas" width="650" height="400" style="border:1px solid #ccc; border-radius:4px;">
                 </canvas>
             </div>
-
-
-            <div class="mouth" style="display: none;">
-                @* Upper Right (Quadrant 1) *@
-                <input type="checkbox" asp-for="tooth11" class="tooth-checkbox" id="tooth11" hidden />
-                <input type="checkbox" asp-for="tooth12" class="tooth-checkbox" id="tooth12" hidden />
-                <input type="checkbox" asp-for="tooth13" class="tooth-checkbox" id="tooth13" hidden />
-                <input type="checkbox" asp-for="tooth14" class="tooth-checkbox" id="tooth14" hidden />
-                <input type="checkbox" asp-for="tooth15" class="tooth-checkbox" id="tooth15" hidden />
-                <input type="checkbox" asp-for="tooth16" class="tooth-checkbox" id="tooth16" hidden />
-                <input type="checkbox" asp-for="tooth17" class="tooth-checkbox" id="tooth17" hidden />
-                <input type="checkbox" asp-for="tooth18" class="tooth-checkbox" id="tooth18" hidden />
-
-                @* Upper Left (Quadrant 2) *@
-                <input type="checkbox" asp-for="tooth21" class="tooth-checkbox" id="tooth21" hidden />
-                <input type="checkbox" asp-for="tooth22" class="tooth-checkbox" id="tooth22" hidden />
-                <input type="checkbox" asp-for="tooth23" class="tooth-checkbox" id="tooth23" hidden />
-                <input type="checkbox" asp-for="tooth24" class="tooth-checkbox" id="tooth24" hidden />
-                <input type="checkbox" asp-for="tooth25" class="tooth-checkbox" id="tooth25" hidden />
-                <input type="checkbox" asp-for="tooth26" class="tooth-checkbox" id="tooth26" hidden />
-                <input type="checkbox" asp-for="tooth27" class="tooth-checkbox" id="tooth27" hidden />
-                <input type="checkbox" asp-for="tooth28" class="tooth-checkbox" id="tooth28" hidden />
-
-                @* Lower Left (Quadrant 3) *@
-                <input type="checkbox" asp-for="tooth31" class="tooth-checkbox" id="tooth31" hidden />
-                <input type="checkbox" asp-for="tooth32" class="tooth-checkbox" id="tooth32" hidden />
-                <input type="checkbox" asp-for="tooth33" class="tooth-checkbox" id="tooth33" hidden />
-                <input type="checkbox" asp-for="tooth34" class="tooth-checkbox" id="tooth34" hidden />
-                <input type="checkbox" asp-for="tooth35" class="tooth-checkbox" id="tooth35" hidden />
-                <input type="checkbox" asp-for="tooth36" class="tooth-checkbox" id="tooth36" hidden />
-                <input type="checkbox" asp-for="tooth37" class="tooth-checkbox" id="tooth37" hidden />
-                <input type="checkbox" asp-for="tooth38" class="tooth-checkbox" id="tooth38" hidden />
-
-                @* Lower Right (Quadrant 4) *@
-                <input type="checkbox" asp-for="tooth41" class="tooth-checkbox" id="tooth41" hidden />
-                <input type="checkbox" asp-for="tooth42" class="tooth-checkbox" id="tooth42" hidden />
-                <input type="checkbox" asp-for="tooth43" class="tooth-checkbox" id="tooth43" hidden />
-                <input type="checkbox" asp-for="tooth44" class="tooth-checkbox" id="tooth44" hidden />
-                <input type="checkbox" asp-for="tooth45" class="tooth-checkbox" id="tooth45" hidden />
-                <input type="checkbox" asp-for="tooth46" class="tooth-checkbox" id="tooth46" hidden />
-                <input type="checkbox" asp-for="tooth47" class="tooth-checkbox" id="tooth47" hidden />
-                <input type="checkbox" asp-for="tooth48" class="tooth-checkbox" id="tooth48" hidden />
-
-
-            </div>
-
-
-
-
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const canvas = document.getElementById('canvas');
-                    const engine = new Engine();
-                    engine.setCanvas(canvas);
-                    engine.init();
-
-                         const teethIds = engine.mouth
-                            .map(tooth => tooth.id);
-
-                            let counter = 0;
-                        teethIds.forEach(tooth => {
-                            if(document.getElementById(`tooth${tooth}`).checked)
-                            {
-                              engine.mouth[counter].highlight = engine.settings.COLOR_HIGHLIGHT;
-                              counter++;
-                            }
-                            else
-                            {
-                                counter++;
-                            }
-                        });
-
-
-                    canvas.addEventListener('contextmenu', e => e.preventDefault());
-
-
-                    const btnAdult = document.getElementById('btnAdult');
-                    const btnChild = document.getElementById('btnChild');
-                    const btnReset = document.getElementById('btnReset');
-                    const btnSubmit = document.querySelector('.submit-btn');
-
-                    function activateButton(activeBtn, inactiveBtn) {
-                        activeBtn.classList.add('active');
-                        inactiveBtn.classList.remove('active');
-                    }
-
-                    btnAdult.addEventListener('click', () => {
-                        engine.changeView('0');
-                        activateButton(btnAdult, btnChild);
-                        engine.reset();
-                    });
-
-                    btnChild.addEventListener('click', () => {
-                        engine.changeView('1');
-                        activateButton(btnChild, btnAdult);
-                        engine.reset();
-                    });
-
-                    btnReset.addEventListener('click', () => {
-                        engine.reset();
-                    });
-
-
-                    canvas.addEventListener('mousedown', e => engine.onMouseClick(e));
-                    canvas.addEventListener('mousemove', e => engine.onMouseMove(e));
-                    canvas.addEventListener('click', e => {
-                        const x = engine.getXpos(e);
-                        const y = engine.getYpos(e);
-                        engine.mouth.forEach(tooth => {
-                            if (tooth.checkCollision(x, y)) {
-                                const sel = !tooth.highlight;
-                                tooth.toggleSelected(sel);
-                                if (sel) tooth.highlightColor = engine.settings.COLOR_HIGHLIGHT;
-                            }
-                        });
-                        engine.update();
-                    });
-
-                    btnSubmit.addEventListener('click', () => {
-                        const selectedIds = engine.mouth
-                            .filter(tooth => tooth.highlight)
-                            .map(tooth => tooth.id);
-
-                        selectedIds.forEach(teeth => {
-                            document.getElementById(`tooth${teeth}`).checked = true;
-
-
-                        });
-
-                        // alert('Selected teeth: ' + (selectedIds.length ? selectedIds.join(', ') : 'None'));
-                    });
-                });
-            </script>
-
-
-
-
-            <!-- روابط مكتبات الجيكويري و Select2 -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-            <script>
-                $(document).ready(function () {
-                    $('#namesSelect').select2({
-                        placeholder: "اختر التشخيص",
-                        allowClear: true,
-                        closeOnSelect: false, // ميخليش القائمة تقفل كل مرة تختار اسم
-                        tags: true              // هنا فعلت خاصية إضافة أسماء جديدة من المستخدم
-                    });
-                });
-            </script>
-
-
+        </div>
+</div>
             <!-- زر الإرسال -->
             <div class="submit-container">
-                <a asp-action="Index" style="text-decoration: none" class="submit-btn">رجوع</a>
+
+               @if(User.IsInRole("Reception"))
+               {
+                <button onclick="downloadPDF()" style="text-decoration: none" class="submit-btn">طباعه</button>
+               }
+                <a  href="javascript:history.back()" style="text-decoration: none" class="submit-btn">رجوع</a>
             </div>
 
-@*     </form> *@
+    <div class="mouth" style="display: none;">
+        @* Upper Right (Quadrant 1) *@
+        <input type="checkbox" asp-for="tooth11" class="tooth-checkbox" id="tooth11" hidden />
+        <input type="checkbox" asp-for="tooth12" class="tooth-checkbox" id="tooth12" hidden />
+        <input type="checkbox" asp-for="tooth13" class="tooth-checkbox" id="tooth13" hidden />
+        <input type="checkbox" asp-for="tooth14" class="tooth-checkbox" id="tooth14" hidden />
+        <input type="checkbox" asp-for="tooth15" class="tooth-checkbox" id="tooth15" hidden />
+        <input type="checkbox" asp-for="tooth16" class="tooth-checkbox" id="tooth16" hidden />
+        <input type="checkbox" asp-for="tooth17" class="tooth-checkbox" id="tooth17" hidden />
+        <input type="checkbox" asp-for="tooth18" class="tooth-checkbox" id="tooth18" hidden />
+
+        @* Upper Left (Quadrant 2) *@
+        <input type="checkbox" asp-for="tooth21" class="tooth-checkbox" id="tooth21" hidden />
+        <input type="checkbox" asp-for="tooth22" class="tooth-checkbox" id="tooth22" hidden />
+        <input type="checkbox" asp-for="tooth23" class="tooth-checkbox" id="tooth23" hidden />
+        <input type="checkbox" asp-for="tooth24" class="tooth-checkbox" id="tooth24" hidden />
+        <input type="checkbox" asp-for="tooth25" class="tooth-checkbox" id="tooth25" hidden />
+        <input type="checkbox" asp-for="tooth26" class="tooth-checkbox" id="tooth26" hidden />
+        <input type="checkbox" asp-for="tooth27" class="tooth-checkbox" id="tooth27" hidden />
+        <input type="checkbox" asp-for="tooth28" class="tooth-checkbox" id="tooth28" hidden />
+
+        @* Lower Left (Quadrant 3) *@
+        <input type="checkbox" asp-for="tooth31" class="tooth-checkbox" id="tooth31" hidden />
+        <input type="checkbox" asp-for="tooth32" class="tooth-checkbox" id="tooth32" hidden />
+        <input type="checkbox" asp-for="tooth33" class="tooth-checkbox" id="tooth33" hidden />
+        <input type="checkbox" asp-for="tooth34" class="tooth-checkbox" id="tooth34" hidden />
+        <input type="checkbox" asp-for="tooth35" class="tooth-checkbox" id="tooth35" hidden />
+        <input type="checkbox" asp-for="tooth36" class="tooth-checkbox" id="tooth36" hidden />
+        <input type="checkbox" asp-for="tooth37" class="tooth-checkbox" id="tooth37" hidden />
+        <input type="checkbox" asp-for="tooth38" class="tooth-checkbox" id="tooth38" hidden />
+
+        @* Lower Right (Quadrant 4) *@
+        <input type="checkbox" asp-for="tooth41" class="tooth-checkbox" id="tooth41" hidden />
+        <input type="checkbox" asp-for="tooth42" class="tooth-checkbox" id="tooth42" hidden />
+        <input type="checkbox" asp-for="tooth43" class="tooth-checkbox" id="tooth43" hidden />
+        <input type="checkbox" asp-for="tooth44" class="tooth-checkbox" id="tooth44" hidden />
+        <input type="checkbox" asp-for="tooth45" class="tooth-checkbox" id="tooth45" hidden />
+        <input type="checkbox" asp-for="tooth46" class="tooth-checkbox" id="tooth46" hidden />
+        <input type="checkbox" asp-for="tooth47" class="tooth-checkbox" id="tooth47" hidden />
+        <input type="checkbox" asp-for="tooth48" class="tooth-checkbox" id="tooth48" hidden />
+
+
+    </div>
+
+        <script src="~/js/Canvas.js"></script>
+
+        <!-- روابط مكتبات الجيكويري و Select2 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#namesSelect').select2({
+                    placeholder: "اختر التشخيص",
+                    allowClear: true,
+                    closeOnSelect: false, // ميخليش القائمة تقفل كل مرة تختار اسم
+                    tags: true              // هنا فعلت خاصية إضافة أسماء جديدة من المستخدم
+                });
+            });
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('TicketPrint');
+
+            html2pdf().set({
+                margin: [10, 10, 10, 10], // top, left, bottom, right in mm
+                filename: 'ticket.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    scrollY: 0 // Avoid scrolling issue
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            }).from(element).save();
+        }
+    </script>
 
 
 

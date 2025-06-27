@@ -82,21 +82,22 @@
                 </div>
 
                 <!-- التقارير-->
-                <div class="col">
+
+    @*             <div class="col">
                     <div class="feature-box clickable" data-controller="Reports" data-action="Index">
                         <i class="fa-solid fa-chart-line icon"></i>
                         <h3>التقارير</h3>
                         <p>عرض التقارير والإحصائيات</p>
                     </div>
-                </div>
+                </div> *@
 
                 <!-- بحث عن تذكرة -->
                 <div class="col">
-                    <div class="feature-box form-type" data-controller="Reception" data-action="ShowFullTicket">
+                    <div class="feature-box form-type" data-controller="Reception" data-action="DisplayTicket">
                         <i class="fa-solid fa-search icon"></i>
                         <h3>طباعة تذكرة</h3>
                         <p>من هنا يمكنك عرض  و طباعة بيانات التذكرة</p>
-                        <form asp-action="ShowFullTicket" method="post">
+                        <form asp-action="DisplayTicket" method="get">
                             <input type="text" name="id" class="form-control mb-2" placeholder="رقم التذكرة" required>
                             <button type="submit" class="btn btn-dark w-100">إرسال</button>
                         </form>

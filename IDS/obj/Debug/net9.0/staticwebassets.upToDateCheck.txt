@@ -20,6 +20,7 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\CloseErrorMessage.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\jquery\LICENSE.txt
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
@@ -47,6 +48,7 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\UserSearchHandle
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\Role.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\Print.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\constants.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
@@ -90,6 +92,7 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\rect.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\jquery\dist\jquery.slim.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\Canvas.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\jquery\dist\jquery.min.map
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\styleLogin&SignUp.css
 wwwroot\css\AddEmployee.css
@@ -105,6 +108,7 @@ wwwroot\css\IndexForDicts.css
 wwwroot\css\LogIn.css
 wwwroot\css\PatientProfile.css
 wwwroot\css\popup.css
+wwwroot\css\Print.css
 wwwroot\css\Reception.css
 wwwroot\css\ReceptionTicket.css
 wwwroot\css\Role.css
@@ -179,6 +183,8 @@ wwwroot\Images\logo.png
 wwwroot\Images\teeth.png
 wwwroot\Images\tooth.png
 wwwroot\js\AddEntityPopUp.js
+wwwroot\js\Canvas.js
+wwwroot\js\CloseErrorMessage.js
 wwwroot\js\collisionHandler.js
 wwwroot\js\constants.js
 wwwroot\js\engine.js

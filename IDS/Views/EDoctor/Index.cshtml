@@ -1,0 +1,225 @@
+﻿@model IEnumerable<IDS.Models.Ticket>
+
+@{
+    ViewData["Title"] = "EDoctor page";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ًصفحة طبيب إمتياز</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="~/css/CPresident.css">
+    <link rel="stylesheet" href="~/css/Error.css">
+
+</head>
+<body>
+
+    <!-- Success Container -->
+    <div class="success-container" id="successContainer">
+        @if (TempData["Success"] != null)
+        {
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <div class="success-content">
+                    <div class="success-title">Done.</div>
+                    <div class="success-details">@TempData["Success"]</div>
+                    @*                     <div class="success-details">رقم التذكرة : @TempData["TicketId"]</div> *@
+
+                </div>
+                <button class="close-btn" onclick="closeMessage(this)">×</button>
+            </div>
+        }
+    </div>
+
+    <!-- Error Container -->
+    <div class="error-container" id="errorContainer">
+        @if (TempData["Error"] != null)
+        {
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="error-content">
+                    <div class="error-title">Error</div>
+                    <div class="error-details">@TempData["Error"]</div>
+                </div>
+                <button class="close-btn" onclick="closeMessage(this)">×</button>
+            </div>
+        }
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="~/images/logo.png" alt="شعار العيادة" class="logo-img">
+                </div>
+                <div class="header-text">
+                    <h1>مرحبًا بكم</h1>
+                    <h2>ملف الحالات الطبية</h2>
+                    <p>د/@User.FindFirst("DocName")?.Value</p>
+                </div>
+
+                <div class="search-container">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="ابحث باسم المريض أو رقم المذكرة..." class="search-input">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="Navs">
+                    <a asp-action="" class="btn custom-hover" style="text-decoration: none;">
+                        إحصائيات العيادة
+                    </a>
+
+
+                    <a asp-action="SignOut" asp-controller="Auth" class="btn custom-hover" style="text-decoration: none;">
+                        خروج
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>رقم التذكرة</th>
+                        <th>تاريخ الزيارة</th>
+                        <th>اسم المريض</th>
+                        <th>رقم الهاتف</th>
+                        <th>حالة التذكرة</th>
+                        <th>تاريخ الزيارة القادمة</th>
+
+                        <th class="actions-header">الإجراءات</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var entity in Model)
+                    {
+                        <tr>
+
+                            <td>@entity.TicketId</td>
+                            <td>@entity.AppointmentDate</td>
+                            <td>@entity.Patient.Name</td>
+                            <td>@entity.Patient.phoneNumber</td>
+                            <td>@(entity.LevelOfCompletness ?? "جديد")</td>
+                            <td>@(entity.NextDate.HasValue ? entity.NextDate.Value.ToString("yyyy-MM-dd") : "لم يحدد بعد")</td>
+                  @*           <td class="doctor-select">
+                                <form asp-action="AssignDoctor" asp-asp-controller="ClinicPresident" asp-route-id="@entity.TicketId" method="post">
+
+
+                                    <select class="doctor-select" name="docId" asp-items="@ViewBag.Doctors">
+                                        <option value="dr2">إختر الطبيب المناسب</option>
+                                    </select>
+                                    <button type="submit" class="action-link view"><i class="fas fa-eye"></i>إرسال للطبيب</button>
+
+                                </form>
+
+                            </td> *@
+
+                            <td class="actions">
+
+                                <a class="action-link view" asp-action="Edit" asp-Controller="@ViewBag.ControllerName" asp-route-id="@entity.TicketId"><i class="fas fa-eye"></i>فحص</a>
+                                <a class="action-link view" asp-action="ShowPatientProfile" asp-Controller="@ViewBag.ControllerName" asp-route-id="@entity.Patient.PatientId"><i class="fas fa-eye"></i>عرض ملف المريض</a>
+
+                                <button type="button" class="action-link view" data-bs-toggle="modal" data-bs-target="#myModalEdit_@entity.TicketId">
+                                    تحديد موعد زيارة
+                                </button>
+
+                                <div class="modal fade" id="myModalEdit_@entity.TicketId" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="PopUpDiv">
+                                                    <form asp-controller="@ViewBag.controllerName" asp-action="ChangeNextDate" asp-route-id="@entity.TicketId" method="post">
+                                                        <input type="hidden" asp-for="@entity.TicketId" />
+
+                                                        <div class="mb-3">
+                                                            <h4>تحديد موعد زيارة قادمة</h4>
+
+                                                            <label class="form-label">إختر التاريخ</label>
+                                                           <input type="date" class="form-control" id="date" name="Date" required />
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary btn-block btn-submit but">حفظ</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button style=" margin-left : auto;" type="button" class="btn btn-dark" data-bs-dismiss="modal">رجوع</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="action-link view" data-bs-toggle="modal" data-bs-target="#myModalEdit2_@entity.TicketId">
+                                      تعديل حالة التذكرة
+                                </button>
+
+                                <div class="modal fade" id="myModalEdit2_@entity.TicketId" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="PopUpDiv">
+                                                    <form asp-controller="@ViewBag.controllerName" asp-action="ChangeLevelOfCompletness" asp-route-id="@entity.TicketId" method="post">
+                                                        <input type="hidden" asp-for="@entity.TicketId" />
+
+                                                        <div class="mb-3">
+                                                            <h4>تعديل حالة التذكرة</h4>
+                                                            <label class="form-label">إسم المريض</label>
+                                                            <select name="LevelOfCompletionParameter" id="LevelOfCompletionParameter" class="status-select plain">
+                                                                <option value="new">جديد</option>
+                                                                <option value="follow-up">في مرحلة العلاج</option>
+                                                                <option value="DidNotAttend">المريض لم يحضر الجلسة</option>
+                                                                <option value="completed">تم العلاج بالكامل</option>
+                                                            </select>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary btn-block btn-submit but">حفظ</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button style=" margin-left : auto;" type="button" class="btn btn-dark" data-bs-dismiss="modal">رجوع</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>جميع الحقوق محفوظة 2025 © فريق تطوير نظام "IDS"</p>
+        </div>
+    </div>
+
+    <script src="~/js/CloseErrorMessage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

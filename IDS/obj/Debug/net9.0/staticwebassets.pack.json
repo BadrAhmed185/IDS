@@ -305,6 +305,10 @@
       "PackagePath": "staticwebassets\\css\\PatientProfile.css"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\Print.css",
+      "PackagePath": "staticwebassets\\css\\Print.css"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\Reception.css",
       "PackagePath": "staticwebassets\\css\\Reception.css"
     },
@@ -351,6 +355,14 @@
     {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\AddEntityPopUp.js",
       "PackagePath": "staticwebassets\\js\\AddEntityPopUp.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\Canvas.js",
+      "PackagePath": "staticwebassets\\js\\Canvas.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\CloseErrorMessage.js",
+      "PackagePath": "staticwebassets\\js\\CloseErrorMessage.js"
     },
     {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\Teicket.js",

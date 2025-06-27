@@ -45,16 +45,20 @@ namespace IDS.Controllers
             return View();
         }
 
+        [HttpGet]
+
         public async Task<IActionResult> DisplayTicket(string id)
         {
-            TempData["New"] = false;
+            // TempData["New"] = false;
+            ViewBag.controllerName = "Diagnosis";
+
 
             if (id == null)
             {
                 return NotFound();
             }
 
-            if (!tickets.Select(t => t.TicketId).Contains(id))
+            if (!_context.Tickets.Select(t => t.TicketId).Contains(id))
             {
                 TempData["Error"] = "عذرا , هذه التذكره غير موجوده";
                 return RedirectToAction(nameof(Index));
@@ -132,6 +136,7 @@ namespace IDS.Controllers
             var ticketVm = new TicketVM
             {
                 // Ticket Properties
+                TicketID = ticket.TicketId,
                 PatientId = ticket.PatientId,
                 AppointmentDate = ticket.AppointmentDate,
                 ChiefComlant = ticket.ChiefComlant,
@@ -221,6 +226,7 @@ namespace IDS.Controllers
 
             return View(ticketVm);
         }
+
 
 
 

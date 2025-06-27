@@ -1,0 +1,51 @@
+﻿
+/* Force page break rules */
+#TicketPrint {
+    width: 210mm; /* A4 Width */
+    min-height: 297mm; /* A4 Height */
+    padding: 20px;
+    margin: auto;
+    background: white;
+    color: black;
+    overflow: visible;
+}
+
+/* Prevent canvas and images from breaking */
+canvas, img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Avoid page-break inside important containers */
+.container2, .container3, .container4, .container5 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Avoid extra spacing issues */
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+/* Hide buttons when printing */
+.submit-container {
+    display: none;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #TicketPrint, #TicketPrint * {
+        visibility: visible;
+    }
+
+    #TicketPrint {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

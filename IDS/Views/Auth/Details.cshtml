@@ -32,9 +32,15 @@
 
     <header>
 
-        <div class="auth-buttons">
-            <a asp-controller="Auth" asp-action="SignUp" class="sign-up">تسجيل مستخدم جديد</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="auth-buttons">
+                <a asp-controller="Auth" asp-action="SignUp" class="sign-up">تسجيل مستخدم جديد</a>
 
+                <a href="#" onclick="document.getElementById('redirectForm').submit();" class="sign-up">
+                    العودة إلى قائمة المستخدمين
+                </a>
+            </div>
 
             <!-- classic way to return to index and to specific partial view-->
             <!-- <a asp-controller="Admin" asp-action="Index" asp-route-load="Auth/ShowAll" class="sign-up">العوده الي قائمه المستخدمين</a> !-->
@@ -43,14 +49,7 @@
             <form style="position : absolute;" id="redirectForm" method="post" asp-controller="Admin" asp-action="Index">
                 <input type="hidden" name="load" value="Auth/ShowAll" />
             </form>
-
-            <a href="#" onclick="document.getElementById('redirectForm').submit();" class="sign-up">
-                العودة إلى قائمة المستخدمين
-            </a>
-
-
-
-        </div>
+        }
 
         <div class="auth-buttons">
             <a asp-controller="Auth" asp-action="SignOut" class="sign-out">تسجيل الخروج</a>
@@ -118,9 +117,19 @@
                             <input type="hidden" name="load" value="Auth/ShowAll" />
                         </form>
 
+                    @if (User.IsInRole("Admin"))
+                    {
                         <a href="#" onclick="document.getElementById('redirectForm').submit();" class="btn btn-primary" style="text-decoration : none; width : 30%;">
                             العودة إلى قائمة المستخدمين
                         </a>
+                    }
+                    else
+                    {
+                        <a href="javascript:history.back()" class="btn btn-primary" style="text-decoration : none; width : 30%;">
+                            الرجوع
+                        </a>
+                    }
+
 
 
 

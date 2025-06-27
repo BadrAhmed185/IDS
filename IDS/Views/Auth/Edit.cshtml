@@ -16,49 +16,45 @@
 
     <link href="~/css/AddEmployee.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
+    <style>
 
 
         header {
-            margin-top: 10px;
-            background : none;
+        margin-top: 10px;
+        background : none;
         }
-</style>
+    </style>
 
 
 </head>
 
 <body style="font-family: 'Noto Sans Arabic', sans-serif;">
 
+
+
     <header>
 
-        <div class="auth-buttons">
-            <a asp-controller="Auth" asp-action="SignUp" class="sign-up">تسجيل مستخدم جديد</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="auth-buttons">
+                <a asp-controller="Auth" asp-action="SignUp" class="sign-up">تسجيل مستخدم جديد</a>
 
+                <a href="#" onclick="document.getElementById('redirectForm').submit();" class="sign-up">
+                    العودة إلى قائمة المستخدمين
+                </a>
+            </div>
 
             <!-- classic way to return to index and to specific partial view-->
             <!-- <a asp-controller="Admin" asp-action="Index" asp-route-load="Auth/ShowAll" class="sign-up">العوده الي قائمه المستخدمين</a> !-->
-
-
-
             <!-- More efficient way to return to index and to specific partial view-->
             <!--   hidden form  -->
             <form style="position : absolute;" id="redirectForm" method="post" asp-controller="Admin" asp-action="Index">
                 <input type="hidden" name="load" value="Auth/ShowAll" />
             </form>
-
-            <a href="#" onclick="document.getElementById('redirectForm').submit();" class="sign-up">
-                العودة إلى قائمة المستخدمين
-            </a>
-
-
-
-        </div>
-        
-
+        }
         <div class="auth-buttons">
             <a asp-controller="Auth" asp-action="SignOut" class="sign-out">تسجيل الخروج</a>
-          
+
         </div>
     </header>
     <div class="container">
@@ -85,7 +81,7 @@
                             <span asp-validation-for="NationalId" class="text-danger" id="NationalIdSpan"></span>
                         </div>
 
-               
+
 
                         <div class="col-md-4 mb-3 position-relative">
                             <label  class="form-label">الإيميل</label>
@@ -105,21 +101,25 @@
                             <span asp-validation-for="Address" class="text-danger" id="AddressSpan"></span>
                         </div>
 
-                        <div class="col-md-4 mb-3 position-relative">
-                            <label asp-for="Role" class="form-label"></label>
-              
-                            <select class="form-control" asp-for="Role">
-                                @foreach (var role in ViewBag.Roles)
-                                {
-                                    <option value="@role">@role</option>
-                                }
-                            </select>
-                            <span asp-validation-for="Role" class="text-danger" id="RoleSpan"></span>
-                        </div>
+                        @if(User.IsInRole("Admin"))
+                        {
+                            <div class="col-md-4 mb-3 position-relative">
+                                <label asp-for="Role" class="form-label"></label>
+
+                                <select class="form-control" asp-for="Role">
+                                    @foreach (var role in ViewBag.Roles)
+                                    {
+                                        <option value="@role">@role</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="Role" class="text-danger" id="RoleSpan"></span>
+                            </div>
+                        }
+
                     </div>
 
                     <div class="d-grid">
-                        
+
                     </div>
 
                     <div class="submit-container d-flex links">
@@ -129,11 +129,18 @@
                             <input type="hidden" name="load" value="Auth/ShowAll" />
                         </form>
 
-                        <a href="#" onclick="document.getElementById('redirectForm').submit();" class="btn btn-primary" style="text-decoration : none; width : 30%;">
-                            العودة إلى قائمة المستخدمين
-                        </a>
-
-                     
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a href="#" onclick="document.getElementById('redirectForm').submit();" class="btn btn-primary" style="text-decoration : none; width : 30%;">
+                                العودة إلى قائمة المستخدمين
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="javascript:history.back()" class="btn btn-primary" style="text-decoration : none; width : 30%;">
+                                الرجوع
+                            </a>
+                        }
 
                     </div>
                 </form>

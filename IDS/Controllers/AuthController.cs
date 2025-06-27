@@ -9,6 +9,8 @@ using System.Net.NetworkInformation;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using DocumentFormat.OpenXml.Vml;
+using Microsoft.CodeAnalysis;
 
 namespace IDS.Controllers
 {
@@ -207,6 +209,18 @@ namespace IDS.Controllers
                         {
                             return RedirectToAction("Index", "Reception");
                         }
+                        else if (userModel.Role == "Diagnosis-Nurse")
+                        {
+                            claims.Add(new Claim("DocName", userModel.FullName));
+                            claims.Add(new Claim("DocId", userModel.Id));
+                            await _signInManager.SignInWithClaimsAsync(userModel, new AuthenticationProperties
+                            {
+                                IsPersistent = false, // Ensures session-based authentication
+                                AllowRefresh = true // Allows the session to be refreshed while the browser is open
+                            }, claims);
+                            return RedirectToAction("Index", "DiagnosisNurse");
+                        }
+                      
                         else if (userModel.Role == "Diagnosis-Doc")
                         {
                             return RedirectToAction("Index", "Diagnosis");
@@ -214,7 +228,8 @@ namespace IDS.Controllers
                         else if (userModel.Role == "CPresident")
                         {
                             var clinic = await _context.Clinics.Where(d => d.Supervisor == userModel.Id).FirstOrDefaultAsync();
-                       
+
+
 
                             claims.Add(new Claim("ClinicName", clinic.Name));
                             claims.Add(new Claim("ClinicId", clinic.Id.ToString()));
@@ -232,6 +247,32 @@ namespace IDS.Controllers
 
                             return RedirectToAction("Index", "ClinicPresident");
                         }
+
+                        else if (userModel.Role == "EDoctor")
+                        {
+
+                            var doctor = await _context.Doctors.Where(d => d.Id == userModel.Id).FirstOrDefaultAsync();
+                            var clinic = await _context.Clinics.Where(d => d.Id == doctor.ClinicId).FirstOrDefaultAsync();
+                       
+
+                            claims.Add(new Claim("ClinicName", clinic.Name));
+                            claims.Add(new Claim("ClinicId", clinic.Id.ToString()));
+                         
+                            claims.Add(new Claim("DocName", userModel.FullName));
+                            claims.Add(new Claim("DocId", userModel.Id));
+
+
+                            //  Ending the Cookie Making proccess
+                            await _signInManager.SignInWithClaimsAsync(userModel, new AuthenticationProperties
+                            {
+                                IsPersistent = false, // Ensures session-based authentication
+                                AllowRefresh = true // Allows the session to be refreshed while the browser is open
+                            }, claims);
+
+                            return RedirectToAction("Index", "EDoctor");
+                        }
+
+
 
                         
                         else

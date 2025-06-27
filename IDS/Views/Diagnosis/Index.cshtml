@@ -30,7 +30,7 @@
                 <div class="success-content">
                     <div class="success-title">Done.</div>
                     <div class="success-details">@TempData["Success"]</div>
-                    <div class="success-details">رقم التذكرة : @TempData["TicketId"]</div>
+@*                     <div class="success-details">رقم التذكرة : @TempData["TicketId"]</div> *@
 
                 </div>
                 <button class="close-btn" onclick="closeMessage(this)">×</button>
@@ -89,6 +89,14 @@
                             </form>
                         </div>
                     </div>
+
+                <div class="col">
+                    <div class="feature-box clickable" data-controller="Auth" data-action="Details">
+                        <i class="fa-solid fa-user-cog icon"></i>
+                        <h3>حسابي</h3>
+                        <p>عرض الحساب الشخصي</p>
+                    </div>
+                </div>
                 <!--  تذكره لزائر جديد-->
                 </div>
             </div>

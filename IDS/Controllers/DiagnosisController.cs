@@ -9,10 +9,10 @@ namespace IDS.Controllers
     public class DiagnosisController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly IEnumerable<Ticket> tickets;
+      //  private readonly IEnumerable<Ticket> tickets;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IEnumerable<Patient> Patients;
-        private readonly IEnumerable<string> PatientsIds;
+        //private readonly IEnumerable<Patient> Patients;
+       // private readonly IEnumerable<string> PatientsIds;
 
 
 
@@ -23,9 +23,9 @@ namespace IDS.Controllers
         public DiagnosisController(UserManager<ApplicationUser> userManager, AppDbContext context)
         {
             _context = context;
-            Patients = _context.patients.ToList();
-            PatientsIds = Patients.Select(p => p.PatientId).ToList();
-            tickets = _context.Tickets.ToList();
+           // Patients = _context.patients.ToList();
+         //   PatientsIds = Patients.Select(p => p.PatientId).ToList();
+          //  tickets = _context.Tickets.ToList();
             // tickets = _context.Tickets.ToList();
             _userManager = userManager;
 
@@ -36,6 +36,8 @@ namespace IDS.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.controllerName = "Diagnosis";
+
             return View();
 
 
@@ -44,12 +46,15 @@ namespace IDS.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
+            ViewBag.controllerName = "Diagnosis";
+
             if (id == null)
             {
                 return NotFound();
             }
 
             var ticket = await _context.Tickets
+                    .Where(t => t.Status == "2")
                     .Include(t => t.Patient)
                     .ThenInclude(t => t.MedicalHistory)
                     .Include(t => t.ReferredTo)
@@ -178,6 +183,8 @@ namespace IDS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(TicketVM newTicket)
         {
+            ViewBag.controllerName = "Diagnosis";
+
 
             foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
             {
@@ -216,7 +223,7 @@ namespace IDS.Controllers
                 ticket.ChiefComlant = newTicket.ChiefComlant;
                 ticket.PrevisionalDiagnosis = newTicket.PrevisionalDiagnosis;
               //  ticket.NextDate = newTicket.NextDate;
-              //  ticket.Status = newTicket.Status;
+               ticket.Status = "3";
                // ticket.IsValid = newTicket.IsValid;
 
 
@@ -306,7 +313,7 @@ namespace IDS.Controllers
 
                 //  _context.Update(ticket);
                 await _context.SaveChangesAsync();
-                TempData["success"] = "تم حفظ البيانات بنجاح";
+               // TempData["success"] = "تم حفظ البيانات بنجاح";
                 TempData["success"] = "تم حفظ البيانات بنجاح و تحويل التذكرة للعيادة المختصه";
 
              //   var referer = Request.Headers["Referer"].ToString();
@@ -325,7 +332,8 @@ namespace IDS.Controllers
 
         public async Task<IActionResult> ShowPatientProfile(string id)
         {
-            ViewBag.controllerName = "Ticket";
+            ViewBag.controllerName = "Diagnosis";
+
             ViewBag.entity = "تذكرة";
             ViewBag.theEntity = "التذكرة";
             ViewBag.pluralEntity = "تذاكر";
@@ -337,7 +345,7 @@ namespace IDS.Controllers
                 return NotFound();
             }
 
-            if (!Patients.Select(t => t.PatientId).Contains(id))
+            if (!_context.patients.Select(t => t.PatientId).Contains(id))
             {
                 TempData["Error"] = "عذرا , هذا المريض غير موجود";
                 return RedirectToAction(nameof(Index));
@@ -366,14 +374,16 @@ namespace IDS.Controllers
 
         public async Task<IActionResult> DisplayTicket(string id)
         {
-            TempData["New"] = false;
+           // TempData["New"] = false;
+            ViewBag.controllerName = "Diagnosis";
+
 
             if (id == null)
             {
                 return NotFound();
             }
 
-            if (!tickets.Select(t => t.TicketId).Contains(id))
+            if (!_context.Tickets.Select(t => t.TicketId).Contains(id))
             {
                 TempData["Error"] = "عذرا , هذه التذكره غير موجوده";
                 return RedirectToAction(nameof(Index));

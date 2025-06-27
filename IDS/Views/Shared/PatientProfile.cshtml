@@ -157,7 +157,7 @@
 
 
                             <td>
-                                <a asp-controller="Diagnosis" asp-action="DisplayTicket" asp-route-id=@ticket.TicketId class="btn btn-warning btn-sm action-btn edit-btn">عرض</a>
+                                <a asp-controller="@ViewBag.ControllerName" asp-action="DisplayTicket" asp-route-id=@ticket.TicketId class="btn btn-warning btn-sm action-btn edit-btn">عرض</a>
                             </td>
                         </tr>
                     }
@@ -177,7 +177,7 @@
                 <input type="hidden" name="load" value="Patient/ShowAll" />
             </form>
 
-            <a  asp-action="Index" class="btn btn-primary send-btn">
+            <a  href="javascript:history.back()" class="btn btn-primary send-btn">
                 العودة
             </a>    
         </div>
