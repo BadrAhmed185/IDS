@@ -1,0 +1,106 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    direction: rtl;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .main h1 {
+        color: white;
+        font-size: 38px;
+        margin-top: 5px;
+        text-shadow: 1px 1px 3px #000;
+        text-align: center;
+        margin-right: 40px;
+    }
+
+.cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgba(0, 73, 87, 0.8);
+    padding: 30px;
+    border-radius: 16px;
+    width: 350px;
+    height: 280px;
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 130px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+    .card:hover {
+        background-color: rgba(0, 73, 87, 0.95);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+
+    .card img {
+        width: 60px;
+        margin-bottom: 15px;
+        text-align:center;
+        margin-right: 110px;
+    }
+
+    .card h2 {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+.content-section {
+    display: none;
+    width: 100%;
+}
+
+    .content-section.active {
+        display: block;
+    }
+
+.nav-item {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    background: none;
+    border: none;
+    color: white;
+    text-align: right;
+    font-size: 22px;
+    font-weight:bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}

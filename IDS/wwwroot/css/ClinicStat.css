@@ -1,0 +1,309 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    direction: rtl;
+    background-color: #f7f7f7;
+}
+
+/* ----------------------- */
+/*  الحاوية الأساسية */
+/* ----------------------- */
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(252, 244, 244);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px 20px;
+}
+
+/* ----------------------- */
+/* الهيدر */
+/* ----------------------- */
+header {
+    background-color: #1d5dbf;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-wrapper {
+    margin-right: 0;
+    margin-left: 100px;
+}
+
+.logo-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.head-text {
+    text-align: right;
+    margin-right: 20px;
+}
+
+    .head-text h1 {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .head-text p {
+        font-size: 13px;
+        color: #e0e0e0;
+    }
+
+/* ----------------------- */
+/*  الفلاتر والتواريخ */
+/* ----------------------- */
+.filter-controls {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-type {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+    .stat-type label {
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+.stat-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+    .stat-btn.active {
+        background-color: rgb(85, 172, 88);
+        color: white;
+        font-weight: bold;
+    }
+
+.view-btn {
+    background-color: #1d5dbf;
+    color: white;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+}
+
+    .view-btn:hover {
+        background-color: #164aa8;
+        transform: translateY(-2px);
+    }
+
+.date-selectors {
+    display: flex;
+    gap: 12px;
+    width: 40%;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+
+    .date-selectors select,
+    .date-selectors input {
+        padding: 5px 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        height: 34px;
+        width: 50%;
+    }
+
+/* ----------------------- */
+/*  كروت الإحصائيات */
+/* ----------------------- */
+.stats-section {
+    margin-top: 50px;
+}
+
+.stats-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+    .stats-grid.two-cards .stat-card {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .stats-grid.three-cards .stat-card {
+        flex: 1 1 calc(33.33% - 13.5px);
+    }
+
+.stat-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    position: relative;
+}
+
+    .stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .stat-card.green::before {
+        background-color: #4caf50;
+    }
+
+    .stat-card.blue::before {
+        background-color: #2196f3;
+    }
+
+    .stat-card.yellow::before {
+        background-color: #fbc02d;
+    }
+
+    .stat-card.red::before {
+        background-color: #e53935;
+    }
+
+    .stat-card.purple::before {
+        background-color: #9c27b0;
+    }
+
+    .stat-card p {
+        font-size: 14px;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    .stat-card h4 {
+        font-size: 22px;
+        margin-top: 6px;
+        color: #222;
+    }
+
+/* ----------------------- */
+/* جدول العيادات */
+/* ----------------------- */
+.table-section {
+    margin-top: 50px;
+}
+
+.table-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.clinic-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+    .clinic-table thead {
+        background-color: #1d5dbf;
+        color: white;
+    }
+
+    .clinic-table th,
+    .clinic-table td {
+        padding: 12px 8px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+/* ----------------------- */
+/* ⬅ زر الرجوع */
+/* ----------------------- */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* مهم للروابط */
+    background-color: #1d5dbf;
+    color: white;
+    border: none;
+    width: 250px;
+    height: 32px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .back-btn:hover {
+        background-color: #164aa8;
+    }
+
+/* ----------------------- */
+/*  الفوتر */
+/* ----------------------- */
+.footer {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    padding: 15px 0;
+}

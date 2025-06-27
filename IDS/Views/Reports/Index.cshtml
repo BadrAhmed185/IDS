@@ -1,17 +1,54 @@
 ﻿@{
+    Layout = null;
     ViewData["Title"] = "التقارير والإحصائيات";
 }
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/ClinicStatIndex.css" />
+</head>
+<body>
+    <div class="container">
 
-<div class="text-center">
-    <h2>📊 التقارير والإحصائيات</h2>
-    
-    <div class="mt-4">
-        <a class="btn btn-primary btn-lg m-2" asp-controller="Statistics" asp-action="General">
-            📈 الإحصائيات العامة
-        </a>
+        <!-- Sidebar ثابت (اختياري) -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="~/images/logo.png" alt="Dental Logo" />
+            </div>
+            <nav>
+                <!--<button class="nav-item active"><i class="icon">📊</i>الإحصائيات</button>-->
 
-        <a class="btn btn-success btn-lg m-2" asp-controller="ClinicStatistics" asp-action="Index">
-            🏥 إحصائيات العيادة
-        </a>
+                <button class="nav-item" onclick="loadPartialView('/Reports/Index')">
+                    <i class="icon">📊</i> الإحصائيات
+                </button>
+
+                <button class="nav-item" onclick="loadPartialView('/Report/Index')">
+                    <i class="icon">📊</i> التقارير
+                </button>
+            </nav>
+
+            
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <h1>📊 التقارير والإحصائيات</h1>
+            <div class="cards">
+                <a href="@Url.Action("General", "Statistics")" class="card">
+                    <img src="~/images/images-removebg-preview1.png" alt="General Stats" />
+                    <h2>الإحصائيات العامة</h2>
+                    <p>مؤشرات أداء المستشفى لفترات مختلفة</p>
+                </a>
+                <a href="@Url.Action("Index", "ClinicStatistics")" class="card">
+                    <img src="~/images/images-removebg-preview.png" alt="Clinic Stats" />
+                    <h2>إحصائيات العيادة</h2>
+                    <p>مؤشرات الأداء داخل العيادات</p>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
+</body>
+</html>

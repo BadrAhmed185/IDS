@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gn/L4O2GkUE=",
+  "dgSpecHash": "4e5r3w2scE4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\IDS.csproj",
+  "projectFilePath": "D:\\IDS\\IDS\\IDS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huawei\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Huawei\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

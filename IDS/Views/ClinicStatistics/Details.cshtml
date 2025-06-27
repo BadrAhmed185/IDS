@@ -1,36 +1,128 @@
 ﻿@model dynamic
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إحصائيات العيادة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/ClinicStat.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <div class="header-content">
+                <img src="~/images/logo.png" alt="Logo" class="logo-img">
+                <div class="head-text">
+                    <h1>إحصائيات العيادة - @Model.ClinicName</h1>
+                    <p>إذا لم تقم باختيار تاريخ، سيتم استخدام التاريخ الحالي حسب نوع الإحصائية</p>
+                </div>
+            </div>
+        </header>
 
-<h2>📍 Clinic: @Model.ClinicName</h2>
+        <form method="get" asp-action="Details" asp-route-id="@Model.ClinicId">
+            <div class="filter-controls">
+                <div class="stat-type">
+                    <label>نوع الإحصائية:</label>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="day">يومي</button>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="month">شهري</button>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="year">سنوي</button>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="custom">مخصص</button>
+                    <button class="view-btn" type="submit">عرض الإحصائيات</button>
+                </div>
+                <div class="date-selectors"></div>
+            </div>
+        </form>
 
-<ul>
-    <li><strong>Number of Patients:</strong> @Model.PatientCount</li>
-    <li><strong>Total Visits:</strong> @Model.VisitCount</li>
-</ul>
+        <div class="stats-section">
+            <h3 class="stats-title">الإجماليات (لكل الوقت)</h3>
+            <div class="stats-grid two-cards">
+                <div class="stat-card green">
+                    <p>إجمالي عدد التذاكر</p>
+                    <h4>@Model.allTimeVisitCount</h4>
+                </div>
+                <div class="stat-card blue">
+                    <p>إجمالي عدد المرضى</p>
+                    <h4>@Model.allTimePatientCount</h4>
+                </div>
+            </div>
+        </div>
 
-<h3>🗣️ Top Complaints</h3>
-<table class="table">
-    <thead><tr><th>Complaint</th><th>Count</th></tr></thead>
-    <tbody>
-        @foreach (var item in Model.TopComplaints)
-        {
-            <tr><td>@item.Complaint</td><td>@item.Count</td></tr>
-        }
-    </tbody>
-</table>
+        <div class="stats-section">
+            <h3 class="stats-title">الإحصائيات للفترة المحددة:</h3>
+            <div class="stats-grid two-cards">
+                <div class="stat-card yellow">
+                    <p>عدد التذاكر</p>
+                    <h4>@Model.VisitCount</h4>
+                </div>
+                <div class="stat-card purple">
+                    <p>عدد المرضى</p>
+                    <h4>@Model.PatientCount</h4>
+                </div>
+            </div>
+        </div>
 
-<h3>🩺 Top Diagnoses</h3>
-<table class="table">
-    <thead><tr><th>Diagnosis</th><th>Count</th></tr></thead>
-    <tbody>
-        @foreach (var item in Model.TopDiagnoses)
-        {
-            <tr><td>@item.Diagnosis</td><td>@item.Count</td></tr>
-        }
+        <div class="table-section">
+            <h3 class="table-title">أهم الشكاوي</h3>
+            <div class="table-wrapper">
+                <table class="clinic-table">
+                    <thead>
+                        <tr>
+                            <th>الشكوى</th>
+                            <th>عدد الشكاوى</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.TopComplaints)
+                        {
+                            <tr>
+                                <td>@item.Complaint</td>
+                                <td>@item.Count</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    </tbody>
-</table>
-<div class="mb-3">
-    <button class="btn btn-secondary" onclick="loadPartialView('/Reports/Index')">
-        🔙 رجوع إلى قائمة الإحصائيات
-    </button>
-</div>
+        <div class="table-section">
+            <h3 class="table-title">أهم التشخيصات</h3>
+            <div class="table-wrapper">
+                <table class="clinic-table">
+                    <thead>
+                        <tr>
+                            <th>التشخيص</th>
+                            <th>عدد التشخيصات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.TopDiagnoses)
+                        {
+                            <tr>
+                                <td>@item.Diagnosis</td>
+                                <td>@item.Count</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="button-wrapper">
+            <a asp-controller="Admin" asp-action="Index" class="back-btn">
+                العودة الي القائمة الرئيسية  <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            <p>جميع الحقوق محفوظة © 2025 - IDS</p>
+        </footer>
+    </div>
+
+    <script src="~/js/ClinicStat.js"></script>
+</body>
+</html>

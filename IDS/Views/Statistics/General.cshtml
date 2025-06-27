@@ -1,34 +1,114 @@
 ﻿@model dynamic
-@using System.Globalization
 
-<h2>📊 General Hospital Statistics</h2>
+@{
+    Layout = null;
+}
 
-<ul>
-    <li><strong>Total Patients:</strong> @Model.totalPatients</li>
-    <li><strong>Total Visits:</strong> @Model.totalTickets</li>
-    <li><strong>New Patients This Month:</strong> @Model.newPatientsThisMonth</li>
-    <li><strong>Visits This Month:</strong> @Model.visitsThisMonth</li>
-    <li><strong>Average Visits per Patient:</strong> @Model.avgVisitsPerPatient.ToString("0.00", CultureInfo.InvariantCulture)</li>
-</ul>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإحصائيات العامة للمستشفى</title>
 
-<h3>🦷 Patients Per Clinic</h3>
-<table class="table table-bordered">
-    <thead>
-        <tr><th>Clinic</th><th>Number of Patients</th></tr>
-    </thead>
-    <tbody>
-        @foreach (var clinic in Model.patientsPerClinic)
-        {
-            <tr>
-                <td>@clinic.ClinicName</td>
-                <td>@clinic.PatientCount</td>
-            </tr>
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/GeneralStat.css" />
+</head>
+<body>
+    <div class="main-container">
 
-    </tbody>
-</table>
-<div class="mb-3">
-    <button class="btn btn-secondary" onclick="loadPartialView('/Reports/Index')">
-        🔙 رجوع إلى قائمة الإحصائيات
-    </button>
-</div>
+        <header>
+            <div class="header-content">
+                <img src="~/images/logo.png" alt="Logo" class="logo-img">
+                <div class="head-text">
+                    <h1>الإحصائيات العامة للمستشفى</h1>
+                    <p>إذا لم تقم باختيار تاريخ، سيتم استخدام التاريخ الحالي حسب نوع الإحصائية</p>
+                </div>
+            </div>
+        </header>
+
+        <form method="get" asp-action="General">
+            <div class="filter-controls">
+                <div class="stat-type">
+                    <label>نوع الإحصائية:</label>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="day">يومي</button>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="month">شهري</button>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="year">سنوي</button>
+                    <button class="stat-btn" onclick="selectStat(this)" type="button" data-value="custom">مخصص</button>
+                    <button class="view-btn" type="submit">عرض الإحصائيات</button>
+                </div>
+                <div class="date-selectors"></div>
+            </div>
+        </form>
+
+        <div class="stats-section">
+            <h3 class="stats-title">الإجماليات (لكل الوقت)</h3>
+            <div class="stats-grid two-cards">
+                <div class="stat-card green">
+                    <p>إجمالي عدد التذاكر</p>
+                    <h4>@Model.allTimeTickets</h4>
+                </div>
+                <div class="stat-card blue">
+                    <p>إجمالي عدد المرضى</p>
+                    <h4>@Model.allTimePatients</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h3 class="stats-title">إحصائيات للفترة المحددة</h3>
+            <div class="stats-grid three-cards">
+                <div class="stat-card yellow">
+                    <p>متوسط الزيارات لكل مريض</p>
+                    <h4>@Model.avgVisitsPerPatient.ToString("0.00")</h4>
+                </div>
+                <div class="stat-card red">
+                    <p>عدد التذاكر</p>
+                    <h4>@Model.visitsThisMonth</h4>
+                </div>
+                <div class="stat-card purple">
+                    <p>عدد المرضى</p>
+                    <h4>@Model.newPatientsThisMonth</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h3 class="table-title">عدد المرضى حسب العيادة</h3>
+            <div class="table-wrapper">
+                <table class="clinic-table">
+                    <thead>
+                        <tr>
+                            <th>العيادة</th>
+                            <th>عدد المرضى</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.patientsPerClinic)
+                        {
+                            <tr>
+                                <td>@item.ClinicName</td>
+                                <td>@item.PatientCount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="button-wrapper">
+            <a asp-controller="Admin" asp-action="Index" class="back-btn">
+                العودة الي القائمة الرئيسية  <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            <p>IDS جميع الحقوق محفوظة © 2025</p>
+        </footer>
+
+    </div>
+
+    <script src="~/js/GeneralStat.js"></script>
+</body>
+</html>
