@@ -5,7 +5,9 @@
         Reception = 1,
         Diagnosis = 2,
         Sec_Diagnosis = 3,
-        Specific_Clinic = 4,
+        CPresident = 4,
+        Specific_Clinic = 5,
+
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IDS.Models.Ticket>
+﻿ @model IEnumerable<IDS.Models.Ticket>
 
 @{
     ViewData["Title"] = "EDoctor page";
@@ -113,7 +113,19 @@
                             <td>@entity.AppointmentDate</td>
                             <td>@entity.Patient.Name</td>
                             <td>@entity.Patient.phoneNumber</td>
-                            <td>@(entity.LevelOfCompletness ?? "جديد")</td>
+                            <td>
+                                @(
+                                    entity.LevelOfCompletness switch
+                                    {
+                                        "new" => "جديد",
+                                        "follow-up" => "في مرحلة العلاج",
+                                        "DidNotAttend" => "المريض لم يحضر الجلسة",
+                                        "completed" => "تم العلاج بالكامل",
+                                        _ => "جديد" // Default if null or unrecognized
+                                    }
+                                    )
+                            </td>
+
                             <td>@(entity.NextDate.HasValue ? entity.NextDate.Value.ToString("yyyy-MM-dd") : "لم يحدد بعد")</td>
                   @*           <td class="doctor-select">
                                 <form asp-action="AssignDoctor" asp-asp-controller="ClinicPresident" asp-route-id="@entity.TicketId" method="post">
@@ -147,7 +159,7 @@
                                             <div class="modal-body">
                                                 <div class="PopUpDiv">
                                                     <form asp-controller="@ViewBag.controllerName" asp-action="ChangeNextDate" asp-route-id="@entity.TicketId" method="post">
-                                                        <input type="hidden" asp-for="@entity.TicketId" />
+                                                        <input type="hidden" name="id" Value="@entity.TicketId" />
 
                                                         <div class="mb-3">
                                                             <h4>تحديد موعد زيارة قادمة</h4>
@@ -180,7 +192,7 @@
                                             <div class="modal-body">
                                                 <div class="PopUpDiv">
                                                     <form asp-controller="@ViewBag.controllerName" asp-action="ChangeLevelOfCompletness" asp-route-id="@entity.TicketId" method="post">
-                                                        <input type="hidden" asp-for="@entity.TicketId" />
+                                                        <input type="hidden" name="id" Value="@entity.TicketId" />
 
                                                         <div class="mb-3">
                                                             <h4>تعديل حالة التذكرة</h4>

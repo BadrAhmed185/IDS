@@ -107,10 +107,15 @@ namespace IDS.Models
 
         public bool IsValid { get; set; } = true;
 
+        public string? LevelOfCompletness { get; set; }  // part of third changes
+
+
 
 
         [Display(Name = "مسئول موظف الإستقبال")]
         public string? ReceptionEmpName { get; set; }  /// part of third changes
+        public string? DiagnosisDocName { get; set; }  /// part of third changes
+        public string? ClinicDocName { get; set; }  /// part of third changes
 
 
 

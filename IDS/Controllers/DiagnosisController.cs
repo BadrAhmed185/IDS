@@ -94,7 +94,6 @@ namespace IDS.Controllers
                 NextDate = ticket.NextDate,
                 Status = ticket.Status,
                 IsValid = ticket.IsValid,
-                ReceptionEmpName = await _userManager.Users.Where(u => u.Id == ticket.TicketAccountancy.ReceptionEmpId).Select(u => u.FullName).FirstOrDefaultAsync(),
 
 
 

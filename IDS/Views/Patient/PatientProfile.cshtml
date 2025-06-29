@@ -159,13 +159,11 @@
 
                             <td>@(ticket.NextDate.HasValue ? ticket.NextDate.Value.ToString("yyyy-MM-dd") : "-")</td>
                             <td>
-                                <a asp-controller="Ticket" asp-action="Edit" asp-route-id=@ticket.TicketId class="btn btn-warning btn-sm action-btn edit-btn">تعديل</a>
+                                <a asp-controller="Admin" asp-action="DisplayTicket" asp-route-id=@ticket.TicketId class="btn btn-warning btn-sm action-btn edit-btn">عرض</a>
                                 <a asp-controller="Ticket" asp-action="Print" asp-route-id=@ticket.TicketId class="btn btn-success btn-sm action-btn confirm-btn">طباعة</a>
 
 
-                                <button type="button" class="btn btn-danger btn-sm action-btn delete-btn" data-bs-toggle="modal" data-bs-target="#myModalDelete_@ticket.TicketId">
-                                    حذف
-                                </button>
+                        
 
                                 <div class="modal fade" id="myModalDelete_@ticket.TicketId" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog">
