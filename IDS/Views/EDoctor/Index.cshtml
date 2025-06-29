@@ -76,14 +76,20 @@
                     </form>
                 </div>
                 <div class="Navs">
+
                     <a asp-action="" class="btn custom-hover" style="text-decoration: none;">
                         إحصائيات العيادة
+                    </a>
+
+                    <a asp-action="DoctorProfile" asp-controller="Doctor" class="btn custom-hover" style="text-decoration: none;">
+                        حسابي
                     </a>
 
 
                     <a asp-action="SignOut" asp-controller="Auth" class="btn custom-hover" style="text-decoration: none;">
                         خروج
                     </a>
+
 
                 </div>
             </div>
@@ -145,7 +151,7 @@
                                 <a class="action-link view" asp-action="Edit" asp-Controller="@ViewBag.ControllerName" asp-route-id="@entity.TicketId"><i class="fas fa-eye"></i>فحص</a>
                                 <a class="action-link view" asp-action="ShowPatientProfile" asp-Controller="@ViewBag.ControllerName" asp-route-id="@entity.Patient.PatientId"><i class="fas fa-eye"></i>عرض ملف المريض</a>
 
-                                <button type="button" class="action-link view" data-bs-toggle="modal" data-bs-target="#myModalEdit_@entity.TicketId">
+                                <button type="button" class="action-link view" style="border: none;" data-bs-toggle="modal" data-bs-target="#myModalEdit_@entity.TicketId">
                                     تحديد موعد زيارة
                                 </button>
 
@@ -153,7 +159,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                 <h4>تحديد موعد زيارة قادمة</h4>
                                             </div>
 
                                             <div class="modal-body">
@@ -162,12 +168,12 @@
                                                         <input type="hidden" name="id" Value="@entity.TicketId" />
 
                                                         <div class="mb-3">
-                                                            <h4>تحديد موعد زيارة قادمة</h4>
+                                                           
 
-                                                            <label class="form-label">إختر التاريخ</label>
-                                                           <input type="date" class="form-control" id="date" name="Date" required />
+                                                            <label class="form-label" style="font-weight : bold;">إختر التاريخ</label>
+                                                           <input type="date" class="form-control" id="date" name="Date" required style="width:70%; margin : auto;" />
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary btn-block btn-submit but">حفظ</button>
+                                                        <button type="submit" class="btn btn-primary btn-block" style="background : rgb(30, 100, 145); border:none;">حفظ</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -178,7 +184,7 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="action-link view" data-bs-toggle="modal" data-bs-target="#myModalEdit2_@entity.TicketId">
+                                <button type="button" class="action-link view" style="border: none;" data-bs-toggle="modal" data-bs-target="#myModalEdit2_@entity.TicketId">
                                       تعديل حالة التذكرة
                                 </button>
 
@@ -186,7 +192,11 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <h5>تعديل حالة التذكرة </h5>
+
+                                            @*     <button type="button" class="btn-close" data-bs-dismiss="modal"></button> *@
+                
+
                                             </div>
 
                                             <div class="modal-body">
@@ -195,16 +205,16 @@
                                                         <input type="hidden" name="id" Value="@entity.TicketId" />
 
                                                         <div class="mb-3">
-                                                            <h4>تعديل حالة التذكرة</h4>
-                                                            <label class="form-label">إسم المريض</label>
-                                                            <select name="LevelOfCompletionParameter" id="LevelOfCompletionParameter" class="status-select plain">
+                                                            <label class="form-label"><span style="font-weight:bold;">إسم المريض:</span> @entity.Patient.Name</label>                       
+                                                            
+                                                            <select name="LevelOfCompletionParameter" id="LevelOfCompletionParameter" class="status-select plain" style="border: 1px solid; border-radius:10px; width:70%;">
                                                                 <option value="new">جديد</option>
                                                                 <option value="follow-up">في مرحلة العلاج</option>
                                                                 <option value="DidNotAttend">المريض لم يحضر الجلسة</option>
                                                                 <option value="completed">تم العلاج بالكامل</option>
                                                             </select>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary btn-block btn-submit but">حفظ</button>
+                                                        <button type="submit" class="btn btn-primary btn-block" style="background : rgb(30, 100, 145); border:none;">حفظ</button>
                                                     </form>
                                                 </div>
                                             </div>

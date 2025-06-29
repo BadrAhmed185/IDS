@@ -305,6 +305,10 @@
       "PackagePath": "staticwebassets\\css\\ClinicStatIndex.css"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\Diagnosis.css",
+      "PackagePath": "staticwebassets\\css\\Diagnosis.css"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\css\\EditPatient.css",
       "PackagePath": "staticwebassets\\css\\EditPatient.css"
     },
