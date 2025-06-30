@@ -133,18 +133,7 @@
                             </td>
 
                             <td>@(entity.NextDate.HasValue ? entity.NextDate.Value.ToString("yyyy-MM-dd") : "لم يحدد بعد")</td>
-                  @*           <td class="doctor-select">
-                                <form asp-action="AssignDoctor" asp-asp-controller="ClinicPresident" asp-route-id="@entity.TicketId" method="post">
-
-
-                                    <select class="doctor-select" name="docId" asp-items="@ViewBag.Doctors">
-                                        <option value="dr2">إختر الطبيب المناسب</option>
-                                    </select>
-                                    <button type="submit" class="action-link view"><i class="fas fa-eye"></i>إرسال للطبيب</button>
-
-                                </form>
-
-                            </td> *@
+        
 
                             <td class="actions">
 

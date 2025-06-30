@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5qGGBkcTj56WY/R7LpI3vNmx6oPLQ0zV+DNs9rKtTCY=",
+  "Hash": "J774ONbyrfiNWS7LuSbWInknUBblq0DoUcM+XYxVTvo=",
   "Source": "IDS",
   "BasePath": "_content/IDS",
   "Mode": "Default",
@@ -1487,6 +1487,27 @@
       "OriginalItemSpec": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
+      "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\kx38gjhtpm-wv1x1t49ty.gz",
+      "SourceId": "IDS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/IDS",
+      "RelativePath": "js/TicketSearchHandler#[.{fingerprint=wv1x1t49ty}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "dcb74zqd1y",
+      "Integrity": "0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js"
+    },
+    {
       "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\l8dz8oht6v-6pdc2jztkx.gz",
       "SourceId": "IDS",
       "SourceType": "Discovered",
@@ -1632,6 +1653,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\q609f4mv3u-369ln9jpr8.gz",
+      "SourceId": "IDS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/IDS",
+      "RelativePath": "js/MyCases#[.{fingerprint=369ln9jpr8}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "7oq8vc2hb1",
+      "Integrity": "B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\MyCases.js"
     },
     {
       "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\qiqe6i032a-5ipweew5fc.gz",
@@ -5645,6 +5687,27 @@
       "OriginalItemSpec": "wwwroot\\js\\menuItem.js"
     },
     {
+      "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+      "SourceId": "IDS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\",
+      "BasePath": "_content/IDS",
+      "RelativePath": "js/MyCases#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "369ln9jpr8",
+      "Integrity": "q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\MyCases.js"
+    },
+    {
       "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\odontogramaGenerator.js",
       "SourceId": "IDS",
       "SourceType": "Discovered",
@@ -5790,6 +5853,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\textBox.js"
+    },
+    {
+      "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+      "SourceId": "IDS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\",
+      "BasePath": "_content/IDS",
+      "RelativePath": "js/TicketSearchHandler#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wv1x1t49ty",
+      "Integrity": "NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\TicketSearchHandler.js"
     },
     {
       "Identity": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\tooth.js",
@@ -29024,6 +29108,304 @@
       ]
     },
     {
+      "Route": "js/MyCases.369ln9jpr8.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\q609f4mv3u-369ln9jpr8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003174603175"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 00:51:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "369ln9jpr8"
+        },
+        {
+          "Name": "label",
+          "Value": "js/MyCases.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4="
+        }
+      ]
+    },
+    {
+      "Route": "js/MyCases.369ln9jpr8.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 00:51:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "369ln9jpr8"
+        },
+        {
+          "Name": "label",
+          "Value": "js/MyCases.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4="
+        }
+      ]
+    },
+    {
+      "Route": "js/MyCases.369ln9jpr8.js.gz",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\q609f4mv3u-369ln9jpr8.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 00:51:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "369ln9jpr8"
+        },
+        {
+          "Name": "label",
+          "Value": "js/MyCases.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM="
+        }
+      ]
+    },
+    {
+      "Route": "js/MyCases.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\q609f4mv3u-369ln9jpr8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003174603175"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 00:51:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4="
+        }
+      ]
+    },
+    {
+      "Route": "js/MyCases.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 00:51:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-q8y5MsuYvYVgQHipyVWEJQg+Ig+E08KwpfMy5RarBt4="
+        }
+      ]
+    },
+    {
+      "Route": "js/MyCases.js.gz",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\q609f4mv3u-369ln9jpr8.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 00:51:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-B8h/faVWrWRKinYZUPFv1UgLdgsKjci6t7UG3bWkAPM="
+        }
+      ]
+    },
+    {
       "Route": "js/odontogramaGenerator.js",
       "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\bu9qku4jmo-zp7v7yl70m.gz",
       "Selectors": [
@@ -31106,6 +31488,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-xf7YAuWq1OkajgeQ0LHig1pSJbbSZWVhQKT/DjPx8b8="
+        }
+      ]
+    },
+    {
+      "Route": "js/TicketSearchHandler.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\kx38gjhtpm-wv1x1t49ty.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001976284585"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 22:38:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE="
+        }
+      ]
+    },
+    {
+      "Route": "js/TicketSearchHandler.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 22:38:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE="
+        }
+      ]
+    },
+    {
+      "Route": "js/TicketSearchHandler.js.gz",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\kx38gjhtpm-wv1x1t49ty.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 22:38:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8="
+        }
+      ]
+    },
+    {
+      "Route": "js/TicketSearchHandler.wv1x1t49ty.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\kx38gjhtpm-wv1x1t49ty.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001976284585"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 22:38:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wv1x1t49ty"
+        },
+        {
+          "Name": "label",
+          "Value": "js/TicketSearchHandler.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE="
+        }
+      ]
+    },
+    {
+      "Route": "js/TicketSearchHandler.wv1x1t49ty.js",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1104"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 22:38:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wv1x1t49ty"
+        },
+        {
+          "Name": "label",
+          "Value": "js/TicketSearchHandler.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NMPYKPFll1PJxo22PE1Ad00Z+Y2ZPpe7aBQUzbgmixE="
+        }
+      ]
+    },
+    {
+      "Route": "js/TicketSearchHandler.wv1x1t49ty.js.gz",
+      "AssetFile": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\obj\\Debug\\net9.0\\compressed\\kx38gjhtpm-wv1x1t49ty.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 22:38:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wv1x1t49ty"
+        },
+        {
+          "Name": "label",
+          "Value": "js/TicketSearchHandler.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/r19ppnu+qwk9oYWKfm1VYsP3Awwj2oPOV5zQ/DEN8="
         }
       ]
     },

@@ -67,6 +67,7 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\TicketSearchHandler.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\renderer.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
@@ -74,6 +75,7 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\GeneralStat.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\Error.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\MyCases.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\js\main.js
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\css\PatientProfile.css
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
@@ -262,6 +264,7 @@ wwwroot\js\images\dentadura-sup-64.png
 wwwroot\js\images\GeneralStat.js
 wwwroot\js\main.js
 wwwroot\js\menuItem.js
+wwwroot\js\MyCases.js
 wwwroot\js\odontogramaGenerator.js
 wwwroot\js\rect.js
 wwwroot\js\renderer.js
@@ -269,6 +272,7 @@ wwwroot\js\settings.js
 wwwroot\js\site.js
 wwwroot\js\Teicket.js
 wwwroot\js\textBox.js
+wwwroot\js\TicketSearchHandler.js
 wwwroot\js\tooth.js
 wwwroot\js\UserSearchHandler.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

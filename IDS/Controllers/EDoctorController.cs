@@ -561,7 +561,33 @@ namespace IDS.Controllers
         }
 
 
+        public async Task<IActionResult> Search(string keyword)
+        {
+            var clinicId = int.Parse(User.FindFirst("ClinicId").Value);
+            var docId = User.FindFirst("DocId")?.Value;
 
+            var tickets = await _context.Tickets
+                .Where(t => t.ClinicId == clinicId && t.Status == "5" && t.TicketAccountancy.ClinicDocId == docId)
+             .Include(t => t.Patient)
+             .ThenInclude(t => t.MedicalHistory)
+             .Include(t => t.ReferredTo)
+            .Include(t => t.Asnan)
+             .ToListAsync();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                if (keyword.All(char.IsDigit))
+                {
+                    tickets = tickets.Where(t => t.TicketId.Contains(keyword)).ToList();
+                }
+                else
+                {
+                    tickets = tickets.Where(t => t.Patient.Name.Contains(keyword)).ToList();
+
+                }
+            }
+
+            return PartialView("_TicketSearchResults", tickets.ToList());
+        }
     }
 
 }

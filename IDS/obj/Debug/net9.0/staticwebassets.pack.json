@@ -401,8 +401,16 @@
       "PackagePath": "staticwebassets\\js\\CloseErrorMessage.js"
     },
     {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+      "PackagePath": "staticwebassets\\js\\MyCases.js"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\Teicket.js",
       "PackagePath": "staticwebassets\\js\\Teicket.js"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+      "PackagePath": "staticwebassets\\js\\TicketSearchHandler.js"
     },
     {
       "Id": "C:\\Users\\Huawei\\OneDrive\\سطح المكتب\\IDS\\IDS\\wwwroot\\js\\UserSearchHandler.js",

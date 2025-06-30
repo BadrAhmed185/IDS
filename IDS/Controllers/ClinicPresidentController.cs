@@ -1,4 +1,5 @@
-﻿using IDS.Models;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using IDS.Models;
 using IDS.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -99,6 +100,79 @@ namespace IDS.Controllers
             return RedirectToAction("Index", "ClinicPresident"); // Fallback if referer is not available
 
         }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> ChangeNextDate(string id, DateTime date)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("Invalid Ticket ID.");
+
+            // Try to get the ticket by ID
+            var ticket = await _context.Tickets.FindAsync(id);
+
+            if (ticket == null)
+            {
+                TempData["Error"] = "عذرآ حدث حطأ ما , التذكرة غير موجودة";
+                return RedirectToAction(nameof(Index));
+            }
+
+
+            ticket.NextDate = date;
+
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "تم تحديد موعد الزيارة القادم  ";
+            TempData["DoneChanged"] = true;
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> ChangeLevelOfCompletness(string id, string LevelOfCompletionParameter)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("Invalid Ticket ID.");
+
+            var ticket = await _context.Tickets.FindAsync(id);
+
+            if (ticket == null)
+            {
+                TempData["Error"] = "عذرًا، حدث خطأ ما. التذكرة غير موجودة.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Update the LevelOfCompletness
+            ticket.LevelOfCompletness = LevelOfCompletionParameter;
+
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "تم تحديث حالة التذكرة بنجاح.";
+            TempData["DoneChanged"] = true;
+        
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> MyCases()
+        {
+            ViewBag.controllerName = "ClinicPresident";
+
+            var clinicId = int.Parse(User.FindFirst("ClinicId").Value);
+            var docId = User.FindFirst("DocId")?.Value;
+
+            var tickets = await _context.Tickets
+             .Where(t => t.ClinicId == clinicId && t.Status == "5" && t.TicketAccountancy.ClinicDocId == docId)
+             .Include(t => t.Patient)
+             .ThenInclude(t => t.MedicalHistory)
+             .Include(t => t.ReferredTo)
+             .Include(t => t.Asnan)
+             .ToListAsync();
+
+            return PartialView("_MyCases", tickets);
+        }
+
 
 
         public async Task<IActionResult> ShowPatientProfile(string id)
@@ -321,6 +395,34 @@ namespace IDS.Controllers
             };
 
             return View(ticketVm);
+        }
+
+
+        public async Task<IActionResult> Search(string keyword)
+        {
+            var clinicId = int.Parse(User.FindFirst("ClinicId").Value);
+
+            var tickets = await _context.Tickets
+                .Where(t => t.ClinicId == clinicId && t.Status == "4")
+             .Include(t => t.Patient)
+             .ThenInclude(t => t.MedicalHistory)
+             .Include(t => t.ReferredTo)
+            .Include(t => t.Asnan)
+             .ToListAsync();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                if (keyword.All(char.IsDigit))
+                {
+                    tickets = tickets.Where(t => t.TicketId.Contains(keyword)).ToList();
+                }
+                else
+                {
+                    tickets = tickets.Where(t => t.Patient.Name.Contains(keyword)).ToList();
+
+                }
+            }
+           
+            return PartialView("_TicketSearchResults", tickets.ToList());
         }
     }
 }

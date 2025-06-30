@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\edoctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\edoctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\controllers\\diagnosisnursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\controllers\\diagnosisnursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\diagnosisnurse\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\diagnosisnurse\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\diagnosis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\diagnosis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\clinicpresident\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\clinicpresident\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\wwwroot\\js\\mycases.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\wwwroot\\js\\mycases.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\edoctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\edoctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\controllers\\clinicpresidentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\controllers\\clinicpresidentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\wwwroot\\css\\cpresident.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\wwwroot\\css\\cpresident.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\clinicpresident\\_mycases.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\clinicpresident\\_mycases.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\wwwroot\\js\\ticketsearchhandler.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\wwwroot\\js\\ticketsearchhandler.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|c:\\users\\huawei\\onedrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\ids\\ids\\views\\shared\\_ticketsearchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62268E68-4030-4C56-A9BE-4D504F09692D}|IDS\\IDS.csproj|solutionrelative:ids\\views\\shared\\_ticketsearchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,83 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "IDS\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\appsettings.Development.json",
-              "RelativeToolTip": "IDS\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-29T20:14:12.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DoctorController.cs",
-              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\DoctorController.cs",
-              "RelativeDocumentMoniker": "IDS\\Controllers\\DoctorController.cs",
-              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\DoctorController.cs",
-              "RelativeToolTip": "IDS\\Controllers\\DoctorController.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAiwGoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DiagnosisNurseController.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\DiagnosisNurseController.cs",
+              "RelativeDocumentMoniker": "IDS\\Controllers\\DiagnosisNurseController.cs",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\DiagnosisNurseController.cs",
+              "RelativeToolTip": "IDS\\Controllers\\DiagnosisNurseController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwBsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T19:11:25.489Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "IDS\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "IDS\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T19:11:19.34Z",
+              "WhenOpened": "2025-06-30T11:46:47.858Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\DiagnosisNurse\\Index.cshtml",
+              "RelativeDocumentMoniker": "IDS\\Views\\DiagnosisNurse\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\DiagnosisNurse\\Index.cshtml",
+              "RelativeToolTip": "IDS\\Views\\DiagnosisNurse\\Index.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-30T11:45:48.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\Diagnosis\\Index.cshtml",
+              "RelativeDocumentMoniker": "IDS\\Views\\Diagnosis\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\Diagnosis\\Index.cshtml",
+              "RelativeToolTip": "IDS\\Views\\Diagnosis\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-30T11:45:47.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MyCases.js",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+              "RelativeDocumentMoniker": "IDS\\wwwroot\\js\\MyCases.js",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\wwwroot\\js\\MyCases.js",
+              "RelativeToolTip": "IDS\\wwwroot\\js\\MyCases.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-30T11:22:42.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\EDoctor\\Index.cshtml",
+              "RelativeDocumentMoniker": "IDS\\Views\\EDoctor\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\EDoctor\\Index.cshtml",
+              "RelativeToolTip": "IDS\\Views\\EDoctor\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-30T01:04:11.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\ClinicPresident\\Index.cshtml",
               "RelativeDocumentMoniker": "IDS\\Views\\ClinicPresident\\Index.cshtml",
               "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\ClinicPresident\\Index.cshtml",
               "RelativeToolTip": "IDS\\Views\\ClinicPresident\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAALQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-29T19:09:28.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CPresident.css",
-              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
-              "RelativeDocumentMoniker": "IDS\\wwwroot\\css\\CPresident.css",
-              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\wwwroot\\css\\CPresident.css",
-              "RelativeToolTip": "IDS\\wwwroot\\css\\CPresident.css",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-29T18:52:19.599Z"
+              "DocumentIndex": 8,
+              "Title": "TicketSearchHandler.js",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+              "RelativeDocumentMoniker": "IDS\\wwwroot\\js\\TicketSearchHandler.js",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\wwwroot\\js\\TicketSearchHandler.js",
+              "RelativeToolTip": "IDS\\wwwroot\\js\\TicketSearchHandler.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-30T00:44:11.307Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\EDoctor\\Index.cshtml",
-              "RelativeDocumentMoniker": "IDS\\Views\\EDoctor\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\EDoctor\\Index.cshtml",
-              "RelativeToolTip": "IDS\\Views\\EDoctor\\Index.cshtml",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAcwFkAAAADAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "_MyCases.cshtml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\ClinicPresident\\_MyCases.cshtml",
+              "RelativeDocumentMoniker": "IDS\\Views\\ClinicPresident\\_MyCases.cshtml",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\ClinicPresident\\_MyCases.cshtml",
+              "RelativeToolTip": "IDS\\Views\\ClinicPresident\\_MyCases.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-29T18:37:48.755Z",
+              "WhenOpened": "2025-06-30T00:34:34.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClinicPresidentController.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\ClinicPresidentController.cs",
+              "RelativeDocumentMoniker": "IDS\\Controllers\\ClinicPresidentController.cs",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Controllers\\ClinicPresidentController.cs",
+              "RelativeToolTip": "IDS\\Controllers\\ClinicPresidentController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAhwH0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T22:48:21.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_TicketSearchResults.cshtml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\Shared\\_TicketSearchResults.cshtml",
+              "RelativeDocumentMoniker": "IDS\\Views\\Shared\\_TicketSearchResults.cshtml",
+              "ToolTip": "C:\\Users\\Huawei\\OneDrive\\\u0633\u0637\u062D \u0627\u0644\u0645\u0643\u062A\u0628\\IDS\\IDS\\Views\\Shared\\_TicketSearchResults.cshtml",
+              "RelativeToolTip": "IDS\\Views\\Shared\\_TicketSearchResults.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-29T22:46:19.06Z",
               "EditorCaption": ""
             }
           ]

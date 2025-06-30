@@ -1,0 +1,132 @@
+﻿@model IEnumerable<IDS.Models.Ticket>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>رقم التذكرة</th>
+                <th>تاريخ الزيارة</th>
+                <th>اسم المريض</th>
+                <th>رقم الهاتف</th>
+                <th>حالة التذكرة</th>
+                <th>تاريخ الزيارة القادمة</th>
+
+                <th class="actions-header">الإجراءات</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @if (Model.Any())
+        {
+            @foreach (var entity in Model)
+            {
+                <tr>
+
+                    <td>@entity.TicketId</td>
+                    <td>@entity.AppointmentDate</td>
+                    <td>@entity.Patient.Name</td>
+                    <td>@entity.Patient.phoneNumber</td>
+                    <td>
+                        @(
+                            entity.LevelOfCompletness switch
+                            {
+                                "new" => "جديد",
+                                "follow-up" => "في مرحلة العلاج",
+                                "DidNotAttend" => "المريض لم يحضر الجلسة",
+                                "completed" => "تم العلاج بالكامل",
+                                _ => "جديد" // Default if null or unrecognized
+                            }
+                            )
+                    </td>
+
+                    <td>@(entity.NextDate.HasValue ? entity.NextDate.Value.ToString("yyyy-MM-dd") : "لم يحدد بعد")</td>
+
+
+                    <td class="actions">
+
+                        <a class="action-link view" asp-action="Edit" asp-Controller="@ViewBag.ControllerName" asp-route-id="@entity.TicketId"><i class="fas fa-eye"></i>فحص</a>
+                        <a class="action-link view" asp-action="ShowPatientProfile" asp-Controller="@ViewBag.ControllerName" asp-route-id="@entity.Patient.PatientId"><i class="fas fa-eye"></i>عرض ملف المريض</a>
+
+                        <button type="button" class="action-link view" style="border: none;" data-bs-toggle="modal" data-bs-target="#myModalEdit_@entity.TicketId">
+                            تحديد موعد زيارة
+                        </button>
+
+                        <div class="modal fade" id="myModalEdit_@entity.TicketId" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>تحديد موعد زيارة قادمة</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="PopUpDiv">
+                                            <form asp-controller="@ViewBag.controllerName" asp-action="ChangeNextDate" asp-route-id="@entity.TicketId" method="post">
+                                                <input type="hidden" name="id" Value="@entity.TicketId" />
+
+                                                <div class="mb-3">
+
+
+                                                    <label class="form-label" style="font-weight : bold;">إختر التاريخ</label>
+                                                    <input type="date" class="form-control" id="date" name="Date" required style="width:70%; margin : auto;" />
+                                                </div>
+                                                <button type="submit" class="btn btn-primary btn-block" style="background : rgb(30, 100, 145); border:none;">حفظ</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button style=" margin-left : auto;" type="button" class="btn btn-dark" data-bs-dismiss="modal">رجوع</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="action-link view" style="border: none;" data-bs-toggle="modal" data-bs-target="#myModalEdit2_@entity.TicketId">
+                            تعديل حالة التذكرة
+                        </button>
+
+                        <div class="modal fade" id="myModalEdit2_@entity.TicketId" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5>تعديل حالة التذكرة </h5>
+
+                                        @*     <button type="button" class="btn-close" data-bs-dismiss="modal"></button> *@
+
+
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="PopUpDiv">
+                                            <form asp-controller="@ViewBag.controllerName" asp-action="ChangeLevelOfCompletness" asp-route-id="@entity.TicketId" method="post">
+                                                <input type="hidden" name="id" Value="@entity.TicketId" />
+
+                                                <div class="mb-3">
+                                                    <label class="form-label"><span style="font-weight:bold;">إسم المريض:</span> @entity.Patient.Name</label>
+
+                                                    <select name="LevelOfCompletionParameter" id="LevelOfCompletionParameter" class="status-select plain" style="border: 1px solid; border-radius:10px; width:70%;">
+                                                        <option value="new">جديد</option>
+                                                        <option value="follow-up">في مرحلة العلاج</option>
+                                                        <option value="DidNotAttend">المريض لم يحضر الجلسة</option>
+                                                        <option value="completed">تم العلاج بالكامل</option>
+                                                    </select>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary btn-block" style="background : rgb(30, 100, 145); border:none;">حفظ</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button style=" margin-left : auto;" type="button" class="btn btn-dark" data-bs-dismiss="modal">رجوع</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </td>
+                </tr>
+
+            }
+        }
+
+        </tbody>
+    </table>

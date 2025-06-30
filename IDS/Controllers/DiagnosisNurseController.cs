@@ -42,6 +42,7 @@ namespace IDS.Controllers
                .FirstOrDefault(t => t.TicketId == id).Status = "2";
 
             _context.SaveChangesAsync();
+            Console.WriteLine("Badr");
 
           return RedirectToAction(nameof(Index));
 

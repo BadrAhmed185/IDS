@@ -1527,3 +1527,5 @@ C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\bdsxj8iiph-3r8b2a0bt1.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\css0w7tme5-uds4shyi53.gz
 C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\br95axji1z-e2rfm9j56p.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\kx38gjhtpm-wv1x1t49ty.gz
+C:\Users\Huawei\OneDrive\سطح المكتب\IDS\IDS\obj\Debug\net9.0\compressed\q609f4mv3u-369ln9jpr8.gz

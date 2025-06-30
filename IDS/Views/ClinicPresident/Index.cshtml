@@ -13,19 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ًصفحة النائب</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="~/css/CPresident.css">
     <link rel="stylesheet" href="~/css/Error.css">
-
- @*    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> *@
-
-@* 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> *@
+ 
 
 </head>
 <body>
+    <input id="controllerName" type="hidden" value="@ViewBag.controllerName">
+    <input id="doneChanged" type="hidden" value="@TempData["DoneChanged"]">
+    <input id="baseUrl" type="hidden" value="@Url.Content("~/")">
+
 
     <!-- Success Container -->
     <div class="success-container" id="successContainer">
@@ -73,20 +72,24 @@
 
                     <div class="search-container">
                         <form action="#" method="get">
-                            <input type="text" placeholder="ابحث باسم المريض أو رقم المذكرة..." class="search-input">
+                        <input type="text" placeholder="ابحث باسم المريض أو رقم المذكرة..." id="searchBox" class="search-input">
                             <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>
                             </button>
                         </form>
                     </div>   
                     <div class="Navs">
+
+                    <a asp-action="Index" class="btn custom-hover" style="text-decoration: none;">
+                        كل الحالات
+                    </a>
+                    <button  class="btn custom-hover" id="myCases">
+                        حالاتي
+                    </button>
                     <a asp-action="" class="btn custom-hover" style="text-decoration: none;">
                         إحصائيات العيادة
                     </a>
 
-                    <a asp-action="DoctorProfile" asp-controller="Doctor" class="btn custom-hover" style="text-decoration: none;">
-                        حسابي
-                    </a>
 
 
 
@@ -97,8 +100,8 @@
                     </div>
             </div>
         </div>
-
-        <div class="table-container">
+ 
+        <div class="table-container" id="casesContainer">
             <table>
                 <thead>
                     <tr>
@@ -111,8 +114,8 @@
                     </tr>
                 </thead>               
 
-                <tbody>                    
-                        @foreach(var entity in Model)
+                <tbody id="entityTableBody">
+                    @foreach(var entity in Model)
                         {
                         <tr>
 
@@ -156,6 +159,22 @@
     </div>
 
     <script src="~/js/CloseErrorMessage.js"></script>
+    <script src="~/js/TicketSearchHandler.js"></script>
+    <script src="~/js/MyCases.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const doneChanged = document.getElementById("doneChanged")?.value;
+
+            if (doneChanged && doneChanged.trim() !== "") {
+                const myCasesButton = document.getElementById("myCases");
+                if (myCasesButton) {
+                    myCasesButton.click();
+                }
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
